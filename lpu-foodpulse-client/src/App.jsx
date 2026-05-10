@@ -1,5 +1,5 @@
 import React, { Suspense, useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import ErrorBoundary from './components/ErrorBoundary';
 
@@ -88,7 +88,7 @@ const App = () => {
       </AnimatePresence>
       
       {!isAppLoading && (
-        <BrowserRouter>
+        <Router>
           <Suspense fallback={<StartupSplash />}>
             <Routes>
               <Route path="/" element={<LandingPage />} />
@@ -107,7 +107,7 @@ const App = () => {
               </Route>
             </Routes>
           </Suspense>
-        </BrowserRouter>
+        </Router>
       )}
     </ErrorBoundary>
   );
