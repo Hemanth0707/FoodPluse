@@ -3,7 +3,7 @@ import axios from 'axios';
 
 axios.defaults.headers.common['Bypass-Tunnel-Reminder'] = 'true';
 
-const API_URL = 'https://lpufoodpulse-api.loca.lt/api';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 const useFoodStore = create((set) => ({
   complaints: [],
@@ -51,11 +51,9 @@ const useFoodStore = create((set) => ({
   submitComplaint: async (complaintData, token) => {
     set({ loading: true });
     try {
-      console.log('[DEBUG] Submitting complaint data...');
       const res = await axios.post(`${API_URL}/complaints/submit`, complaintData, {
         headers: { Authorization: `Bearer ${token}` }
       });
-      console.log('[DEBUG] Complaint Response:', res.data);
       if (res.data.success) {
         set((state) => ({ complaints: [res.data.complaint, ...state.complaints], loading: false }));
         return res.data;

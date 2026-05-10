@@ -59,7 +59,6 @@ const ReportFood = () => {
 
   const executeSubmissionFlow = async () => {
     try {
-      console.log('[DEBUG] Starting file upload...');
       const uploadData = new FormData();
       uploadData.append('proof', files[0].file);
       const imageUrl = await uploadProof(uploadData);
@@ -68,7 +67,6 @@ const ReportFood = () => {
         return { success: false, status: 'rejected', reason: 'Failed to upload proof. Please try again.' };
       }
       
-      console.log('[DEBUG] Upload successful, sending complaint data...', imageUrl);
       const response = await submitComplaint({
         ...formData,
         studentId: user?._id || '',

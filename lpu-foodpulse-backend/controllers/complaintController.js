@@ -8,7 +8,6 @@ exports.submitComplaint = async (req, res) => {
   const studentId = req.user._id;
 
   try {
-    console.log(`[DEBUG] Complaint Submission Started for studentId: ${studentId}`);
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
@@ -19,7 +18,6 @@ exports.submitComplaint = async (req, res) => {
     if (imageProof) {
       initialStatus = 'Verified';
       marketplaceUnlocked = true;
-      console.log(`[DEBUG] Image proof provided. Auto-verifying complaint.`);
     }
 
     const complaint = await Complaint.create({
@@ -49,7 +47,6 @@ exports.submitComplaint = async (req, res) => {
       initialStatus = 'Verified';
       marketplaceUnlocked = true;
       complaint.status = 'Verified';
-      console.log(`[DEBUG] Threshold reached for ${hostel} ${mess}. Auto-verified.`);
     }
 
     // Add Wallet Points if Verified
@@ -58,7 +55,6 @@ exports.submitComplaint = async (req, res) => {
       if (user) {
         user.foodPoints = (user.foodPoints || 0) + 150;
         await user.save();
-        console.log(`[DEBUG] Added 150 points to user ${user.email}.`);
       }
     }
 

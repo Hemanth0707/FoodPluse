@@ -3,7 +3,7 @@ import axios from 'axios';
 
 axios.defaults.headers.common['Bypass-Tunnel-Reminder'] = 'true';
 
-const API_URL = 'https://lpufoodpulse-api.loca.lt/api/auth';
+const API_URL = import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}/auth` : 'http://localhost:5000/api/auth';
 
 // Safely parse LocalStorage to prevent crashes if data is corrupted
 const getSafeUser = () => {
