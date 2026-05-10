@@ -4,6 +4,8 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const { Server } = require('socket.io');
 const http = require('http');
+const Stall = require('./models/Stall');
+const seedDB = require('./seed');
 
 dotenv.config();
 
@@ -46,8 +48,21 @@ io.on('connection', (socket) => {
 // MongoDB Connection
 const PORT = process.env.PORT || 5000;
 mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/lpufoodpulse')
-  .then(() => {
+  .then(async () => {
     console.log('MongoDB Connected');
+    
+    // Auto-seed Production DB if empty
+    try {
+      const stallCount = await Stall.countDocuments();
+      if (stallCount === 0) {
+        console.log('Database is empty. Running auto-seeder...');
+        await seedDB();
+        console.log('Auto-seeding complete.');
+      }
+    } catch (seedErr) {
+      console.error('Auto-seeding failed:', seedErr);
+    }
+
     server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
   })
   .catch((err) => console.log('MongoDB Connection Error:', err));

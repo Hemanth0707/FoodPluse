@@ -134,8 +134,7 @@ const lpuStallsData = [
 
 const seedDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/lpufoodpulse');
-    console.log('MongoDB Connected for Massive Swiggy-style Demo Seeding...');
+    console.log('Starting Massive Swiggy-style Demo Seeding...');
 
     // Wipe Collections
     await Stall.deleteMany();
@@ -228,11 +227,10 @@ const seedDB = async () => {
     console.log('Admin: admin@lpu.in | password123');
     console.log('Student: student@lpu.in | password123');
     console.log('=============================================');
-    process.exit();
+    console.log('=============================================');
   } catch (error) {
     console.error('Seeding Error:', error);
-    process.exit(1);
   }
 };
 
-seedDB();
+module.exports = seedDB;
