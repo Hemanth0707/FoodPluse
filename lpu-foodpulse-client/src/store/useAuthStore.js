@@ -5,6 +5,33 @@ axios.defaults.headers.common['Bypass-Tunnel-Reminder'] = 'true';
 
 const API_URL = import.meta.env.VITE_API_URL || 'https://lpu-foodpulse-api.onrender.com/api/auth';
 
+// Setup Global Axios Interceptors
+axios.interceptors.request.use((config) => {
+  const token = localStorage.getItem('foodpulse_token');
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+
+axios.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response && error.response.status === 401) {
+      console.warn('Token expired or invalid, logging out automatically');
+      localStorage.removeItem('foodpulse_token');
+      localStorage.removeItem('foodpulse_user');
+      // We can't safely call useAuthStore.getState().logout() if it causes a circular dependency, 
+      // but we can force a page reload to clear state and redirect to login
+      if (window.location.hash !== '#/login') {
+        window.location.hash = '#/login';
+        window.location.reload();
+      }
+    }
+    return Promise.reject(error);
+  }
+);
+
 // Safely parse LocalStorage to prevent crashes if data is corrupted
 const getSafeUser = () => {
   try {
