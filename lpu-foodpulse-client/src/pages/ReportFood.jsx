@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useFoodStore from '../store/useFoodStore';
 import useAuthStore from '../store/useAuthStore';
@@ -8,8 +8,7 @@ const ReportFood = () => {
   const navigate = useNavigate();
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
-    hostel: 'BH1',
-    mess: 'Mess 1',
+    stallId: '',
     mealType: 'Lunch',
     issueType: 'Quality Issue',
     description: ''
@@ -22,9 +21,19 @@ const ReportFood = () => {
   const [verificationResult, setVerificationResult] = useState(null);
   const [errorMsg, setErrorMsg] = useState('');
 
-  const { submitComplaint, uploadProof } = useFoodStore();
+  const { submitComplaint, uploadProof, stalls, fetchStalls } = useFoodStore();
   const token = useAuthStore(state => state.token) || localStorage.getItem('foodpulse_token');
   const user = useAuthStore(state => state.user);
+
+  useEffect(() => {
+    fetchStalls();
+  }, [fetchStalls]);
+
+  useEffect(() => {
+    if (stalls.length > 0 && !formData.stallId) {
+      setFormData(prev => ({ ...prev, stallId: stalls[0]._id }));
+    }
+  }, [stalls, formData.stallId]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -77,6 +86,8 @@ const ReportFood = () => {
 
       const response = await submitComplaint({
         ...formData,
+        hostel: user?.hostel || 'Campus',
+        mess: stalls.find(s => s._id === formData.stallId)?.name || 'Food Court',
         studentId: user?._id || '',
         imageProof: imageUrl
       }, authToken);
@@ -155,10 +166,14 @@ const ReportFood = () => {
   };
 
   return (
-    <div className="report-container">
+    <div className="report-container pb-24 lg:pb-8">
       <div className="report-form-card">
         {step === 1 && (
           <div className="animate-[fadeUp_0.3s_both]">
+            <div className="mb-6">
+                <h2 className="text-2xl font-display font-bold text-white tracking-tight">Report an Issue</h2>
+                <p className="text-gray-400 text-sm">Help us maintain food quality standards across campus.</p>
+            </div>
             <div className="rf-steps">
               <div className="rfs active">1. Details</div>
               <div className="rfs-line"></div>
@@ -168,24 +183,14 @@ const ReportFood = () => {
             </div>
 
             <form onSubmit={handleSubmit}>
-              <div className="form-grid-2">
-                <div className="form-group">
-                  <label>Hostel</label>
-                  <select name="hostel" className="form-input" value={formData.hostel} onChange={handleChange}>
-                    <option value="BH1">BH-1</option>
-                    <option value="BH2">BH-2</option>
-                    <option value="GH1">GH-1</option>
-                    <option value="GH2">GH-2</option>
-                  </select>
-                </div>
-                <div className="form-group">
-                  <label>Mess Name</label>
-                  <select name="mess" className="form-input" value={formData.mess} onChange={handleChange}>
-                    <option value="Mess 1">Mess 1</option>
-                    <option value="Mess 2">Mess 2</option>
-                    <option value="Mess 3">Mess 3</option>
-                  </select>
-                </div>
+              <div className="form-group mb-4">
+                <label>Select Stall / Vendor</label>
+                <select name="stallId" className="form-input" value={formData.stallId} onChange={handleChange} required>
+                  {stalls.length === 0 && <option value="">Loading vendors...</option>}
+                  {stalls.map(stall => (
+                    <option key={stall._id} value={stall._id}>{stall.name} ({stall.location})</option>
+                  ))}
+                </select>
               </div>
 
               <div className="form-grid-2">
@@ -194,6 +199,7 @@ const ReportFood = () => {
                   <select name="mealType" className="form-input" value={formData.mealType} onChange={handleChange}>
                     <option value="Breakfast">Breakfast</option>
                     <option value="Lunch">Lunch</option>
+                    <option value="Snacks">Snacks</option>
                     <option value="Dinner">Dinner</option>
                   </select>
                 </div>
@@ -204,8 +210,7 @@ const ReportFood = () => {
                     <option value="Undercooked">Undercooked</option>
                     <option value="Overcooked">Overcooked</option>
                     <option value="Unhygienic">Unhygienic</option>
-                    <option value="Low quantity">Low quantity</option>
-                    <option value="Repeated menu">Repeated menu</option>
+                    <option value="Foreign object">Foreign object</option>
                     <option value="Stale food">Stale food</option>
                   </select>
                 </div>
@@ -256,7 +261,7 @@ const ReportFood = () => {
                 )}
               </div>
 
-              <button type="submit" className="btn-primary w-full mt-6" disabled={isVerifying}>
+              <button type="submit" className="btn-primary w-full mt-6" disabled={isVerifying || stalls.length === 0}>
                 Submit & Verify Issue
               </button>
             </form>
@@ -311,17 +316,17 @@ const ReportFood = () => {
         <div className="rsi-card">
           <h4>Today's Issue Trends</h4>
           <div className="trend-item">
-            <span>BH1</span>
+            <span>Oven Exp.</span>
             <div className="trend-bar"><div className="bg-red-500" style={{width: '80%'}}></div></div>
             <span className="text-red-400">High</span>
           </div>
           <div className="trend-item">
-            <span>BH2</span>
+            <span>Juice Bar</span>
             <div className="trend-bar"><div className="bg-yellow-500" style={{width: '40%'}}></div></div>
             <span className="text-yellow-400">Med</span>
           </div>
           <div className="trend-item">
-            <span>GH1</span>
+            <span>Salad Co.</span>
             <div className="trend-bar"><div className="bg-green-500" style={{width: '10%'}}></div></div>
             <span className="text-green-400">Low</span>
           </div>

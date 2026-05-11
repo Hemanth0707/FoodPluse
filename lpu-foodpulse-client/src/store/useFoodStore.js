@@ -36,6 +36,30 @@ const useFoodStore = create((set) => ({
     }
   },
 
+  fetchVendorComplaints: async (stallId) => {
+    set({ loading: true });
+    try {
+      const res = await axios.get(`${API_URL}/complaints?stallId=${stallId}`);
+      set({ complaints: res.data, loading: false });
+    } catch (err) {
+      console.error(err);
+      set({ loading: false });
+    }
+  },
+
+  updateComplaintStatus: async (complaintId, status) => {
+    try {
+      const res = await axios.put(`${API_URL}/complaints/${complaintId}/status`, { status });
+      set((state) => ({
+        complaints: state.complaints.map(c => c._id === complaintId ? res.data : c)
+      }));
+      return res.data;
+    } catch (err) {
+      console.error(err);
+      return null;
+    }
+  },
+
   uploadProof: async (formData) => {
     try {
       const res = await axios.post(`${API_URL}/upload`, formData, {
