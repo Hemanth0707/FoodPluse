@@ -53,12 +53,10 @@ mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/lpufoodpuls
     
     // Auto-seed Production DB if empty
     try {
-      const stallCount = await Stall.countDocuments();
-      if (stallCount === 0) {
-        console.log('Database is empty. Running auto-seeder...');
-        await seedDB();
-        console.log('Auto-seeding complete.');
-      }
+      // Force-seed Production DB for presentation updates
+      console.log('Forcing database re-seed for presentation updates...');
+      await seedDB();
+      console.log('Auto-seeding complete.');
     } catch (seedErr) {
       console.error('Auto-seeding failed:', seedErr);
     }

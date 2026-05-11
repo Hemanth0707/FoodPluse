@@ -2,17 +2,18 @@ const mongoose = require('mongoose');
 
 const complaintSchema = new mongoose.Schema({
   studentId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
-  hostel: { type: String, required: true }, // e.g., 'BH1'
-  mess: { type: String, required: true }, // e.g., 'Block A Mess'
-  mealType: { type: String, enum: ['Breakfast', 'Lunch', 'Dinner'], required: true },
+  stallId: { type: mongoose.Schema.Types.ObjectId, ref: 'Stall', required: false }, // Direct link to vendor
+  hostel: { type: String, required: true },
+  mess: { type: String, required: true },
+  mealType: { type: String, enum: ['Breakfast', 'Lunch', 'Dinner', 'Snacks', 'Beverages'], required: true },
   issueType: { 
     type: String, 
-    enum: ['Bad taste', 'Undercooked', 'Overcooked', 'Unhygienic', 'Low quantity', 'Repeated menu', 'Stale food', 'Food poisoning risk'],
+    enum: ['Bad taste', 'Undercooked', 'Overcooked', 'Unhygienic', 'Low quantity', 'Repeated menu', 'Stale food', 'Food poisoning risk', 'Quality Issue'],
     required: true
   },
   description: { type: String },
-  imageProof: { type: String }, // URL from Cloudinary
-  status: { type: String, enum: ['Pending', 'Verified', 'Rejected'], default: 'Pending' },
+  imageProof: { type: String },
+  status: { type: String, enum: ['Pending', 'Verified', 'In Progress', 'Resolved', 'Rejected'], default: 'Pending' },
   upvotes: { type: Number, default: 0 },
 }, { timestamps: true });
 

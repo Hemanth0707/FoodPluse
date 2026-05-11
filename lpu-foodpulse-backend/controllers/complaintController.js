@@ -4,7 +4,7 @@ const User = require('../models/User');
 const VERIFICATION_THRESHOLD = 5;
 
 exports.submitComplaint = async (req, res) => {
-  const { hostel, mess, mealType, issueType, description, imageProof } = req.body;
+  const { hostel, mess, stallId, mealType, issueType, description, imageProof } = req.body;
   const studentId = req.user._id;
 
   try {
@@ -22,6 +22,7 @@ exports.submitComplaint = async (req, res) => {
 
     const complaint = await Complaint.create({
       studentId,
+      stallId,
       hostel,
       mess,
       mealType,
@@ -87,14 +88,18 @@ exports.submitComplaint = async (req, res) => {
 };
 
 exports.getComplaints = async (req, res) => {
-  const { hostel, mess, status } = req.query;
+  const { hostel, mess, status, stallId } = req.query;
   let filter = {};
   if (hostel) filter.hostel = hostel;
   if (mess) filter.mess = mess;
   if (status) filter.status = status;
+  if (stallId) filter.stallId = stallId;
 
   try {
-    const complaints = await Complaint.find(filter).populate('studentId', 'name lpuId').sort({ createdAt: -1 });
+    const complaints = await Complaint.find(filter)
+      .populate('studentId', 'name lpuId')
+      .populate('stallId', 'name location')
+      .sort({ createdAt: -1 });
     res.json(complaints);
   } catch (error) {
     res.status(500).json({ message: error.message });
