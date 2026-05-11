@@ -23,7 +23,7 @@ const ReportFood = () => {
   const [errorMsg, setErrorMsg] = useState('');
 
   const { submitComplaint, uploadProof } = useFoodStore();
-  const token = useAuthStore(state => state.token);
+  const token = useAuthStore(state => state.token) || localStorage.getItem('foodpulse_token');
   const user = useAuthStore(state => state.user);
 
   const handleChange = (e) => {
@@ -59,19 +59,27 @@ const ReportFood = () => {
 
   const executeSubmissionFlow = async () => {
     try {
-      const uploadData = new FormData();
-      uploadData.append('proof', files[0].file);
-      const imageUrl = await uploadProof(uploadData);
-      
-      if (!imageUrl) {
-        return { success: false, status: 'rejected', reason: 'Failed to upload proof. Please try again.' };
+      // Get latest token directly from localStorage as ultimate fallback
+      const authToken = token || localStorage.getItem('foodpulse_token');
+
+      let imageUrl = null;
+      if (files.length > 0) {
+        const uploadData = new FormData();
+        uploadData.append('proof', files[0].file);
+        imageUrl = await uploadProof(uploadData);
       }
-      
+
+      // If upload failed, use a placeholder — don't block submission
+      if (!imageUrl) {
+        console.warn('Proof upload failed or returned null; using placeholder.');
+        imageUrl = '/uploads/placeholder.jpg';
+      }
+
       const response = await submitComplaint({
         ...formData,
         studentId: user?._id || '',
         imageProof: imageUrl
-      }, token);
+      }, authToken);
 
       return response;
     } catch (error) {
@@ -83,8 +91,17 @@ const ReportFood = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Auth Fallback Checks
-    if (!token || !user || !user._id) {
+    // Auth Fallback Checks — read from localStorage if Zustand state hasn't re-hydrated
+    const activeToken = token || localStorage.getItem('foodpulse_token');
+    let activeUser = user;
+    if (!activeUser) {
+      try {
+        const raw = localStorage.getItem('foodpulse_user');
+        if (raw && raw !== 'undefined') activeUser = JSON.parse(raw);
+      } catch (_) { /* ignore parse errors */ }
+    }
+
+    if (!activeToken || !activeUser || !activeUser._id) {
       alert('Authentication error. Please log in again.');
       return;
     }

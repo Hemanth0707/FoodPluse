@@ -17,7 +17,9 @@ const DashboardLayout = () => {
     window.scrollTo(0, 0);
   }, [location]);
 
-  if (!isAuthenticated) {
+  // Also check localStorage as a fallback to handle Zustand re-hydration timing issues
+  const hasLocalToken = !!localStorage.getItem('foodpulse_token');
+  if (!isAuthenticated && !hasLocalToken) {
     return <Navigate to="/login" replace />;
   }
 

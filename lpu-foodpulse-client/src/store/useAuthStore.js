@@ -14,16 +14,27 @@ axios.interceptors.request.use((config) => {
   return config;
 });
 
+// Endpoints that should NOT trigger a forced logout on 401
+const NON_AUTH_ENDPOINTS = ['/upload', '/auth/login', '/auth/register'];
+
 axios.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (error.response && error.response.status === 401) {
+    const requestUrl = error.config?.url || '';
+    const isNonAuthEndpoint = NON_AUTH_ENDPOINTS.some(ep => requestUrl.includes(ep));
+
+    // Only force logout on 401 for protected endpoints
+    if (error.response && error.response.status === 401 && !isNonAuthEndpoint) {
       console.warn('Token expired or invalid, logging out automatically');
       localStorage.removeItem('foodpulse_token');
       localStorage.removeItem('foodpulse_user');
-      // We can't safely call useAuthStore.getState().logout() if it causes a circular dependency, 
-      // but we can force a page reload to clear state and redirect to login
-      if (window.location.hash !== '#/login') {
+
+      // Avoid redirect loop - check current hash path
+      const currentHash = window.location.hash || '#/';
+      const protectedPaths = ['#/login', '#/register', '#/'];
+      const isAlreadyOnPublicPage = protectedPaths.some(p => currentHash === p || currentHash.startsWith('#/?'));
+
+      if (!isAlreadyOnPublicPage) {
         window.location.hash = '#/login';
         window.location.reload();
       }
