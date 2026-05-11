@@ -44,8 +44,16 @@ const Profile = () => {
   const rewards = [
     { id: 1, title: 'Food Critic', desc: 'Reported 5 valid issues', icon: '📝', unlocked: true },
     { id: 2, title: 'Early Bird', desc: 'Ordered breakfast 10 times', icon: '🌅', unlocked: true },
-    { id: 3, title: 'Marketplace Explorer', desc: 'Tried 5 different stalls', icon: '🏪', unlocked: false },
+    { id: 3, title: 'Marketplace Explorer', desc: 'Tried 5 different mess vendors', icon: '🏪', unlocked: false },
     { id: 4, title: 'Healthy Eater', desc: 'Ordered 10 salads', icon: '🥗', unlocked: false }
+  ];
+
+  // Mock Transactions for Points History
+  const pointTransactions = [
+    { id: 'txn1', date: 'Today, 10:30 AM', desc: 'Complaint Verified: Bad Taste', amount: '+150', type: 'earn' },
+    { id: 'txn2', date: 'Yesterday, 8:15 PM', desc: 'Meal Order: Kitchen Ate', amount: '-120', type: 'spend' },
+    { id: 'txn3', date: '10 May, 1:45 PM', desc: 'Complaint Verified: Stale Food', amount: '+150', type: 'earn' },
+    { id: 'txn4', date: '08 May, 9:00 AM', desc: 'Meal Order: South Indian Kitchen', amount: '-80', type: 'spend' }
   ];
 
   return (
@@ -175,14 +183,14 @@ const Profile = () => {
               </div>
             </div>
             <div className="bg-black/30 border border-white/5 rounded-2xl p-6">
-              <p className="text-gray-400 text-sm mb-4">Favorite Stall</p>
+              <p className="text-gray-400 text-sm mb-4">Favorite Mess Vendor</p>
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-gradient-to-tr from-purple-600 to-pink-600 rounded-xl flex items-center justify-center text-white">
                   <Store size={20}/>
                 </div>
                 <div>
-                  <h4 className="text-white font-bold text-lg">Oven Express</h4>
-                  <p className="text-sm text-gray-400">Fast Food & Snacks</p>
+                  <h4 className="text-white font-bold text-lg">Kitchen Ate</h4>
+                  <p className="text-sm text-gray-400">Block 25 Food Court</p>
                 </div>
               </div>
             </div>
@@ -249,6 +257,30 @@ const Profile = () => {
                   Locked
                 </div>
               )}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* POINTS TRANSACTION HISTORY */}
+      <div className="bg-[#12122a] border border-white/5 rounded-3xl p-8 mt-8 relative overflow-hidden">
+        <div className="flex justify-between items-center mb-6">
+          <h3 className="text-2xl font-display font-bold text-white flex items-center gap-2">
+            <Wallet className="text-purple-400" /> Points Transaction History
+          </h3>
+          <button className="text-sm text-purple-400 font-semibold hover:underline">View All</button>
+        </div>
+        
+        <div className="space-y-4 relative z-10">
+          {pointTransactions.map(txn => (
+            <div key={txn.id} className="flex items-center justify-between p-4 bg-white/5 border border-white/5 rounded-2xl hover:bg-white/10 transition-colors">
+              <div className="flex flex-col">
+                <span className="text-white font-bold mb-1">{txn.desc}</span>
+                <span className="text-xs text-gray-400">{txn.date}</span>
+              </div>
+              <div className={`font-display font-bold text-lg ${txn.type === 'earn' ? 'text-green-400' : 'text-pink-400'}`}>
+                {txn.amount} <span className="text-sm font-normal opacity-70">pts</span>
+              </div>
             </div>
           ))}
         </div>

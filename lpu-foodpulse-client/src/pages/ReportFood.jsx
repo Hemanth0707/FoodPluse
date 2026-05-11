@@ -184,9 +184,9 @@ const ReportFood = () => {
 
             <form onSubmit={handleSubmit}>
               <div className="form-group mb-4">
-                <label>Select Stall / Vendor</label>
+                <label>Select Mess Facility</label>
                 <select name="stallId" className="form-input" value={formData.stallId} onChange={handleChange} required>
-                  {stalls.length === 0 && <option value="">Loading vendors...</option>}
+                  {stalls.length === 0 && <option value="">Loading mess vendors...</option>}
                   {stalls.map(stall => (
                     <option key={stall._id} value={stall._id}>{stall.name} ({stall.location})</option>
                   ))}
@@ -316,17 +316,17 @@ const ReportFood = () => {
         <div className="rsi-card">
           <h4>Today's Issue Trends</h4>
           <div className="trend-item">
-            <span>Oven Exp.</span>
+            <span>Block 25 Mess</span>
             <div className="trend-bar"><div className="bg-red-500" style={{width: '80%'}}></div></div>
             <span className="text-red-400">High</span>
           </div>
           <div className="trend-item">
-            <span>Juice Bar</span>
+            <span>Block 28 Mess</span>
             <div className="trend-bar"><div className="bg-yellow-500" style={{width: '40%'}}></div></div>
             <span className="text-yellow-400">Med</span>
           </div>
           <div className="trend-item">
-            <span>Salad Co.</span>
+            <span>Block 34 Mess</span>
             <div className="trend-bar"><div className="bg-green-500" style={{width: '10%'}}></div></div>
             <span className="text-green-400">Low</span>
           </div>
