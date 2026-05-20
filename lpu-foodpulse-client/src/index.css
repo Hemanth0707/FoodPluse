@@ -6,34 +6,34 @@
 
 /* ===== CSS VARIABLES ===== */
 :root {
-  --bg: #080810;
-  --bg2: #0d0d1c;
-  --bg3: #12122a;
-  --card: rgba(255,255,255,0.035);
-  --card-border: rgba(168,85,247,0.18);
-  --glass: rgba(10,10,22,0.88);
-  --glass-border: rgba(255,255,255,0.07);
-  --text: #f0efff;
-  --text2: #9d9bbc;
-  --text3: #5e5c7a;
+  --bg: #070714;
+  --bg2: #0b0b1f;
+  --bg3: #111126;
+  --card: rgba(13, 13, 28, 0.45);
+  --card-border: rgba(168, 85, 247, 0.12);
+  --glass: rgba(7, 7, 20, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --text: #f3f4f6;
+  --text2: #a1a1aa;
+  --text3: #71717a;
   --purple: #a855f7;
-  --purple-light: #c084fc;
-  --purple-dark: #7c3aed;
+  --purple-light: #d8b4fe;
+  --purple-dark: #6b21a8;
   --pink: #ec4899;
   --blue: #3b82f6;
   --green: #10b981;
   --amber: #f59e0b;
   --red: #ef4444;
-  --grad: linear-gradient(135deg,#7c3aed,#a855f7,#ec4899);
-  --grad2: linear-gradient(145deg,#080810 0%,#160430 100%);
-  --sidebar-w: 242px;
+  --grad: linear-gradient(135deg, #a855f7, #ec4899, #3b82f6);
+  --grad2: linear-gradient(145deg, #070714 0%, #15082d 100%);
+  --sidebar-w: 260px;
   --font-display: 'Syne', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
-  --radius: 16px;
-  --radius-sm: 10px;
-  --shadow: 0 8px 32px rgba(0,0,0,0.5);
-  --shadow-glow: 0 0 30px rgba(168,85,247,0.22);
-  --transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+  --font-body: 'Outfit', sans-serif;
+  --radius: 24px;
+  --radius-sm: 16px;
+  --shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
+  --shadow-glow: 0 0 30px rgba(168, 85, 247, 0.25);
+  --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 [data-theme="light"] {

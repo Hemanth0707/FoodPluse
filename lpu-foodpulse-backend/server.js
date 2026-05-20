@@ -36,6 +36,16 @@ app.get('/', (req, res) => {
   res.send('LPU FoodPulse API is running...');
 });
 
+// TEMPORARY FORCE-SEED ENDPOINT
+app.get('/api/force-seed', async (req, res) => {
+  try {
+    await seedDB();
+    res.json({ message: 'Database successfully force-seeded with new UI data.' });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 // Socket.io for Real-time
 io.on('connection', (socket) => {
   console.log('User connected:', socket.id);
