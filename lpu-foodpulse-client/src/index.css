@@ -424,10 +424,10 @@ img { max-width: 100%; }
 /* ===== PREMIUM AUTH SPLIT ===== */
 .auth-split-layout { display: flex; min-height: 100vh; background: #080810; overflow: hidden; font-family: var(--font-body); flex-direction: column; }
 @media (min-width: 1024px) { .auth-split-layout { flex-direction: row; } }
-.auth-split-left { position: relative; display: none; width: 40%; background: #0d0d1c; border-right: 1px solid rgba(255,255,255,0.05); flex-direction: column; justify-content: space-between; padding: 4rem; overflow: hidden; z-index: 10; box-shadow: 20px 0 50px rgba(0,0,0,0.5); }
+.auth-split-left { position: relative; display: none; width: 46%; background: #070714; border-right: 1px solid rgba(255,255,255,0.05); flex-direction: column; justify-content: space-between; padding: 3rem 4rem; overflow: hidden; z-index: 10; box-shadow: 20px 0 50px rgba(0,0,0,0.5); }
 @media (min-width: 1024px) { .auth-split-left { display: flex; } }
 .auth-split-right { width: 100%; display: flex; flex-direction: column; min-height: 100vh; position: relative; overflow-y: auto; background: #080810; }
-@media (min-width: 1024px) { .auth-split-right { width: 60%; } }
+@media (min-width: 1024px) { .auth-split-right { width: 54%; } }
 .auth-form-container { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 3rem 1.5rem; max-width: 600px; margin: 0 auto; width: 100%; }
 @media (min-width: 1024px) { .auth-form-container { padding: 3rem 6rem; max-width: 800px; } }
 .auth-hero-title { font-family: var(--font-display); font-size: clamp(2.5rem, 4vw, 3.5rem); font-weight: 800; color: white; line-height: 1.1; margin-bottom: 1.5rem; }

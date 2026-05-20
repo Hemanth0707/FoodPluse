@@ -286,9 +286,11 @@ const LandingPage = () => {
         <div className="max-w-7xl mx-auto">
           
           <div className="text-center max-w-2xl mx-auto mb-20 space-y-4">
-            <h4 className="text-purple-400 text-sm font-bold uppercase tracking-widest">Workflow</h4>
-            <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white">How FoodPulse Works</h2>
-            <p className="text-gray-400 text-base">Our ecosystem is engineered to keep dining high-quality and order checkout frictionless.</p>
+            <span className="text-[10px] bg-purple-500/10 text-purple-300 font-bold px-2.5 py-1 rounded-full border border-purple-500/20 uppercase tracking-widest inline-block">
+              + WORKFLOW
+            </span>
+            <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white">How FoodPulse <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Works</span></h2>
+            <p className="text-gray-400 text-base leading-relaxed">Our ecosystem is engineered to keep dining high-quality and order checkout frictionless.</p>
           </div>
 
           <motion.div 
@@ -296,33 +298,44 @@ const LandingPage = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative"
           >
             {[
               { step: "01", title: "Browse Marketplace", desc: "Access the campus digital food court, check menus, and order your favorite meals.", icon: <ShoppingBag size={24} />, color: "from-purple-500 to-indigo-500" },
               { step: "02", title: "Order or Report", desc: "Enjoy quick queue-free meals or report poor-quality food items instantly.", icon: <Utensils size={24} />, color: "from-pink-500 to-purple-500" },
               { step: "03", title: "AI Verification", desc: "Computer vision scans details to verify complaints automatically in seconds.", icon: <ShieldCheck size={24} />, color: "from-blue-500 to-indigo-500" },
-              { step: "04", title: "Earn Rewards", desc: "Recieve instant compensation points and unlock premium reward badges.", icon: <Award size={24} />, color: "from-amber-500 to-pink-500" }
+              { step: "04", title: "Earn Rewards", desc: "Receive instant compensation points and unlock premium reward badges.", icon: <Award size={24} />, color: "from-amber-500 to-pink-500" }
             ].map((card, idx) => (
               <motion.div 
                 key={idx} 
                 variants={itemVariants}
-                className="group relative rounded-3xl bg-white/[0.02] border border-white/5 p-8 backdrop-blur-md hover:border-purple-500/40 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)] transition-all duration-500 overflow-hidden flex flex-col justify-between min-h-[280px]"
+                className="group relative rounded-3xl bg-[#111126]/40 border border-white/5 p-8 backdrop-blur-md hover:border-purple-500/40 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)] transition-all duration-500 overflow-hidden flex flex-col justify-between min-h-[300px]"
               >
                 {/* Accent glow corner */}
                 <div className={`absolute top-0 right-0 w-24 h-24 bg-gradient-to-tr ${card.color} opacity-0 group-hover:opacity-10 rounded-bl-full transition-opacity duration-500`} />
                 
-                <div className="flex justify-between items-start">
-                  <div className={`w-12 h-12 rounded-2xl bg-gradient-to-tr ${card.color} flex items-center justify-center text-white shadow-md`}>
-                    {card.icon}
-                  </div>
-                  <span className="text-4xl font-display font-extrabold text-white/10 tracking-widest">{card.step}</span>
+                {/* Step indicator inside card */}
+                <div className="absolute top-6 left-6 text-xs font-mono font-extrabold text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded-full border border-purple-500/20">
+                  {card.step}
                 </div>
 
-                <div className="mt-8 space-y-2">
-                  <h3 className="text-xl font-bold text-white group-hover:text-purple-300 transition-colors">{card.title}</h3>
-                  <p className="text-sm text-gray-400 leading-relaxed">{card.desc}</p>
+                <div className="flex justify-center items-center mt-6">
+                  <div className={`w-16 h-16 rounded-3xl bg-gradient-to-tr ${card.color} flex items-center justify-center text-white shadow-lg`}>
+                    {card.icon}
+                  </div>
                 </div>
+
+                <div className="mt-8 space-y-2 text-center">
+                  <h3 className="text-xl font-bold text-white group-hover:text-purple-300 transition-colors">{card.title}</h3>
+                  <p className="text-xs text-gray-400 leading-relaxed">{card.desc}</p>
+                </div>
+
+                {/* Arrow pointers between cards */}
+                {idx < 3 && (
+                  <div className="hidden lg:flex absolute right-[-20px] top-[50%] translate-y-[-50%] z-20 items-center justify-center text-purple-500/40">
+                    <span className="text-2xl font-bold">➔</span>
+                  </div>
+                )}
               </motion.div>
             ))}
           </motion.div>
@@ -332,47 +345,88 @@ const LandingPage = () => {
 
       {/* 3. ADVANTAGES SECTION */}
       <section id="advantages" className="py-28 px-6 md:px-8 max-w-7xl mx-auto">
-        <div className="text-center max-w-2xl mx-auto mb-20 space-y-4">
-          <h4 className="text-pink-400 text-sm font-bold uppercase tracking-widest">Platform Benefits</h4>
-          <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white">Engineered for LPU Campus</h2>
-          <p className="text-gray-400 text-base">Discover custom-designed tools designed to address common dining and kitchen issues.</p>
-        </div>
+        <div className="bg-[#0b0b1f]/35 border border-white/5 rounded-[36px] p-8 md:p-12 relative overflow-hidden">
+          {/* Neon background blur */}
+          <div className="absolute top-[20%] left-[50%] translate-x-[-50%] w-[500px] h-[200px] bg-purple-600/10 rounded-full blur-[100px] pointer-events-none" />
 
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-        >
-          {[
-            { title: "Faster Ordering", desc: "Skip queues by ordering menu items ahead of arrival.", icon: <Clock size={20} />, status: "Instant" },
-            { title: "AI Verification", desc: "Computer vision verifies food texture and ingredients.", icon: <ShieldCheck size={20} />, status: "Automated" },
-            { title: "Complaint Tracking", desc: "Track mess issues live from detection to resolution.", icon: <AlertTriangle size={20} />, status: "Transparent" },
-            { title: "Queue Reduction", desc: "Optimize preparation times with predictive insights.", icon: <BarChart3 size={20} />, status: "Live" },
-            { title: "Reward Points", desc: "Earn and spend compensation points across campus.", icon: <Wallet size={20} />, status: "Earn Points" },
-            { title: "Student Transparency", desc: "Every resolved report holds kitchens accountable.", icon: <Heart size={20} />, status: "Social Good" },
-            { title: "Better Food Quality", desc: "Continuous audits force stalls to maintain standards.", icon: <Utensils size={20} />, status: "Audited" },
-            { title: "Campus Analytics", desc: "Deep metrics charts on popular food items and trends.", icon: <TrendingUp size={20} />, status: "Smart Insights" }
-          ].map((feat, idx) => (
-            <motion.div 
-              key={idx}
-              variants={itemVariants}
-              className="p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-purple-500/30 transition-all duration-300 flex flex-col justify-between h-[200px] hover:shadow-[0_8px_30px_rgba(168,85,247,0.08)]"
-            >
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <div className="w-8 h-8 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center">
-                    {feat.icon}
+          <div className="text-center max-w-2xl mx-auto mb-16 space-y-4 relative z-10">
+            <span className="text-[10px] bg-pink-500/10 text-pink-300 font-bold px-2.5 py-1 rounded-full border border-pink-500/20 uppercase tracking-widest inline-block">
+              ✦ PLATFORM BENEFITS
+            </span>
+            <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white">Engineered for LPU Campus</h2>
+            <p className="text-gray-400 text-base leading-relaxed">Discover custom-designed tools designed to address common dining and kitchen issues.</p>
+          </div>
+
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10"
+          >
+            {[
+              { title: "Faster Ordering", desc: "Skip queues by ordering menu items ahead of arrival.", icon: <Clock size={20} />, status: "Instant", points: ["30% Less Waiting Time", "Real-time Queue Updates"] },
+              { title: "AI Verification", desc: "Computer vision verifies food texture and ingredients.", icon: <ShieldCheck size={20} />, status: "Automated", points: ["99.5% Accuracy Rate", "Instant Issue Detection"] },
+              { title: "Complaint Tracking", desc: "Track mess issues live from detection to resolution.", icon: <AlertTriangle size={20} />, status: "Transparent", points: ["Live Status Updates", "Full Transparency"] },
+              { title: "Queue Reduction", desc: "Optimize preparation times with predictive insights.", icon: <BarChart3 size={20} />, status: "Live", points: ["Predictive Analytics", "Smart Load Balancing"] }
+            ].map((feat, idx) => (
+              <motion.div 
+                key={idx}
+                variants={itemVariants}
+                className="p-6 rounded-3xl bg-[#08081a]/40 border border-white/5 hover:border-purple-500/30 transition-all duration-300 flex flex-col justify-between min-h-[260px] hover:shadow-[0_8px_30px_rgba(168,85,247,0.08)]"
+              >
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center border border-purple-500/20">
+                      {feat.icon}
+                    </div>
+                    <span className="text-[10px] bg-purple-500/10 text-purple-300 font-bold px-2 py-0.5 rounded-full border border-purple-500/20">{feat.status}</span>
                   </div>
-                  <span className="text-[10px] bg-purple-500/10 text-purple-300 font-bold px-2 py-0.5 rounded-full border border-purple-500/20">{feat.status}</span>
+                  <h4 className="font-extrabold text-white text-lg">{feat.title}</h4>
+                  <p className="text-xs text-gray-400 leading-relaxed">{feat.desc}</p>
                 </div>
-                <h4 className="font-bold text-white text-base">{feat.title}</h4>
-                <p className="text-xs text-gray-400 leading-relaxed">{feat.desc}</p>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+
+                <div className="mt-4 pt-4 border-t border-white/5 space-y-2">
+                  {feat.points.map((pt, pIdx) => (
+                    <div key={pIdx} className="flex items-center gap-2 text-[10px] text-gray-400 font-medium">
+                      <span className="w-4 h-4 rounded-full bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-[8px] font-bold">✓</span>
+                      <span>{pt}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Bottom Metrics Bar */}
+          <div className="relative z-10 border-t border-white/5 pt-8 mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div className="flex flex-col items-center justify-center space-y-1">
+              <span className="text-2xl font-extrabold text-white flex items-center gap-2">
+                👥 5K+
+              </span>
+              <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">Active Students</span>
+            </div>
+            <div className="flex flex-col items-center justify-center space-y-1">
+              <span className="text-2xl font-extrabold text-white flex items-center gap-2">
+                🎯 99.8%
+              </span>
+              <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">AI Scan Accuracy</span>
+            </div>
+            <div className="flex flex-col items-center justify-center space-y-1">
+              <span className="text-2xl font-extrabold text-white flex items-center gap-2">
+                🎁 20K+
+              </span>
+              <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">Points Redeemed</span>
+            </div>
+            <div className="flex flex-col items-center justify-center space-y-1">
+              <span className="text-2xl font-extrabold text-white flex items-center gap-2">
+                ⏱️ 8.5hrs
+              </span>
+              <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">Avg. Time Saved / Week</span>
+            </div>
+          </div>
+
+        </div>
       </section>
 
       {/* 4. STUDENT BENEFITS SECTION (Bento Grid Layout) */}

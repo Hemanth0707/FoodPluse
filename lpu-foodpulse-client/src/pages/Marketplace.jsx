@@ -154,7 +154,7 @@ const Marketplace = () => {
             <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
           ) : (
             <div className="w-full h-full bg-gradient-to-tr from-purple-950/20 to-pink-950/20 flex items-center justify-center text-4xl">
-              🥘
+              {item.emoji || '🥘'}
             </div>
           )}
 
@@ -328,7 +328,7 @@ const Marketplace = () => {
                         >
                           <div className="flex gap-4">
                             <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex-shrink-0 flex items-center justify-center text-2xl border border-purple-500/10">
-                              🥘
+                              {item.emoji || '🥘'}
                             </div>
                             <div className="min-w-0">
                               <h4 className="font-extrabold text-white text-sm truncate">{item.name}</h4>
@@ -366,7 +366,7 @@ const Marketplace = () => {
                     {trendingItems.slice(0, 2).map((item, idx) => (
                       <div key={`recent-${idx}`} className="flex items-center justify-between p-3 bg-white/5 border border-white/5 rounded-2xl hover:border-purple-500/20 transition-all cursor-pointer" onClick={() => setSelectedPreviewItem(item)}>
                         <div className="flex items-center gap-3">
-                          <span className="text-2xl">🍲</span>
+                          <span className="text-2xl">{item.emoji || '🥘'}</span>
                           <div>
                             <h4 className="text-xs font-bold text-white">{item.name}</h4>
                             <p className="text-[10px] text-gray-400">{item.stallName} • {item.pointsCost} pts</p>
