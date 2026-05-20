@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import useAuthStore from '../store/useAuthStore';
 import useFoodStore from '../store/useFoodStore';
 import { 
@@ -26,6 +26,56 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ResponsiveContainer, AreaChart, Area, BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
 
+// Premium numerical ticker count-up animator
+const AnimatedCounter = ({ value, duration = 1200 }) => {
+  const [count, setCount] = useState(value);
+
+  useEffect(() => {
+    const matches = value.toString().match(/[\d.]+/);
+    if (!matches) {
+      setCount(value);
+      return;
+    }
+    const end = parseFloat(matches[0]);
+    if (isNaN(end) || end === 0) {
+      setCount(value);
+      return;
+    }
+
+    const isPoints = value.toString().includes('pts');
+    const isHrs = value.toString().includes('hrs');
+    const isRupees = value.toString().startsWith('₹');
+    
+    const steps = 50;
+    const increment = end / steps;
+    let stepCount = 0;
+    let current = 0;
+
+    const timer = setInterval(() => {
+      stepCount++;
+      current += increment;
+      if (stepCount >= steps) {
+        clearInterval(timer);
+        setCount(value);
+      } else {
+        if (isPoints) {
+          setCount(`${Math.round(current)} pts`);
+        } else if (isHrs) {
+          setCount(`${current.toFixed(1)} hrs`);
+        } else if (isRupees) {
+          setCount(`₹${Math.round(current).toLocaleString()}`);
+        } else {
+          setCount(Math.round(current));
+        }
+      }
+    }, duration / steps);
+
+    return () => clearInterval(timer);
+  }, [value]);
+
+  return <span>{count}</span>;
+};
+
 const Profile = () => {
   const user = useAuthStore(state => state.user);
   const { complaints, orders } = useFoodStore();
@@ -34,6 +84,23 @@ const Profile = () => {
 
   // Simulated avatar preview
   const [avatarPreview, setAvatarPreview] = useState(null);
+
+  // Time-aware welcome greetings
+  const getGreeting = () => {
+    const hour = new Date().getHours();
+    if (hour < 12) return { text: "Good morning", emoji: "🌅" };
+    if (hour < 18) return { text: "Good afternoon", emoji: "☀️" };
+    return { text: "Good evening", emoji: "🌙" };
+  };
+  const greeting = getGreeting();
+
+  // Weather-Aware Food Suggestion States
+  const [weather, setWeather] = useState('Rainy');
+  const weatherSuggestions = {
+    Rainy: { temp: "22°C", text: "Rainy Monsoon", icon: "🌧️", food: "Chai & Samosa Combo", stall: "BH2 Snack Corner", eta: "8 mins" },
+    Hot: { temp: "38°C", text: "Sunny & Scorching", icon: "☀️", food: "Cold Mango Lassi & Frappe", stall: "Block 32 Chillers", eta: "5 mins" },
+    Cold: { temp: "16°C", text: "Chilly Evening", icon: "❄️", food: "Hot Tomato Soup & Momos", stall: "Uni Mall Food Court", eta: "10 mins" }
+  };
 
   const handleAvatarChange = (e) => {
     const file = e.target.files[0];
@@ -142,6 +209,9 @@ const Profile = () => {
             {/* Profile Text Metadata */}
             <div className="space-y-4">
               <div className="space-y-1">
+                <p className="text-xs text-purple-300 font-bold uppercase tracking-widest flex items-center gap-1.5 justify-center md:justify-start mb-1">
+                  <span>{greeting.emoji}</span> {greeting.text}, welcome back!
+                </p>
                 <div className="flex flex-col sm:flex-row sm:items-center justify-center md:justify-start gap-2.5">
                   <h1 className="text-3xl md:text-4xl font-display font-extrabold text-white tracking-tight">{user?.name || 'Namburi Hemanth'}</h1>
                   <div className="flex justify-center gap-1.5 shrink-0">
@@ -186,7 +256,9 @@ const Profile = () => {
             </div>
             <div>
               <p className="text-gray-500 text-[10px] font-bold uppercase tracking-wider mb-1">{stat.label}</p>
-              <h3 className="text-xl font-bold text-white font-display">{stat.value}</h3>
+              <h3 className="text-xl font-bold text-white font-display">
+                <AnimatedCounter value={stat.value} />
+              </h3>
             </div>
           </div>
         ))}
@@ -266,6 +338,110 @@ const Profile = () => {
           </div>
         </div>
 
+      </div>
+
+      {/* WEATHER-AWARE AI ECOSYSTEM & INSIGHTS GRID */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        {/* Weather-Aware Suggestion Widget */}
+        <div className="lg:col-span-2 p-8 bg-white/[0.02] border border-white/5 rounded-[2.5rem] relative overflow-hidden backdrop-blur-3xl flex flex-col justify-between">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/5 rounded-full blur-3xl pointer-events-none" />
+          <div>
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+              <div>
+                <h3 className="text-xl font-display font-extrabold text-white tracking-tight flex items-center gap-2">
+                  <Sparkles size={18} className="text-purple-400" /> Weather-Aware AI Recommendation
+                </h3>
+                <p className="text-xs text-gray-400 mt-1">Smart food recommendation adjusted to current meteorological sensors</p>
+              </div>
+              
+              {/* Weather Sensor Selector Toggles */}
+              <div className="flex bg-[#070714] border border-white/5 rounded-2xl p-1 gap-1">
+                {['Rainy', 'Hot', 'Cold'].map(w => (
+                  <button
+                    key={w}
+                    onClick={() => setWeather(w)}
+                    className={`px-3 py-1.5 rounded-xl text-[10px] font-bold uppercase tracking-wider transition-all cursor-pointer ${
+                      weather === w
+                        ? 'bg-gradient-to-r from-purple-600 to-pink-500 text-white shadow-lg'
+                        : 'text-gray-400 hover:text-white'
+                    }`}
+                  >
+                    {w === 'Rainy' ? '🌧️ Rain' : w === 'Hot' ? '☀️ Hot' : '❄️ Cold'}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Simulated Weather recommendation display */}
+            <div className="p-6 bg-[#070714]/40 border border-purple-500/10 rounded-3xl flex flex-col sm:flex-row items-center gap-6 relative overflow-hidden">
+              <div className="absolute -left-12 -bottom-12 text-purple-500/[0.02] pointer-events-none scale-150">
+                <Sparkles size={180} />
+              </div>
+              <div className="w-24 h-24 rounded-3xl bg-purple-500/10 border border-purple-500/20 flex flex-col items-center justify-center shrink-0">
+                <span className="text-4xl">{weatherSuggestions[weather].icon}</span>
+                <span className="text-xs font-black text-white mt-1.5">{weatherSuggestions[weather].temp}</span>
+              </div>
+              <div className="space-y-2 text-center sm:text-left">
+                <span className="text-[10px] bg-purple-500/20 text-purple-300 border border-purple-500/30 px-2.5 py-1 rounded-full font-bold uppercase tracking-wider">
+                  AI Suggestion: {weatherSuggestions[weather].text}
+                </span>
+                <h4 className="text-2xl font-black text-white tracking-tight">{weatherSuggestions[weather].food}</h4>
+                <p className="text-xs text-gray-300 font-light">
+                  Highly demanded now at <strong className="text-purple-300 font-semibold">{weatherSuggestions[weather].stall}</strong>. Bypasses standard digital queues.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-6 pt-4 border-t border-white/5">
+            <span className="text-[10px] text-gray-500 font-semibold uppercase tracking-widest flex items-center gap-1.5">
+              <Clock size={12} className="text-purple-400" /> Fast ETA: {weatherSuggestions[weather].eta}
+            </span>
+            <button 
+              onClick={() => navigate('/marketplace')}
+              className="px-5 py-2.5 bg-gradient-to-tr from-purple-600 to-pink-500 text-white rounded-xl text-xs font-bold shadow-lg hover:scale-102 transition-all flex items-center gap-1 cursor-pointer"
+            >
+              Order Instant <ChevronRight size={13} />
+            </button>
+          </div>
+        </div>
+
+        {/* AI Safety & Efficiency Insights Panel */}
+        <div className="p-8 bg-white/[0.02] border border-white/5 rounded-[2.5rem] relative overflow-hidden backdrop-blur-3xl flex flex-col justify-between">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-pink-500/5 rounded-full blur-3xl pointer-events-none" />
+          <div>
+            <h3 className="text-lg font-extrabold text-white tracking-tight flex items-center gap-2 mb-2">
+              <Zap size={16} className="text-pink-400" /> AI Auditor Insights
+            </h3>
+            <p className="text-xs text-gray-400 mb-6">Real-time optimization suggestions for your campus routine</p>
+            
+            <div className="space-y-4">
+              <div className="p-3 bg-white/5 border border-white/5 rounded-2xl flex gap-3">
+                <span className="text-xl mt-0.5">⏱️</span>
+                <div>
+                  <h4 className="text-xs font-bold text-white">Queue Time Flag</h4>
+                  <p className="text-[10px] text-gray-400 mt-0.5 leading-relaxed">
+                    Order from Boys Hostel Mess 1 at 1:15 PM instead of 12:45 PM to cut wait times by 18 minutes.
+                  </p>
+                </div>
+              </div>
+              <div className="p-3 bg-white/5 border border-white/5 rounded-2xl flex gap-3">
+                <span className="text-xl mt-0.5">🥗</span>
+                <div>
+                  <h4 className="text-xs font-bold text-white">Dietary Balance</h4>
+                  <p className="text-[10px] text-gray-400 mt-0.5 leading-relaxed">
+                    Mess audits show your protein consumption has fallen 15%. Consider adding Greek salad from block 32.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="text-[10px] text-gray-500 mt-6 text-center">
+            Insights recalibrate hourly using your digital order histories.
+          </div>
+        </div>
       </div>
 
       {/* 5. LEADERBOARD & TRENDS SIDEBAR SPLIT */}

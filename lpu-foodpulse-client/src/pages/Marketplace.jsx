@@ -23,6 +23,7 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ResponsiveContainer, AreaChart, Area, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
+import QuickPreviewModal from '../components/QuickPreviewModal';
 
 const Marketplace = () => {
   const { stalls, fetchStalls, loading, placeOrder } = useFoodStore();
@@ -37,6 +38,7 @@ const Marketplace = () => {
   const [isPlacingOrder, setIsPlacingOrder] = useState(false);
   const [favorites, setFavorites] = useState({});
   const [notificationMsg, setNotificationMsg] = useState(null);
+  const [selectedPreviewItem, setSelectedPreviewItem] = useState(null);
 
   // Recharts mock queue data for a selected stall
   const [queueTimeData, setQueueTimeData] = useState([
@@ -95,15 +97,7 @@ const Marketplace = () => {
   const popularNearYou = allMenuItems.slice().reverse().slice(0, 4);
 
   const handleItemClick = (item) => {
-    const stall = stalls.find(s => s._id === item.stallId);
-    if (stall) {
-      setSelectedStall(stall);
-      // If switching stalls, reset cart
-      if (selectedStall?._id !== stall._id) {
-        setCart([]);
-      }
-      setIsModalOpen(true);
-    }
+    setSelectedPreviewItem(item);
   };
 
   const updateCart = (item, change) => {
@@ -307,6 +301,120 @@ const Marketplace = () => {
         ) : (
           <div className="space-y-12">
             
+            {/* Popular Right Now Carousel */}
+            {trendingItems.length > 0 && (
+              <div>
+                <h3 className="text-xl md:text-2xl font-display font-extrabold text-white tracking-tight mb-4 flex items-center gap-2">
+                  <Sparkles size={20} className="text-purple-400 animate-pulse" /> Popular Right Now
+                </h3>
+                <p className="text-xs text-gray-400 mb-6">Draggable showcase of the absolute best-rated mess items on campus</p>
+                
+                <motion.div className="overflow-hidden cursor-grab active:cursor-grabbing pb-4 select-none">
+                  <motion.div 
+                    drag="x" 
+                    dragConstraints={{ right: 0, left: -400 }}
+                    className="flex gap-6 w-max"
+                  >
+                    {trendingItems.map((item, idx) => (
+                      <motion.div 
+                        key={`pop-carousel-${idx}`} 
+                        className="w-[280px] shrink-0"
+                        whileHover={{ scale: 1.02 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                      >
+                        <div 
+                          className="premium-glass p-5 flex flex-col justify-between border border-purple-500/10 h-full relative overflow-hidden"
+                          onClick={() => setSelectedPreviewItem(item)}
+                        >
+                          <div className="flex gap-4">
+                            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex-shrink-0 flex items-center justify-center text-2xl border border-purple-500/10">
+                              🥘
+                            </div>
+                            <div className="min-w-0">
+                              <h4 className="font-extrabold text-white text-sm truncate">{item.name}</h4>
+                              <p className="text-[10px] text-purple-300 font-semibold mt-0.5">{item.stallName}</p>
+                              <div className="flex items-center text-[10px] font-bold text-yellow-500 bg-yellow-500/10 px-2 py-0.5 rounded mt-1.5 w-max">
+                                <Star size={9} className="mr-1 fill-yellow-500"/> {item.rating}
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div className="flex justify-between items-center mt-5 pt-3 border-t border-white/5">
+                            <span className="font-extrabold text-white text-sm">{item.pointsCost} PTS</span>
+                            <span className="text-[10px] bg-green-500/10 text-green-300 border border-green-500/20 px-2 py-0.5 rounded font-bold uppercase tracking-wider">
+                              ⚡ Fast ETA
+                            </span>
+                          </div>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </motion.div>
+                </motion.div>
+              </div>
+            )}
+
+            {/* Recently Ordered & Live Campus Congestion */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
+              <div className="premium-glass p-6 border border-purple-500/10 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-lg font-extrabold text-white tracking-tight flex items-center gap-2 mb-2">
+                    <Clock size={16} className="text-pink-400" /> Recently Ordered
+                  </h3>
+                  <p className="text-xs text-gray-400 mb-6">Reorder your favorites in one single click</p>
+                  
+                  <div className="space-y-4">
+                    {trendingItems.slice(0, 2).map((item, idx) => (
+                      <div key={`recent-${idx}`} className="flex items-center justify-between p-3 bg-white/5 border border-white/5 rounded-2xl hover:border-purple-500/20 transition-all cursor-pointer" onClick={() => setSelectedPreviewItem(item)}>
+                        <div className="flex items-center gap-3">
+                          <span className="text-2xl">🍲</span>
+                          <div>
+                            <h4 className="text-xs font-bold text-white">{item.name}</h4>
+                            <p className="text-[10px] text-gray-400">{item.stallName} • {item.pointsCost} pts</p>
+                          </div>
+                        </div>
+                        <button 
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            updateCart(item, 1);
+                            triggerToast(`Added ${item.name} to cart!`);
+                          }}
+                          className="px-3.5 py-1.5 bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 text-[10px] font-bold rounded-xl transition-all border border-purple-500/20 hover:scale-105"
+                        >
+                          Reorder
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              
+              <div className="premium-glass p-6 border border-purple-500/10 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-lg font-extrabold text-white tracking-tight flex items-center gap-2 mb-2">
+                    <TrendingUp size={16} className="text-purple-400" /> Live Campus Congestion
+                  </h3>
+                  <p className="text-xs text-gray-400 mb-4">Overall food court status & average wait predictions</p>
+                  
+                  <div className="grid grid-cols-2 gap-4 mt-2">
+                    <div className="bg-white/5 p-3 rounded-2xl border border-white/5">
+                      <div className="text-[10px] text-gray-400 uppercase tracking-wider">Avg Wait Time</div>
+                      <div className="text-xl font-extrabold text-purple-300 mt-1">12 mins</div>
+                      <div className="text-[9px] text-green-400 font-semibold mt-1">↓ 3 mins since peak</div>
+                    </div>
+                    <div className="bg-white/5 p-3 rounded-2xl border border-white/5">
+                      <div className="text-[10px] text-gray-400 uppercase tracking-wider">Active Orders</div>
+                      <div className="text-xl font-extrabold text-pink-300 mt-1">42 Audits</div>
+                      <div className="text-[9px] text-purple-300 font-semibold mt-1">7 digital queue lines</div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="text-[10px] mt-4 text-center text-gray-500">
+                  Predictive models auto-sync with live NFC terminal logs.
+                </div>
+              </div>
+            </div>
+
             {/* 1. Trending Now Section */}
             {trendingItems.length > 0 && (
               <div>
@@ -537,6 +645,26 @@ const Marketplace = () => {
               
             </motion.div>
           </div>
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {selectedPreviewItem && (
+          <QuickPreviewModal
+            item={selectedPreviewItem}
+            isOpen={!!selectedPreviewItem}
+            onClose={() => setSelectedPreviewItem(null)}
+            cartQuantity={cart.find(c => c._id === selectedPreviewItem?._id)?.quantity || 0}
+            onUpdateCart={updateCart}
+            onViewStall={() => {
+              const stall = stalls.find(s => s._id === selectedPreviewItem.stallId);
+              if (stall) {
+                setSelectedStall(stall);
+                setIsModalOpen(true);
+              }
+              setSelectedPreviewItem(null);
+            }}
+          />
         )}
       </AnimatePresence>
 
