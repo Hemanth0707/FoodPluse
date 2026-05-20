@@ -611,10 +611,27 @@ select.form-input { cursor: pointer; }
 .np-item small { color: var(--text3); font-size: .75rem; }
 
 /* ===== REPORT FORM ===== */
-.report-container { display: flex; gap: 2rem; align-items: flex-start; }
-.report-form-card { flex: 1; background: #12122a; border: 1px solid rgba(255,255,255,0.08); border-radius: 24px; padding: 2.5rem; }
-.report-sidebar-info { flex: 0 0 320px; display: flex; flex-direction: column; gap: 1.5rem; }
-.rsi-card { background: #12122a; border: 1px solid rgba(255,255,255,0.08); border-radius: 24px; padding: 1.8rem; }
+.report-container { display: flex; gap: 2.5rem; align-items: flex-start; }
+.report-form-card { 
+  flex: 1; 
+  background: rgba(13, 13, 28, 0.45); 
+  backdrop-filter: blur(24px); 
+  -webkit-backdrop-filter: blur(24px); 
+  border: 1px solid rgba(255, 255, 255, 0.08); 
+  border-radius: 32px; 
+  padding: 3rem; 
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+.report-sidebar-info { flex: 0 0 340px; display: flex; flex-direction: column; gap: 2rem; }
+.rsi-card { 
+  background: rgba(13, 13, 28, 0.45); 
+  backdrop-filter: blur(24px); 
+  -webkit-backdrop-filter: blur(24px); 
+  border: 1px solid rgba(255, 255, 255, 0.08); 
+  border-radius: 32px; 
+  padding: 2.2rem; 
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
 .rsi-card h4 { font-family: var(--font-display); font-weight: 800; margin-bottom: 1.2rem; font-size: 1rem; }
 .trend-item { display: flex; align-items: center; gap: .75rem; margin-bottom: .75rem; font-size: .85rem; }
 .trend-item > span:first-child { width: 65px; flex-shrink: 0; color: var(--text2); font-weight: 500; }

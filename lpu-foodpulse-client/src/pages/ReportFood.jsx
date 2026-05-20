@@ -803,10 +803,10 @@ const ReportFood = () => {
       </div>
 
       {/* Sidebar Info & Analytics widgets */}
-      <div className="report-sidebar-info w-full lg:w-[320px] shrink-0 space-y-6">
+      <div className="report-sidebar-info">
         
         {/* 1. Live Mess Quality Trends */}
-        <div className="p-6 bg-white/[0.02] border border-white/5 rounded-[2rem] shadow-2xl relative overflow-hidden backdrop-blur-3xl">
+        <div className="rsi-card relative overflow-hidden">
           <div className="flex items-center gap-1.5 text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-5 select-none">
             <TrendingDown size={14} className="text-red-400 animate-pulse" /> Live Mess Quality Index
           </div>
@@ -835,7 +835,7 @@ const ReportFood = () => {
         </div>
 
         {/* 2. Past Compliance Audits Timeline (Interactive Visual Timeline) */}
-        <div className="p-6 bg-white/[0.02] border border-white/5 rounded-[2rem] shadow-2xl relative overflow-hidden backdrop-blur-3xl font-sans">
+        <div className="rsi-card relative overflow-hidden font-sans">
           <div className="flex items-center justify-between mb-5 select-none">
             <h4 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest flex items-center gap-1.5">
               <Clock size={14} className="text-purple-400" /> Compliance Audits

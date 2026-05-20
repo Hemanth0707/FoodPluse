@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { 
   Zap, 
   ArrowRight, 
   Sparkles, 
   ShieldCheck, 
   Wallet, 
-  MapPin, 
   ShoppingBag, 
   TrendingUp, 
   Clock, 
@@ -18,7 +17,9 @@ import {
   AlertTriangle,
   Menu,
   X,
-  Plus
+  Plus,
+  CheckCircle,
+  ThumbsUp
 } from 'lucide-react';
 
 const LandingPage = () => {
@@ -33,33 +34,23 @@ const LandingPage = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Framer Motion Animation Variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.1
+        staggerChildren: 0.1,
+        delayChildren: 0.05
       }
     }
   };
 
   const itemVariants = {
-    hidden: { y: 30, opacity: 0 },
+    hidden: { y: 25, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
-      transition: { type: "spring", stiffness: 100, damping: 15 }
-    }
-  };
-
-  const floatTransition = {
-    y: {
-      duration: 3.5,
-      repeat: Infinity,
-      repeatType: "reverse",
-      ease: "easeInOut"
+      transition: { type: "spring", stiffness: 90, damping: 14 }
     }
   };
 
@@ -145,31 +136,31 @@ const LandingPage = () => {
       </motion.nav>
 
       {/* 1. HERO SECTION */}
-      <section className="relative min-h-screen pt-32 pb-20 px-6 md:px-8 max-w-7xl mx-auto flex items-center">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+      <section className="relative min-h-screen pt-36 pb-28 px-6 md:px-8 max-w-7xl mx-auto flex items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center w-full">
           
           {/* Left Text Column */}
           <motion.div 
-            initial={{ x: -50, opacity: 0 }}
+            initial={{ x: -40, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="lg:col-span-7 space-y-8 z-10"
+            className="lg:col-span-7 space-y-8 z-10 text-left"
           >
             {/* Startup Tagline Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-purple-500/20 bg-purple-500/5 text-purple-300 text-xs font-semibold uppercase tracking-wider backdrop-blur-md">
-              <Sparkles size={14} className="text-pink-400 animate-spin" style={{ animationDuration: '3s' }} /> 
+              <Sparkles size={14} className="text-pink-400 animate-pulse" /> 
               Next-Gen Student Dining
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-display font-extrabold text-white tracking-tight leading-[1.05]">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-extrabold text-white tracking-tight leading-[1.1]">
               FoodPulse – Smart <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-indigo-400 font-extrabold filter drop-shadow-[0_0_30px_rgba(168,85,247,0.2)]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-indigo-400 font-extrabold filter drop-shadow-[0_0_30px_rgba(168,85,247,0.25)]">
                 Campus Food
               </span> <br />
               Ecosystem
             </h1>
 
-            <p className="text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-xl leading-relaxed">
               Redefining campus meals with real-time AI food verification, seamless mobile pre-ordering, queue analytics, and a reward system students love.
             </p>
 
@@ -184,7 +175,7 @@ const LandingPage = () => {
               </Link>
               <Link 
                 to="/login" 
-                className="px-8 py-4 rounded-2xl border border-white/10 bg-white/5 text-white font-bold text-base hover:bg-white/10 hover:border-purple-500/30 transition-all flex items-center justify-center gap-2 backdrop-blur-md"
+                className="px-8 py-4 rounded-2xl border border-white/10 bg-white/5 text-white font-bold text-base hover:bg-white/10 hover:border-purple-500/30 transition-all flex items-center justify-center gap-2 backdrop-blur-md hover:-translate-y-1"
               >
                 Report Food Issue
               </Link>
@@ -193,131 +184,97 @@ const LandingPage = () => {
             {/* Quick Stats Banner */}
             <div className="grid grid-cols-3 gap-6 pt-10 border-t border-white/5">
               <div>
-                <h4 className="text-3xl font-display font-bold text-white">5k+</h4>
-                <p className="text-xs text-gray-500 uppercase tracking-wider mt-1">Active Students</p>
+                <h4 className="text-2xl sm:text-3xl font-display font-bold text-white">5k+</h4>
+                <p className="text-[10px] text-gray-500 uppercase tracking-widest mt-1 font-semibold">Active Students</p>
               </div>
               <div>
-                <h4 className="text-3xl font-display font-bold text-purple-400">99.8%</h4>
-                <p className="text-xs text-gray-500 uppercase tracking-wider mt-1">AI Scan Accuracy</p>
+                <h4 className="text-2xl sm:text-3xl font-display font-bold text-purple-400">99.8%</h4>
+                <p className="text-[10px] text-gray-500 uppercase tracking-widest mt-1 font-semibold">AI Scan Accuracy</p>
               </div>
               <div>
-                <h4 className="text-3xl font-display font-bold text-pink-400">20k+</h4>
-                <p className="text-xs text-gray-500 uppercase tracking-wider mt-1">Points Redeemed</p>
+                <h4 className="text-2xl sm:text-3xl font-display font-bold text-pink-400">20k+</h4>
+                <p className="text-[10px] text-gray-500 uppercase tracking-widest mt-1 font-semibold">Points Redeemed</p>
               </div>
             </div>
           </motion.div>
 
           {/* Right Visual Column (Futuristic UI mockups / Phone Visual) */}
           <motion.div 
-            initial={{ y: 50, opacity: 0 }}
+            initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:col-span-5 relative flex justify-center lg:justify-end"
+            className="lg:col-span-5 relative flex justify-center lg:justify-end w-full"
           >
             {/* Neon Glow Circle Behind */}
-            <div className="absolute inset-0 m-auto w-72 h-72 bg-gradient-to-tr from-purple-600 to-pink-500 rounded-full blur-[90px] opacity-25" />
+            <div className="absolute inset-0 m-auto w-80 h-80 bg-gradient-to-tr from-purple-600 via-pink-500 to-indigo-500 rounded-full blur-[100px] opacity-35" />
 
-            <div className="relative w-[320px] sm:w-[350px] aspect-[9/18]">
-              {/* Phone Frame */}
-              <div className="absolute inset-0 rounded-[48px] border-4 border-white/10 bg-gradient-to-b from-[#111126] to-[#070714] p-3 shadow-2xl overflow-hidden backdrop-blur-3xl animate-float">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-black rounded-b-2xl z-20 flex items-center justify-center">
-                  <div className="w-12 h-1 bg-white/20 rounded-full" />
+            <div className="relative w-full max-w-[460px] h-[400px] md:h-[450px] select-none">
+              {/* Dashboard Window Mockup */}
+              <div className="absolute top-0 left-0 w-[82%] h-[78%] rounded-3xl border border-white/10 bg-[#0d0d21]/80 backdrop-blur-2xl shadow-2xl p-5 overflow-hidden flex flex-col justify-between">
+                {/* Header bar */}
+                <div className="flex items-center justify-between border-b border-white/5 pb-3">
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-red-500" />
+                    <span className="w-2 h-2 rounded-full bg-yellow-500" />
+                    <span className="w-2 h-2 rounded-full bg-green-500" />
+                    <span className="text-[9px] text-gray-500 font-mono ml-2">foodpulse.lpu.in/dashboard</span>
+                  </div>
                 </div>
-
-                {/* Inner Mockup Screen */}
-                <div className="w-full h-full rounded-[38px] overflow-hidden bg-[#070714] p-4 flex flex-col justify-between relative">
-                  
-                  {/* Mock Navbar */}
-                  <div className="flex justify-between items-center pt-3 pb-4 border-b border-white/5">
-                    <div className="flex items-center gap-1.5">
-                      <div className="w-6 h-6 rounded bg-gradient-to-tr from-purple-600 to-pink-500 flex items-center justify-center text-white text-[10px]">⚡</div>
-                      <span className="text-xs font-bold text-white">FoodPulse</span>
+                
+                {/* Mock Content */}
+                <div className="flex-1 py-4 space-y-4">
+                  <div className="flex justify-between items-center">
+                    <h5 className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Mess 1 Queue Prediction</h5>
+                    <span className="text-[8px] bg-green-500/10 text-green-300 font-semibold px-2 py-0.5 rounded border border-green-500/20">Optimal</span>
+                  </div>
+                  {/* Visual Graph bars */}
+                  <div className="flex items-end gap-2 h-20 pt-2 border-b border-white/5 pb-1">
+                    <div className="flex-1 h-[25%] bg-purple-500/20 rounded-t" />
+                    <div className="flex-1 h-[40%] bg-purple-500/20 rounded-t" />
+                    <div className="flex-1 h-[75%] bg-purple-500/40 rounded-t" />
+                    <div className="flex-1 h-[90%] bg-gradient-to-t from-purple-600 to-pink-500 rounded-t relative">
+                      <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-[8px] text-white bg-black/80 px-1 py-0.5 rounded font-bold font-mono">12:30</span>
                     </div>
-                    <div className="flex items-center gap-1 text-[10px] bg-purple-500/10 text-purple-300 px-2 py-0.5 rounded-full border border-purple-500/20">
-                      450 pts
-                    </div>
+                    <div className="flex-1 h-[60%] bg-purple-500/30 rounded-t" />
+                    <div className="flex-1 h-[30%] bg-purple-500/20 rounded-t" />
+                    <div className="flex-1 h-[20%] bg-purple-500/20 rounded-t" />
                   </div>
-
-                  {/* Mock Content */}
-                  <div className="flex-1 py-4 flex flex-col gap-4 justify-center">
-                    
-                    {/* Widget 1: AI Verification */}
-                    <motion.div 
-                      animate={{ scale: [1, 1.02, 1] }}
-                      transition={{ duration: 3, repeat: Infinity }}
-                      className="p-3.5 rounded-2xl bg-[#0b0b1f] border border-red-500/30 shadow-[0_0_15px_rgba(239,68,68,0.15)] relative overflow-hidden"
-                    >
-                      <div className="flex items-start gap-2.5">
-                        <div className="p-2 rounded-lg bg-red-500/10 text-red-400 text-lg">📸</div>
-                        <div>
-                          <h5 className="text-xs font-bold text-white">Complaint Logged</h5>
-                          <p className="text-[10px] text-gray-400 mt-0.5">AI Check: Undercooked Roti</p>
-                          <div className="flex gap-1.5 mt-2">
-                            <span className="text-[8px] bg-red-500/20 text-red-300 font-bold px-1.5 py-0.5 rounded uppercase tracking-wider">Failed Quality</span>
-                            <span className="text-[8px] bg-green-500/20 text-green-300 font-bold px-1.5 py-0.5 rounded uppercase tracking-wider">AI Verified</span>
-                          </div>
-                        </div>
-                      </div>
-                    </motion.div>
-
-                    {/* Widget 2: Wallet Update */}
-                    <motion.div 
-                      animate={{ scale: [1, 1.02, 1] }}
-                      transition={{ duration: 3, repeat: Infinity, delay: 1.5 }}
-                      className="p-3.5 rounded-2xl bg-[#0b0b1f] border border-green-500/30 shadow-[0_0_15px_rgba(16,185,129,0.15)]"
-                    >
-                      <div className="flex items-start gap-2.5">
-                        <div className="p-2 rounded-lg bg-green-500/10 text-green-400 text-lg">💸</div>
-                        <div className="flex-1">
-                          <h5 className="text-xs font-bold text-white">Compensation Credited</h5>
-                          <p className="text-[10px] text-gray-400 mt-0.5">+150 Food Points added</p>
-                          <div className="w-full h-1.5 bg-white/5 rounded-full mt-2.5 overflow-hidden">
-                            <div className="h-full bg-gradient-to-r from-purple-500 to-pink-500 w-[70%]" />
-                          </div>
-                        </div>
-                      </div>
-                    </motion.div>
-                    
+                  <div className="flex justify-between text-[9px] text-gray-500 font-mono">
+                    <span>11:00 AM</span>
+                    <span>Peak (12:30)</span>
+                    <span>3:00 PM</span>
                   </div>
-
-                  {/* Mock CTA Footer */}
-                  <div className="bg-[#0b0b1f] border border-white/5 p-3 rounded-2xl flex items-center justify-between">
-                    <span className="text-[10px] text-gray-400">BH2 Stall Live Status</span>
-                    <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-ping" />
-                  </div>
-
                 </div>
               </div>
 
-              {/* Floating Widget 1 */}
-              <motion.div 
-                animate={{ y: [0, -12, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -left-12 top-24 p-3 rounded-xl bg-white/5 border border-white/10 backdrop-blur-xl shadow-lg flex items-center gap-2"
-              >
-                <div className="w-8 h-8 rounded-lg bg-yellow-500/10 flex items-center justify-center text-yellow-500">
-                  <Award size={16} />
+              {/* Overlapping Phone UI / Floating Card (spans right & bottom) */}
+              <div className="absolute bottom-0 right-0 w-[55%] h-[75%] rounded-3xl border border-white/10 bg-[#070714] p-4 shadow-2xl overflow-hidden flex flex-col justify-between animate-premium-float">
+                {/* Phone details */}
+                <div className="flex justify-between items-center border-b border-white/5 pb-2.5">
+                  <span className="text-[10px] font-bold text-white">Verification HUD</span>
+                  <span className="text-[8px] bg-pink-500/10 text-pink-400 font-extrabold px-1.5 py-0.5 rounded-full border border-pink-500/20">AI LIVE</span>
                 </div>
-                <div>
-                  <p className="text-[10px] text-gray-400 font-semibold">Weekly Leaderboard</p>
-                  <p className="text-xs font-bold text-white">#1 Hemanth (Level 4)</p>
+                
+                {/* Image analysis area */}
+                <div className="flex-1 my-3 bg-white/5 rounded-2xl relative overflow-hidden flex items-center justify-center border border-white/5">
+                  <div className="text-3xl">🍲</div>
+                  {/* Glowing scanner scanning line */}
+                  <div className="absolute inset-x-0 h-[2px] bg-purple-500 shadow-[0_0_10px_#a855f7] top-0 animate-radarScan pointer-events-none" />
+                  
+                  {/* Bounding box */}
+                  <div className="absolute top-4 left-4 w-12 h-12 border-2 border-red-500/40 rounded">
+                    <span className="absolute -top-4 left-0 text-[8px] font-bold font-mono bg-red-500 text-white px-1 rounded">Roti: Undercooked</span>
+                  </div>
                 </div>
-              </motion.div>
 
-              {/* Floating Widget 2 */}
-              <motion.div 
-                animate={{ y: [0, 12, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                className="absolute -right-8 bottom-28 p-3 rounded-xl bg-white/5 border border-white/10 backdrop-blur-xl shadow-lg flex items-center gap-2"
-              >
-                <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-500">
-                  <Clock size={16} />
+                <div className="bg-red-500/10 border border-red-500/20 p-2.5 rounded-xl flex items-center justify-between">
+                  <div>
+                    <span className="text-[9px] text-red-300 font-bold block leading-none">Quality Alert</span>
+                    <span className="text-[8px] text-gray-400">BH2 Mess • +150 Points</span>
+                  </div>
+                  <span className="text-xs">📸</span>
                 </div>
-                <div>
-                  <p className="text-[10px] text-gray-400 font-semibold">Queue Prediction</p>
-                  <p className="text-xs font-bold text-white">Fast Track: 5m Wait</p>
-                </div>
-              </motion.div>
+              </div>
             </div>
           </motion.div>
 
@@ -325,13 +282,13 @@ const LandingPage = () => {
       </section>
 
       {/* 2. HOW IT WORKS SECTION */}
-      <section id="how-it-works" className="relative py-24 px-6 md:px-8 border-t border-white/5 bg-[#0b0b1f]/30">
+      <section id="how-it-works" className="relative py-28 px-6 md:px-8 border-t border-white/5 bg-[#0b0b1f]/30">
         <div className="max-w-7xl mx-auto">
           
-          <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+          <div className="text-center max-w-2xl mx-auto mb-20 space-y-4">
             <h4 className="text-purple-400 text-sm font-bold uppercase tracking-widest">Workflow</h4>
             <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white">How FoodPulse Works</h2>
-            <p className="text-gray-400">Our ecosystem is engineered to keep dining high-quality and order checkout frictionless.</p>
+            <p className="text-gray-400 text-base">Our ecosystem is engineered to keep dining high-quality and order checkout frictionless.</p>
           </div>
 
           <motion.div 
@@ -350,7 +307,7 @@ const LandingPage = () => {
               <motion.div 
                 key={idx} 
                 variants={itemVariants}
-                className="group relative rounded-3xl bg-white/5 border border-white/5 p-6 backdrop-blur-md hover:border-purple-500/40 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)] transition-all duration-500 overflow-hidden flex flex-col justify-between min-h-[250px]"
+                className="group relative rounded-3xl bg-white/[0.02] border border-white/5 p-8 backdrop-blur-md hover:border-purple-500/40 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)] transition-all duration-500 overflow-hidden flex flex-col justify-between min-h-[280px]"
               >
                 {/* Accent glow corner */}
                 <div className={`absolute top-0 right-0 w-24 h-24 bg-gradient-to-tr ${card.color} opacity-0 group-hover:opacity-10 rounded-bl-full transition-opacity duration-500`} />
@@ -374,11 +331,11 @@ const LandingPage = () => {
       </section>
 
       {/* 3. ADVANTAGES SECTION */}
-      <section id="advantages" className="py-24 px-6 md:px-8 max-w-7xl mx-auto">
-        <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+      <section id="advantages" className="py-28 px-6 md:px-8 max-w-7xl mx-auto">
+        <div className="text-center max-w-2xl mx-auto mb-20 space-y-4">
           <h4 className="text-pink-400 text-sm font-bold uppercase tracking-widest">Platform Benefits</h4>
           <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white">Engineered for LPU Campus</h2>
-          <p className="text-gray-400">Discover custom-designed tools designed to address common dining and kitchen issues.</p>
+          <p className="text-gray-400 text-base">Discover custom-designed tools designed to address common dining and kitchen issues.</p>
         </div>
 
         <motion.div 
@@ -394,14 +351,14 @@ const LandingPage = () => {
             { title: "Complaint Tracking", desc: "Track mess issues live from detection to resolution.", icon: <AlertTriangle size={20} />, status: "Transparent" },
             { title: "Queue Reduction", desc: "Optimize preparation times with predictive insights.", icon: <BarChart3 size={20} />, status: "Live" },
             { title: "Reward Points", desc: "Earn and spend compensation points across campus.", icon: <Wallet size={20} />, status: "Earn Points" },
-            { title: "Student Transparency", desc: "Every resolved report holds campus kitchens accountable.", icon: <Heart size={20} />, status: "Social Good" },
+            { title: "Student Transparency", desc: "Every resolved report holds kitchens accountable.", icon: <Heart size={20} />, status: "Social Good" },
             { title: "Better Food Quality", desc: "Continuous audits force stalls to maintain standards.", icon: <Utensils size={20} />, status: "Audited" },
             { title: "Campus Analytics", desc: "Deep metrics charts on popular food items and trends.", icon: <TrendingUp size={20} />, status: "Smart Insights" }
           ].map((feat, idx) => (
             <motion.div 
               key={idx}
               variants={itemVariants}
-              className="p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-purple-500/30 transition-all duration-300 flex flex-col justify-between h-[200px]"
+              className="p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-purple-500/30 transition-all duration-300 flex flex-col justify-between h-[200px] hover:shadow-[0_8px_30px_rgba(168,85,247,0.08)]"
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
@@ -419,74 +376,141 @@ const LandingPage = () => {
       </section>
 
       {/* 4. STUDENT BENEFITS SECTION (Bento Grid Layout) */}
-      <section id="benefits" className="relative py-24 px-6 md:px-8 border-t border-white/5 bg-[#0b0b1f]/20">
+      <section id="benefits" className="relative py-28 px-6 md:px-8 border-t border-white/5 bg-[#0b0b1f]/20">
         <div className="max-w-7xl mx-auto">
           
-          <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+          <div className="text-center max-w-2xl mx-auto mb-20 space-y-4">
             <h4 className="text-blue-400 text-sm font-bold uppercase tracking-widest">Bento Grid</h4>
             <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white">How FoodPulse Helps Students</h2>
-            <p className="text-gray-400">Simplifying student dining while building mess administration transparency.</p>
+            <p className="text-gray-400 text-base">Simplifying student dining while building mess administration transparency.</p>
           </div>
 
           {/* Bento Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
             
             {/* Bento Card 1: Time Saver (Large, Col: 7) */}
-            <div className="md:col-span-7 rounded-3xl bg-gradient-to-br from-purple-900/20 via-[#0b0b1f] to-[#070714] border border-purple-500/20 p-8 flex flex-col justify-between min-h-[300px] hover:border-purple-500/40 transition-all duration-300">
-              <div className="space-y-2">
-                <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4">
+            <div className="md:col-span-7 rounded-3xl bg-[#0d0d21] border border-purple-500/20 p-8 flex flex-col justify-between min-h-[360px] hover:border-purple-500/40 transition-all duration-300 relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl pointer-events-none" />
+              
+              <div className="space-y-4">
+                <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4 border border-purple-500/20">
                   <Clock size={20} />
                 </div>
-                <h3 className="text-2xl font-bold text-white">Saves Time & Reduces Queue Waiting</h3>
+                <h3 className="text-2xl font-bold text-white">Saves Time & Reduces Waiting</h3>
                 <p className="text-gray-400 text-sm max-w-md leading-relaxed">
                   Tired of waiting 30 minutes for lunch? Pre-order on the marketplace, monitor the live queue prediction index, and grab your plate the moment it is ready.
                 </p>
               </div>
-              <div className="flex gap-4 items-center pt-6 text-xs text-purple-400 font-semibold border-t border-white/5">
+
+              {/* Inside Bento Card Mock Visual */}
+              <div className="my-6 p-4 rounded-2xl bg-white/[0.02] border border-white/5 space-y-3">
+                <div className="flex justify-between items-center text-xs font-bold text-purple-300">
+                  <span>Checkout Wait-Time Progress</span>
+                  <span>9.2 min saved</span>
+                </div>
+                <div className="w-full h-2.5 bg-white/5 rounded-full overflow-hidden border border-white/5">
+                  <div className="h-full bg-gradient-to-r from-purple-500 to-pink-500 w-[78%] rounded-full" />
+                </div>
+                <div className="flex justify-between text-[10px] text-gray-500">
+                  <span>Traditional: 25 mins waiting</span>
+                  <span>FoodPulse Fast-Track: 4.5 mins</span>
+                </div>
+              </div>
+
+              <div className="flex gap-4 items-center pt-4 text-xs text-purple-400 font-semibold border-t border-white/5">
                 <span>⚡ 8.5 Hours Saved Average / Student</span>
               </div>
             </div>
 
             {/* Bento Card 2: Hygiene Awareness (Medium, Col: 5) */}
-            <div className="md:col-span-5 rounded-3xl bg-white/[0.03] border border-white/5 p-8 flex flex-col justify-between min-h-[300px] hover:border-purple-500/30 transition-all duration-300">
-              <div className="space-y-2">
-                <div className="w-10 h-10 rounded-xl bg-pink-500/10 text-pink-400 flex items-center justify-center mb-4">
+            <div className="md:col-span-5 rounded-3xl bg-white/[0.03] border border-white/5 p-8 flex flex-col justify-between min-h-[360px] hover:border-purple-500/30 transition-all duration-300 relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-pink-500/10 rounded-full blur-2xl pointer-events-none" />
+
+              <div className="space-y-4">
+                <div className="w-10 h-10 rounded-xl bg-pink-500/10 text-pink-400 flex items-center justify-center mb-4 border border-pink-500/20">
                   <ShieldCheck size={20} />
                 </div>
-                <h3 className="text-2xl font-bold text-white">Better Hygiene Awareness</h3>
+                <h3 className="text-2xl font-bold text-white">Mess Hygiene Scores</h3>
                 <p className="text-gray-400 text-sm leading-relaxed">
-                  Real-time quality alerts flag stalls with active complaints, letting you make healthy choices on where to eat.
+                  Real-time quality audits flag messes with active issues, letting you make healthy choices on where to dine.
                 </p>
               </div>
-              <span className="text-xs text-pink-400 font-bold uppercase tracking-wider pt-4">Safety First</span>
+
+              {/* Mess Score List Visual */}
+              <div className="my-6 space-y-2.5">
+                {[
+                  { name: 'Central Mess', rating: 'A+ (99.8%)', color: 'text-green-400' },
+                  { name: 'BH1 Dining', rating: 'A- (93.1%)', color: 'text-green-300' },
+                  { name: 'BH2 Mess Cafeteria', rating: 'B (82.5%)', color: 'text-yellow-400' }
+                ].map((item, idx) => (
+                  <div key={idx} className="flex justify-between items-center text-xs p-2 rounded-xl bg-white/[0.01] border border-white/5">
+                    <span className="text-gray-300 font-medium">{item.name}</span>
+                    <span className={`font-bold ${item.color}`}>{item.rating}</span>
+                  </div>
+                ))}
+              </div>
+
+              <span className="text-xs text-pink-400 font-bold uppercase tracking-wider pt-2">Safety Verified</span>
             </div>
 
             {/* Bento Card 3: Gives Students a Voice (Medium, Col: 5) */}
-            <div className="md:col-span-5 rounded-3xl bg-white/[0.03] border border-white/5 p-8 flex flex-col justify-between min-h-[300px] hover:border-purple-500/30 transition-all duration-300">
-              <div className="space-y-2">
-                <div className="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center mb-4">
+            <div className="md:col-span-5 rounded-3xl bg-white/[0.03] border border-white/5 p-8 flex flex-col justify-between min-h-[360px] hover:border-purple-500/30 transition-all duration-300 relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 rounded-full blur-2xl pointer-events-none" />
+
+              <div className="space-y-4">
+                <div className="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center mb-4 border border-blue-500/20">
                   <AlertTriangle size={20} />
                 </div>
                 <h3 className="text-2xl font-bold text-white">Gives Students a Voice</h3>
                 <p className="text-gray-400 text-sm leading-relaxed">
-                  No more ignored feedback letters. Submit visual proof and let the automated system hold kitchen operators accountable.
+                  No more ignored feedback letters. Submit visual proof and let the automated computer vision verification hold kitchen operators accountable.
                 </p>
               </div>
-              <span className="text-xs text-blue-400 font-bold uppercase tracking-wider pt-4">Direct Impact</span>
+
+              {/* Audit Status Ticket Visual */}
+              <div className="my-6 p-4 rounded-2xl bg-[#0b0b1f]/60 border border-white/5 flex items-center justify-between text-xs">
+                <div className="flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-yellow-500 animate-ping" />
+                  <div>
+                    <span className="text-gray-300 font-semibold block">Undercooked Meat Audit</span>
+                    <span className="text-[10px] text-gray-500">Scan Verified</span>
+                  </div>
+                </div>
+                <span className="text-green-400 font-extrabold">+150 pts</span>
+              </div>
+
+              <span className="text-xs text-blue-400 font-bold uppercase tracking-wider pt-2">Direct Action</span>
             </div>
 
             {/* Bento Card 4: Mess Management & Transparency (Large, Col: 7) */}
-            <div className="md:col-span-7 rounded-3xl bg-gradient-to-br from-indigo-900/10 via-[#0b0b1f] to-[#070714] border border-indigo-500/10 p-8 flex flex-col justify-between min-h-[300px] hover:border-indigo-500/30 transition-all duration-300">
-              <div className="space-y-2">
-                <div className="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-4">
+            <div className="md:col-span-7 rounded-3xl bg-[#0d0d21] border border-indigo-500/20 p-8 flex flex-col justify-between min-h-[360px] hover:border-indigo-500/40 transition-all duration-300 relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl pointer-events-none" />
+              
+              <div className="space-y-4">
+                <div className="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-4 border border-indigo-500/20">
                   <TrendingUp size={20} />
                 </div>
-                <h3 className="text-2xl font-bold text-white">Transparency in Mess Management</h3>
+                <h3 className="text-2xl font-bold text-white">Audited Mess Performance Leaderboard</h3>
                 <p className="text-gray-400 text-sm max-w-md leading-relaxed">
                   Stall performance ratings, live queue speeds, and resolved complaints data are broadcast directly to the student leaderboard.
                 </p>
               </div>
-              <div className="flex gap-4 items-center pt-6 text-xs text-indigo-400 font-semibold border-t border-white/5">
+
+              {/* Leaderboard Rating Visual */}
+              <div className="my-6 grid grid-cols-3 gap-3">
+                {[
+                  { place: '🥇 #1 Central Stall', score: '4.95 ⭐' },
+                  { place: '🥈 #2 BH2 Cafe', score: '4.88 ⭐' },
+                  { place: '🥉 #3 Central Cafe', score: '4.79 ⭐' }
+                ].map((item, idx) => (
+                  <div key={idx} className="p-3 bg-white/[0.02] border border-white/5 rounded-2xl text-center">
+                    <span className="block font-bold text-xs text-white mb-1">{item.place}</span>
+                    <span className="text-[10px] text-purple-300 font-semibold">{item.score}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex gap-4 items-center pt-4 text-xs text-indigo-400 font-semibold border-t border-white/5">
                 <span>📊 Full Campus Food Quality Statistics Available</span>
               </div>
             </div>
