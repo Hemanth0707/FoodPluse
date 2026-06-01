@@ -33,40 +33,40 @@ const Login = () => {
   const isFormValid = email.length > 0 && password.length > 0;
 
   return (
-    <div className="min-h-screen w-full bg-[#030308] text-white flex flex-col items-center justify-center p-6 md:p-12 lg:p-16 relative overflow-hidden font-body">
+    <div className="min-h-screen w-full bg-[#030308] text-white flex flex-col justify-center items-center p-6 md:p-12 relative overflow-hidden font-body py-12 md:py-20">
       
       {/* Background Neon Glow Blobs */}
       <motion.div 
         animate={{
-          scale: [1, 1.15, 1],
-          opacity: [0.15, 0.25, 0.15],
-          x: [0, 20, 0],
-          y: [0, -20, 0],
+          scale: [1, 1.12, 1],
+          opacity: [0.15, 0.22, 0.15],
+          x: [0, 15, 0],
+          y: [0, -15, 0],
         }}
         transition={{
           duration: 10,
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] min-w-[400px] min-h-[400px] rounded-full bg-purple-600/20 blur-[120px] pointer-events-none z-0"
+        className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] min-w-[400px] min-h-[400px] rounded-full bg-purple-600/20 blur-[130px] pointer-events-none z-0"
       />
       <motion.div 
         animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.12, 0.2, 0.12],
-          x: [0, -30, 0],
-          y: [0, 30, 0],
+          scale: [1, 1.15, 1],
+          opacity: [0.12, 0.18, 0.12],
+          x: [0, -20, 0],
+          y: [0, 20, 0],
         }}
         transition={{
           duration: 12,
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute bottom-[-15%] right-[-10%] w-[50vw] h-[50vw] min-w-[400px] min-h-[400px] rounded-full bg-blue-600/15 blur-[130px] pointer-events-none z-0"
+        className="absolute bottom-[-15%] right-[-10%] w-[50vw] h-[50vw] min-w-[400px] min-h-[400px] rounded-full bg-blue-600/15 blur-[140px] pointer-events-none z-0"
       />
       <motion.div 
         animate={{
-          opacity: [0.08, 0.15, 0.08],
+          opacity: [0.08, 0.12, 0.08],
         }}
         transition={{
           duration: 8,
@@ -80,10 +80,10 @@ const Login = () => {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none opacity-40 z-0"></div>
 
       {/* Main Grid Wrapper Container */}
-      <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center justify-center z-10 relative">
+      <div className="w-full max-w-[1440px] mx-auto px-6 md:px-16 xl:px-24 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8 z-10 relative">
         
         {/* LEFT SIDE (50%): Large futuristic hero section */}
-        <div className="flex flex-col justify-center items-start w-full text-left">
+        <div className="flex flex-col justify-center items-start w-full lg:w-1/2 text-left lg:pr-8 xl:pr-12">
           
           {/* Top Logo */}
           <motion.div 
@@ -117,7 +117,7 @@ const Login = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-display font-black tracking-tight text-white mb-6 leading-[1.1] max-w-xl"
+            className="text-3xl sm:text-4xl lg:text-5xl font-display font-black tracking-tight text-white mb-5 leading-[1.15] max-w-xl"
           >
             FoodPulse <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">Smart Campus</span> <br />
@@ -129,12 +129,12 @@ const Login = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="text-gray-400 text-sm sm:text-base lg:text-lg mb-8 leading-relaxed max-w-md"
+            className="text-gray-400 text-sm sm:text-base mb-8 leading-relaxed max-w-md"
           >
             AI-powered campus food quality verification, smart meal ordering, reward points, and queue management.
           </motion.p>
 
-          {/* Grid of 4 Feature Cards (Floating Glass Cards) */}
+          {/* Grid of 4 Feature Cards (2x2 Grid) */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-lg mb-8">
             
             {/* Feature 1 */}
@@ -197,43 +197,43 @@ const Login = () => {
               </div>
               <div className="text-left">
                 <h4 className="text-xs sm:text-sm font-bold text-white">Queue Prediction</h4>
-                <p className="text-[10px] text-gray-500">Real-time wait times tracker</p>
+                <p className="text-[10px] text-gray-500">Wait times tracker</p>
               </div>
             </motion.div>
 
           </div>
 
-          {/* Glowing Salad Bowl Image */}
+          {/* Glowing Salad Bowl Image (Reduced size by 20%: max-w-[200px]) */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ delay: 0.9, type: "spring", stiffness: 100, damping: 15 }}
             className="relative w-full max-w-sm flex justify-center lg:justify-start items-center select-none pt-4"
           >
-            <div className="absolute left-8 bottom-0 w-48 h-32 bg-purple-600/30 rounded-full blur-[40px] pointer-events-none" />
+            <div className="absolute left-8 bottom-0 w-40 h-28 bg-purple-600/30 rounded-full blur-[40px] pointer-events-none" />
             <motion.img 
               src={saladBowlImg} 
               alt="Glowing Salad Bowl" 
               animate={{ y: [0, -6, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="w-full max-w-[240px] object-contain relative z-10 drop-shadow-[0_15px_30px_rgba(168,85,247,0.4)]"
+              className="w-full max-w-[200px] object-contain relative z-10 drop-shadow-[0_15px_30px_rgba(168,85,247,0.4)]"
             />
           </motion.div>
 
         </div>
 
         {/* RIGHT SIDE (50%): Centered Login Card */}
-        <div className="flex items-center justify-center lg:justify-end w-full">
+        <div className="flex items-center justify-center lg:justify-end w-full lg:w-1/2">
           
           <motion.div 
             initial={{ opacity: 0, scale: 0.95, y: 30 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-            className="w-full max-w-[460px] rounded-[32px] border border-white/10 bg-[#090916]/60 backdrop-blur-2xl p-8 md:p-10 shadow-[0_24px_80px_rgba(0,0,0,0.85),0_0_80px_rgba(168,85,247,0.05)] relative overflow-hidden"
+            className="w-full max-w-[490px] sm:max-w-[500px] rounded-[32px] border border-white/10 bg-[#090916]/65 backdrop-blur-3xl p-8 sm:p-10 md:p-12 shadow-[0_24px_80px_rgba(0,0,0,0.85),0_0_80px_rgba(168,85,247,0.06)] relative overflow-hidden"
           >
             
             {/* Header Title */}
-            <div className="text-center lg:text-left mb-6">
+            <div className="text-center lg:text-left mb-8">
               <h2 className="text-3xl font-display font-black tracking-tight text-white mb-2">Welcome Back</h2>
               <p className="text-gray-400 text-xs sm:text-sm">Log in to continue your FoodPulse journey</p>
             </div>
@@ -251,7 +251,7 @@ const Login = () => {
             )}
 
             {/* Login Form */}
-            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-6">
               
               {/* Email Address */}
               <div className="flex flex-col text-left">
@@ -264,7 +264,7 @@ const Login = () => {
                     type="email" 
                     required 
                     placeholder="Enter your email"
-                    className="w-full h-14 bg-[#080814]/60 border border-white/10 rounded-2xl py-3.5 pl-12 pr-4 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/30 hover:border-white/20 transition-all font-body"
+                    className="w-full h-14 bg-[#080814]/60 border border-white/10 rounded-2xl py-3.5 pl-12 pr-5 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/30 hover:border-white/20 transition-all font-body"
                     value={email} 
                     onChange={(e) => setEmail(e.target.value)}
                   />
@@ -297,8 +297,8 @@ const Login = () => {
               </div>
 
               {/* Remember & Forgot Row */}
-              <div className="flex items-center justify-between text-xs sm:text-sm mt-1 select-none">
-                <label className="flex items-center gap-2 cursor-pointer text-gray-400 hover:text-gray-300 transition-colors">
+              <div className="flex items-center justify-between text-xs sm:text-sm select-none">
+                <label className="flex items-center gap-2.5 cursor-pointer text-gray-400 hover:text-gray-300 transition-colors">
                   <input 
                     type="checkbox" 
                     id="remember"
@@ -314,11 +314,11 @@ const Login = () => {
               </div>
 
               {/* Sign In submit Button */}
-              <div className="mt-2">
+              <div>
                 <button
                   type="submit"
                   disabled={!isFormValid || loading}
-                  className="w-full h-14 rounded-2xl font-bold text-white bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-500 hover:to-pink-400 transition-all shadow-[0_8px_30px_rgba(147,51,234,0.35)] disabled:opacity-50 disabled:cursor-not-allowed hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2 border-none cursor-pointer text-sm"
+                  className="w-full h-14 rounded-2xl font-bold text-white bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-500 hover:to-pink-400 transition-all shadow-[0_10px_35px_rgba(168,85,247,0.4)] disabled:opacity-50 disabled:cursor-not-allowed hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2 border-none cursor-pointer text-sm"
                 >
                   {loading ? (
                     <div className="flex items-center gap-2">
