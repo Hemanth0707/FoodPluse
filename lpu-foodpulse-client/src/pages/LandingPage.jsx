@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { 
   Zap, 
   ArrowRight, 
@@ -22,6 +23,7 @@ import {
 } from 'lucide-react';
 
 const LandingPage = () => {
+  const navigate = useNavigate();
   const [navOpen, setNavOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [currentView, setCurrentView] = useState('home');
@@ -40,6 +42,16 @@ const LandingPage = () => {
   }, []);
 
   const handleViewChange = (view) => {
+    if (view === 'login') {
+      navigate('/login');
+      setNavOpen(false);
+      return;
+    }
+    if (view === 'signup') {
+      navigate('/register');
+      setNavOpen(false);
+      return;
+    }
     setCurrentView(view);
     setNavOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
