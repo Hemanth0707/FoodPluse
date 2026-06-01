@@ -54,11 +54,11 @@ const Profile = () => {
   // Transaction Ledger (6 rows matching screenshot blueprint)
   const PointHistoryData = [
     { activity: 'Complaint Verified: Bad Taste', dateTime: 'Today, 10:30 AM', points: '+150 pts', type: 'earn' },
-    { activity: 'Meal Order: Kitchen Ate', dateTime: 'Yesterday, 8:15 PM', points: '-120 pts', type: 'spend' },
+    { activity: 'Meal Order: Central Mess', dateTime: 'Yesterday, 8:15 PM', points: '-120 pts', type: 'spend' },
     { activity: 'Complaint Verified: Stale Food', dateTime: '10 May, 1:45 PM', points: '+150 pts', type: 'earn' },
-    { activity: 'Meal Order: South Indian Mess', dateTime: '08 May, 9:00 AM', points: '-80 pts', type: 'spend' },
+    { activity: 'Meal Order: Boys Hostel Mess 1', dateTime: '08 May, 9:00 AM', points: '-80 pts', type: 'spend' },
     { activity: 'Complaint Verified: Hygiene Issue', dateTime: '05 May, 11:20 AM', points: '+150 pts', type: 'earn' },
-    { activity: 'Meal Order: Snack Bar', dateTime: '04 May, 7:45 PM', points: '-60 pts', type: 'spend' }
+    { activity: 'Meal Order: Food Court Central', dateTime: '04 May, 7:45 PM', points: '-60 pts', type: 'spend' }
   ];
 
   return (
@@ -274,9 +274,9 @@ const Profile = () => {
                     🍔
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-white">Spicy Chicken Burger</h4>
+                    <h4 className="text-xs font-bold text-white">Spicy Veg Burger</h4>
                     <p className="text-[10px] text-purple-300 font-semibold mt-0.5">Ordered 14 times</p>
-                    <p className="text-[9px] text-gray-500 mt-1">Stall: Kitchen Ate (Block 25 Food Court)</p>
+                    <p className="text-[9px] text-gray-500 mt-1">Stall: Central Mess (Block 25 Food Court)</p>
                   </div>
                 </div>
               </div>
@@ -399,7 +399,7 @@ const Profile = () => {
               {[
                 { title: 'Food Critic', desc: 'Reported 5 valid issues', icon: '📝', unlocked: true },
                 { title: 'Early Bird', desc: 'Ordered breakfast 10 times', icon: '🌅', unlocked: true },
-                { title: 'Marketplace Explorer', desc: 'Tried 5 different mess vendors', icon: '🧭', unlocked: true },
+                { title: 'Campus Food Explorer', desc: 'Tried 5 different dining stalls', icon: '🧭', unlocked: true },
                 { title: 'Healthy Eater', desc: 'Ordered 10 salads', icon: '🥗', unlocked: false }
               ].map((ach, idx) => (
                 <div 
