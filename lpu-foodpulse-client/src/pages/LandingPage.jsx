@@ -178,294 +178,407 @@ const LandingPage = () => {
             </div>
           </motion.div>
 
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    {/* 2. HOW IT WORKS SECTION */}
-    <section id="how-it-works" className="relative py-28 border-t border-white/5 bg-[#0B0B0B]/30 w-full">
-      <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
-        <div className="text-center max-w-2xl mx-auto mb-20 space-y-4">
-          <span className="text-[10px] bg-amber-500/10 text-amber-400 font-bold px-2.5 py-1 rounded-full border border-amber-500/20 uppercase tracking-widest inline-block">
-            + WORKFLOW
-          </span>
-          <h2 className="text-4xl md:text-5xl font-display font-light text-white">How FoodPulse <span className="bg-gradient-to-r from-amber-500 to-yellow-500 bg-clip-text text-transparent">Works</span></h2>
-          <p className="text-neutral-400 text-base font-light">Our ecosystem is engineered to keep dining high-quality and order checkout frictionless.</p>
-        </div>
+      {/* 2. HOW IT WORKS: Alternating Cinematic Stories */}
+      <section id="how-it-works" className="relative py-32 bg-[#0B0B0B] w-full overflow-hidden border-t border-white/5">
+        <div className="absolute top-[30%] left-[5%] w-[400px] h-[400px] bg-amber-500/5 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-[20%] right-[5%] w-[500px] h-[500px] bg-yellow-600/3 rounded-full blur-[140px] pointer-events-none" />
 
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative w-full"
-        >
-          {[
-            { step: "01", title: "Browse Marketplace", desc: "Access the campus digital food court, check menus, and order your favorite meals.", icon: <ShoppingBag size={24} />, color: "from-amber-600 to-yellow-600" },
-            { step: "02", title: "Order or Report", desc: "Enjoy quick queue-free meals or report poor-quality food items instantly.", icon: <Utensils size={24} />, color: "from-amber-600 to-yellow-600" },
-            { step: "03", title: "AI Verification", desc: "Computer vision scans details to verify complaints automatically in seconds.", icon: <ShieldCheck size={24} />, color: "from-amber-600 to-yellow-600" },
-            { step: "04", title: "Earn Rewards", desc: "Receive instant compensation points and unlock premium reward badges.", icon: <Award size={24} />, color: "from-amber-600 to-yellow-600" }
-          ].map((card, idx) => (
-            <motion.div 
-              key={idx} 
-              variants={itemVariants}
-              className="group relative rounded-3xl bg-[#151515] border border-white/5 p-8 hover:border-amber-500/30 hover:shadow-[0_8px_30px_rgba(198,138,43,0.08)] transition-all duration-500 overflow-hidden flex flex-col justify-between min-h-[300px]"
-            >
-              {/* Accent glow corner */}
-              <div className={`absolute top-0 right-0 w-24 h-24 bg-gradient-to-tr ${card.color} opacity-0 group-hover:opacity-5 rounded-bl-full transition-opacity duration-500`} />
-              
-              {/* Step indicator inside card */}
-              <div className="absolute top-6 left-6 text-xs font-mono font-extrabold text-amber-400 bg-amber-500/10 px-2.5 py-0.5 rounded-full border border-amber-500/20">
-                {card.step}
-              </div>
- 
-              <div className="flex justify-center items-center mt-6">
-                <div className={`w-16 h-16 rounded-3xl bg-gradient-to-tr ${card.color} flex items-center justify-center text-neutral-950 shadow-lg`}>
-                  {card.icon}
-                </div>
-              </div>
- 
-              <div className="mt-8 space-y-2 text-center">
-                <h3 className="text-xl font-bold text-white group-hover:text-amber-300 transition-colors">{card.title}</h3>
-                <p className="text-xs text-neutral-400 leading-relaxed font-light">{card.desc}</p>
-              </div>
- 
-              {/* Arrow pointers between cards */}
-              {idx < 3 && (
-                <div className="hidden lg:flex absolute right-[-20px] top-[50%] translate-y-[-50%] z-20 items-center justify-center text-amber-500/20">
-                  <span className="text-2xl font-bold">➔</span>
-                </div>
-              )}
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
-
-    {/* 3. ADVANTAGES SECTION */}
-    <section id="advantages" className="py-28 w-full">
-      <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
-        <div className="bg-[#151515]/65 border border-white/5 rounded-[36px] p-8 md:p-12 relative overflow-hidden shadow-2xl">
-          {/* Subtle warm glow */}
-          <div className="absolute top-[20%] left-[50%] translate-x-[-50%] w-[500px] h-[200px] bg-amber-500/5 rounded-full blur-[100px] pointer-events-none" />
-
-          <div className="text-center max-w-2xl mx-auto mb-16 space-y-4 relative z-10">
-            <span className="text-[10px] bg-amber-500/10 text-amber-400 font-bold px-2.5 py-1 rounded-full border border-amber-500/20 uppercase tracking-widest inline-block">
-              ✦ PLATFORM BENEFITS
-            </span>
-            <h2 className="text-4xl md:text-5xl font-display font-light text-white">Engineered for LPU Campus</h2>
-            <p className="text-neutral-400 text-base font-light">Discover custom-designed tools designed to address common dining and kitchen issues.</p>
+        <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
+          {/* Header */}
+          <div className="max-w-3xl mb-24 text-left space-y-4">
+            <div className="text-[10px] font-bold text-amber-500 tracking-[0.25em] uppercase flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+              + The Gastronomic Pipeline
+            </div>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-display font-light text-white leading-tight">
+              How FoodPulse <br/>
+              <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-200">Refines Your Dining</span>
+            </h2>
+            <div className="h-[1px] w-24 bg-amber-500/30 mt-4" />
           </div>
 
-          <motion.div 
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10"
-          >
-            {[
-              { title: "Faster Ordering", desc: "Skip queues by ordering menu items ahead of arrival.", icon: <Clock size={20} />, status: "Instant", points: ["30% Less Waiting Time", "Real-time Queue Updates"] },
-              { title: "AI Verification", desc: "Computer vision verifies food texture and ingredients.", icon: <ShieldCheck size={20} />, status: "Automated", points: ["99.5% Accuracy Rate", "Instant Issue Detection"] },
-              { title: "Complaint Tracking", desc: "Track mess issues live from detection to resolution.", icon: <AlertTriangle size={20} />, status: "Transparent", points: ["Live Status Updates", "Full Transparency"] },
-              { title: "Queue Reduction", desc: "Optimize preparation times with predictive insights.", icon: <BarChart3 size={20} />, status: "Live", points: ["Predictive Analytics", "Smart Load Balancing"] }
-            ].map((feat, idx) => (
-              <motion.div 
-                key={idx}
-                variants={itemVariants}
-                className="p-6 rounded-3xl bg-neutral-950/60 border border-white/5 hover:border-amber-500/30 transition-all duration-300 flex flex-col justify-between min-h-[260px] hover:shadow-glow"
-              >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center border border-amber-500/20">
-                      {feat.icon}
-                    </div>
-                    <span className="text-[10px] bg-amber-500/10 text-amber-400 font-bold px-2 py-0.5 rounded-full border border-amber-500/20">{feat.status}</span>
+          {/* Step 1: Browse & Reserve (Asymmetrical Text Left, Immersive Image Right) */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center mb-36 w-full">
+            <div className="lg:col-span-5 space-y-6 text-left">
+              <span className="text-[10px] font-bold text-amber-500/50 font-mono tracking-widest block">STEP // 01</span>
+              <h3 className="text-3xl font-display font-bold text-white tracking-tight">Culinary Discovery</h3>
+              <p className="text-neutral-400 text-sm leading-relaxed font-light">
+                Explore LPU's decentralized digital food marketplace to view live menus, queue predictions, and place pre-orders. Skip traditional dining hall lines by purchasing tokens directly using dining reward points or wallet balances.
+              </p>
+              <div className="flex items-center gap-3 pt-2 text-xs text-amber-500 font-semibold">
+                <ShoppingBag size={16} /> pre-order via digital tokens
+              </div>
+            </div>
+            
+            <div className="lg:col-span-7 relative group">
+              <div className="absolute -inset-1 rounded-[32px] bg-gradient-to-r from-amber-500/10 to-yellow-500/10 opacity-30 blur-lg group-hover:opacity-50 transition-opacity" />
+              <div className="relative aspect-[16/10] rounded-[28px] overflow-hidden border border-white/10 shadow-2xl">
+                <img 
+                  src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1000&auto=format&fit=crop" 
+                  alt="Browse Gourmet Foods" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[3s]" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
+                <div className="absolute bottom-6 left-6 right-6 p-5 bg-neutral-950/70 backdrop-blur-md border border-white/5 rounded-2xl flex items-center justify-between">
+                  <div>
+                    <h4 className="text-white text-xs font-bold">Premium Salad & Grains</h4>
+                    <span className="text-[9px] text-neutral-400 uppercase tracking-wider font-semibold">Zone 3 Mess</span>
                   </div>
-                  <h4 className="font-bold text-white text-lg">{feat.title}</h4>
-                  <p className="text-xs text-neutral-400 leading-relaxed font-light">{feat.desc}</p>
+                  <span className="text-[10px] font-bold text-[#7BA05B] bg-[#7BA05B]/10 border border-[#7BA05B]/20 px-2 py-0.5 rounded">Active Prep</span>
                 </div>
+              </div>
+            </div>
+          </div>
 
-                <div className="mt-4 pt-4 border-t border-white/5 space-y-2">
-                  {feat.points.map((pt, pIdx) => (
-                    <div key={pIdx} className="flex items-center gap-2 text-[10px] text-neutral-400 font-medium">
-                      <span className="w-4 h-4 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-[8px] font-bold">✓</span>
-                      <span>{pt}</span>
-                    </div>
-                  ))}
+          {/* Step 2: Savor or Report (Immersive Image Left, Text Right) */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center mb-36 w-full">
+            <div className="lg:col-span-7 lg:order-2 space-y-6 text-left">
+              <span className="text-[10px] font-bold text-amber-500/50 font-mono tracking-widest block">STEP // 02</span>
+              <h3 className="text-3xl font-display font-bold text-white tracking-tight">The Gastronomy Experience</h3>
+              <p className="text-neutral-400 text-sm leading-relaxed font-light font-sans">
+                Skip traditional lines entirely and claim your plate. Enjoy fresh food items audited for safety. In the rare event of a quality discrepancy, submit a verified visual complaint ticket instantly.
+              </p>
+              <div className="flex items-center gap-3 pt-2 text-xs text-amber-500 font-semibold">
+                <Utensils size={16} /> instant plate receipt validation
+              </div>
+            </div>
+
+            <div className="lg:col-span-5 lg:order-1 relative group">
+              <div className="absolute -inset-1 rounded-[32px] bg-gradient-to-r from-amber-500/10 to-yellow-500/10 opacity-30 blur-lg group-hover:opacity-50 transition-opacity" />
+              <div className="relative aspect-[4/5] rounded-[28px] overflow-hidden border border-white/10 shadow-2xl">
+                <img 
+                  src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=600&auto=format&fit=crop" 
+                  alt="Gourmet Plating" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[3s]" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
+                <div className="absolute bottom-6 left-6 right-6 p-4 bg-neutral-950/80 backdrop-blur-md border border-white/5 rounded-2xl">
+                  <span className="text-[9px] text-amber-500 font-bold block uppercase tracking-wider mb-1">MESS HYGIENE INDEX</span>
+                  <p className="text-white text-xs font-medium">99.8% Freshness Checked</p>
                 </div>
-              </motion.div>
+              </div>
+            </div>
+          </div>
+
+          {/* Step 3: Computer Vision Audit (Text Left, Immersive Image Right) */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center mb-36 w-full">
+            <div className="lg:col-span-5 space-y-6 text-left">
+              <span className="text-[10px] font-bold text-amber-500/50 font-mono tracking-widest block">STEP // 03</span>
+              <h3 className="text-3xl font-display font-bold text-white tracking-tight">AI Texture Auditing</h3>
+              <p className="text-neutral-400 text-sm leading-relaxed font-light font-sans">
+                Proprietary computer vision models verify your uploaded meal details. Portions, baking consistency, raw sections, and structural composition are flagged automatically in seconds.
+              </p>
+              <div className="flex items-center gap-3 pt-2 text-xs text-amber-500 font-semibold">
+                <ShieldCheck size={16} /> 99.5% vision accuracy score
+              </div>
+            </div>
+            
+            <div className="lg:col-span-7 relative group">
+              <div className="absolute -inset-1 rounded-[32px] bg-gradient-to-r from-amber-500/10 to-yellow-500/10 opacity-30 blur-lg group-hover:opacity-50 transition-opacity" />
+              <div className="relative aspect-[16/10] rounded-[28px] overflow-hidden border border-white/10 shadow-2xl">
+                <img 
+                  src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop" 
+                  alt="AI Food Quality Scan" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[3s]" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
+                {/* Floating scanner indicator box */}
+                <div className="absolute top-10 left-10 w-44 p-3 bg-neutral-950/70 border border-amber-500/30 rounded-2xl backdrop-blur-md animate-bounce">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-ping" />
+                    <span className="text-[9px] font-mono font-bold text-white uppercase">AI Analysis</span>
+                  </div>
+                  <p className="text-[10px] text-amber-400 font-bold">Starch Index Verified</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Step 4: Smart Ledger Rewards (Immersive Image Left, Text Right) */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center w-full">
+            <div className="lg:col-span-7 lg:order-2 space-y-6 text-left">
+              <span className="text-[10px] font-bold text-amber-500/50 font-mono tracking-widest block">STEP // 04</span>
+              <h3 className="text-3xl font-display font-bold text-white tracking-tight">Smart Wallet Incentives</h3>
+              <p className="text-neutral-400 text-sm leading-relaxed font-light font-sans">
+                Once an issue is validated, points are instantly credited back to your campus wallet. Re-invest points into your marketplace dining or purchase premium dining vouchers.
+              </p>
+              <div className="flex items-center gap-3 pt-2 text-xs text-amber-500 font-semibold">
+                <Award size={16} /> compensation point ledger
+              </div>
+            </div>
+
+            <div className="lg:col-span-5 lg:order-1 relative group">
+              <div className="absolute -inset-1 rounded-[32px] bg-gradient-to-r from-amber-500/10 to-yellow-500/10 opacity-30 blur-lg group-hover:opacity-50 transition-opacity" />
+              <div className="relative aspect-[4/5] rounded-[28px] overflow-hidden border border-white/10 shadow-2xl">
+                <img 
+                  src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=600&auto=format&fit=crop" 
+                  alt="Smart Wallet Dining Credits" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[3s]" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
+                <div className="absolute bottom-6 left-6 right-6 p-5 bg-[#151515]/95 border border-white/5 rounded-2xl flex items-center justify-between shadow-2xl">
+                  <div className="text-left">
+                    <span className="text-[8px] text-gray-500 uppercase tracking-widest block">Smart Wallet</span>
+                    <span className="text-lg font-display font-bold text-white">4,850 <span className="text-xs text-amber-500">PTS</span></span>
+                  </div>
+                  <div className="text-right">
+                    <span className="text-[8px] text-[#7BA05B] font-bold block uppercase bg-[#7BA05B]/10 px-2 py-0.5 rounded">Active Link</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. PLATFORM BENEFITS: Asymmetrical Luxury Composition */}
+      <section id="advantages" className="relative py-32 bg-[#0B0B0B]/70 w-full overflow-hidden border-t border-white/5">
+        <div className="absolute inset-0 m-auto w-[600px] h-[300px] bg-amber-500/3 rounded-full blur-[120px] pointer-events-none" />
+        
+        <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
+          {/* Header */}
+          <div className="max-w-3xl mb-24 text-left space-y-4">
+            <span className="text-[10px] bg-amber-500/10 text-amber-400 font-bold px-2.5 py-1 rounded-full border border-amber-500/20 uppercase tracking-widest inline-block">
+              ✦ Gastronomic Engineering
+            </span>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-display font-light text-white leading-tight">
+              Engineered for <br/>
+              <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-200">The LPU Campus Environment</span>
+            </h2>
+            <div className="h-[1px] w-24 bg-amber-500/30 mt-4" />
+          </div>
+
+          {/* Asymmetrical 3-Column Luxury Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch w-full">
+            
+            {/* Left Column: Massive Vertical Storytelling Banner Card (5 Cols) */}
+            <div className="lg:col-span-5 rounded-[2.5rem] overflow-hidden border border-white/10 relative shadow-2xl min-h-[460px] flex flex-col justify-end p-8 md:p-10 group">
+              <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-black/40 to-transparent z-10 pointer-events-none" />
+              <img 
+                src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=600&auto=format&fit=crop" 
+                alt="LPU Kitchen Counter" 
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-[3s]" 
+              />
+              
+              <div className="relative z-20 space-y-4 text-left">
+                <span className="text-[10px] font-bold text-amber-400 bg-amber-500/15 border border-amber-500/20 px-3 py-1 rounded-full uppercase tracking-wider inline-block">
+                  Congestion Management
+                </span>
+                <h3 className="text-2xl md:text-3xl font-display font-light text-white leading-snug">
+                  Restoring time back to <span className="font-bold text-amber-300">5k+ active diners</span> per semester.
+                </h3>
+                <p className="text-xs text-neutral-300 leading-relaxed font-light max-w-sm">
+                  Wait predictions, real-time load distribution, and digital queue bypass tools ensure campus dining takes minutes, not hours.
+                </p>
+              </div>
+            </div>
+
+            {/* Center Column: Technology Spec List (4 Cols) */}
+            <div className="lg:col-span-4 rounded-[2.5rem] bg-[#151515] border border-white/5 p-8 md:p-10 flex flex-col justify-between shadow-2xl">
+              <div className="space-y-6 text-left">
+                <div className="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-500 flex items-center justify-center border border-amber-500/20">
+                  <ShieldCheck size={24} />
+                </div>
+                <h3 className="text-2xl font-display font-bold text-white tracking-tight">Texture Audits</h3>
+                <p className="text-xs text-neutral-400 leading-relaxed font-light font-sans">
+                  Our computer vision pipeline acts as a decentralized campus quality inspector. We audit portion sizing, cooking consistency, raw dough parameters, and general kitchen hygiene markers.
+                </p>
+              </div>
+
+              <div className="space-y-3.5 pt-8 border-t border-white/5 text-left">
+                <div className="flex items-center gap-2.5 text-[10px] text-neutral-300 font-semibold">
+                  <span className="w-4 h-4 rounded-full bg-amber-500/15 flex items-center justify-center text-amber-400 text-[8px] font-extrabold">✓</span>
+                  <span>99.5% accuracy rate standard</span>
+                </div>
+                <div className="flex items-center gap-2.5 text-[10px] text-neutral-300 font-semibold">
+                  <span className="w-4 h-4 rounded-full bg-amber-500/15 flex items-center justify-center text-amber-400 text-[8px] font-extrabold">✓</span>
+                  <span>Portion verification parameters</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Ledger Spec Card (3 Cols) */}
+            <div className="lg:col-span-3 rounded-[2.5rem] bg-[#151515]/50 border border-white/5 p-8 flex flex-col justify-between shadow-2xl relative overflow-hidden backdrop-blur-md">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-amber-500/5 rounded-full blur-2xl pointer-events-none" />
+              
+              <div className="space-y-6 text-left">
+                <div className="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-500 flex items-center justify-center border border-amber-500/20">
+                  <Wallet size={24} />
+                </div>
+                <h3 className="text-xl font-bold text-white tracking-tight">Smart Ledger</h3>
+                <p className="text-[11px] text-neutral-400 leading-relaxed font-light">
+                  A secure digital system verifying feedback. Validated anomalies unlock points instantly to compensate dining discrepancies.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-neutral-950/60 border border-white/5 text-left space-y-1">
+                <span className="text-[8px] text-gray-500 font-bold uppercase tracking-widest block">AUDIT PAYOUT</span>
+                <span className="text-xl font-display font-black text-amber-500 block">+150 <span className="text-xs">PTS</span></span>
+                <span className="text-[8px] text-[#7BA05B] font-bold block">Refund Verified</span>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Cinematic Statistics Section (Apple-style immersive layout) */}
+          <div className="border-t border-white/5 pt-12 mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              { metric: "👥 5,000+", label: "Active Diners" },
+              { metric: "🎯 99.8%", label: "Visual Compliances" },
+              { metric: "🎁 20,000+", label: "Vouchers Redeemed" },
+              { metric: "⏱️ 8.5 Hours", label: "Saved Per Term" }
+            ].map((item, idx) => (
+              <div key={idx} className="space-y-1.5 text-center">
+                <div className="text-3xl font-display font-extrabold text-white tracking-tight">{item.metric}</div>
+                <p className="text-[10px] text-neutral-400 font-semibold uppercase tracking-widest">{item.label}</p>
+              </div>
             ))}
-          </motion.div>
-
-          {/* Bottom Metrics Bar */}
-          <div className="relative z-10 border-t border-white/5 pt-8 mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div className="flex flex-col items-center justify-center space-y-1">
-              <span className="text-2xl font-extrabold text-white flex items-center justify-center gap-2">
-                👥 5K+
-              </span>
-              <span className="text-[11px] font-bold text-neutral-400 uppercase tracking-wider font-light">Active Diners</span>
-            </div>
-            <div className="flex flex-col items-center justify-center space-y-1">
-              <span className="text-2xl font-extrabold text-white flex items-center justify-center gap-2">
-                🎯 99.8%
-              </span>
-              <span className="text-[11px] font-bold text-neutral-400 uppercase tracking-wider font-light">Scan Accuracy</span>
-            </div>
-            <div className="flex flex-col items-center justify-center space-y-1">
-              <span className="text-2xl font-extrabold text-white flex items-center justify-center gap-2">
-                🎁 20K+
-              </span>
-              <span className="text-[11px] font-bold text-neutral-400 uppercase tracking-wider font-light">Vouchers Redeemed</span>
-            </div>
-            <div className="flex flex-col items-center justify-center space-y-1">
-              <span className="text-2xl font-extrabold text-white flex items-center justify-center gap-2">
-                ⏱️ 8.5hrs
-              </span>
-              <span className="text-[11px] font-bold text-neutral-400 uppercase tracking-wider font-light">Avg. Time Saved</span>
-            </div>
           </div>
 
         </div>
-      </div>
-    </section>
+      </section>
 
-    {/* 4. STUDENT BENEFITS SECTION (Bento Grid) */}
-    <section id="benefits" className="relative py-28 border-t border-white/5 bg-[#0B0B0B] w-full">
-      <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
-        <div className="text-center max-w-2xl mx-auto mb-20 space-y-4">
-          <h4 className="text-amber-500 text-sm font-bold uppercase tracking-widest">Bento Grid</h4>
-          <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white">How FoodPulse Helps Students</h2>
-          <p className="text-gray-400 text-base">Simplifying student dining while building mess administration transparency.</p>
-        </div>
+      {/* 4. THE GASTRONOMIC STANDARD: Complete Bento Grid & Transformed Rankings */}
+      <section id="benefits" className="relative py-32 bg-[#0B0B0B] w-full overflow-hidden border-t border-white/5">
+        <div className="absolute top-[10%] right-[10%] w-[350px] h-[350px] bg-amber-500/5 rounded-full blur-[100px] pointer-events-none" />
+        
+        <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
+          {/* Header */}
+          <div className="max-w-3xl mb-24 text-left space-y-4">
+            <span className="text-[10px] bg-amber-500/10 text-amber-400 font-bold px-2.5 py-1 rounded-full border border-amber-500/20 uppercase tracking-widest inline-block">
+              ✦ Bento Showcase
+            </span>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-display font-light text-white leading-tight">
+              Designed for <br/>
+              <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-200">Campus Transparency</span>
+            </h2>
+            <div className="h-[1px] w-24 bg-amber-500/30 mt-4" />
+          </div>
 
-        {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 w-full">
-          {/* Bento Card 1: Time Saver */}
-          <div className="md:col-span-7 rounded-3xl bg-[#151515] border border-white/5 p-8 flex flex-col justify-between min-h-[360px] hover:border-amber-500/20 transition-all duration-300 relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-2xl pointer-events-none" />
+          {/* Bento Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 w-full mb-28">
             
-            <div className="space-y-4">
-              <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center mb-4 border border-amber-500/20">
-                <Clock size={20} />
-              </div>
-              <h3 className="text-2xl font-bold text-white">Saves Time & Reduces Waiting</h3>
-              <p className="text-gray-400 text-sm max-w-md leading-relaxed">
-                Tired of waiting 30 minutes for lunch? Pre-order on the marketplace, monitor the live queue prediction index, and grab your plate the moment it is ready.
-              </p>
-            </div>
-
-            <div className="my-6 p-4 rounded-2xl bg-white/[0.02] border border-white/5 space-y-3">
-              <div className="flex justify-between items-center text-xs font-bold text-amber-500">
-                <span>Checkout Wait-Time Progress</span>
-                <span>9.2 min saved</span>
-              </div>
-              <div className="w-full h-2.5 bg-white/5 rounded-full overflow-hidden border border-white/5">
-                <div className="h-full bg-gradient-to-r from-amber-600 to-yellow-500 w-[78%] rounded-full" />
-              </div>
-              <div className="flex justify-between text-[10px] text-gray-500">
-                <span>Traditional: 25 mins waiting</span>
-                <span>FoodPulse Fast-Track: 4.5 mins</span>
-              </div>
-            </div>
-
-            <div className="flex gap-4 items-center pt-4 text-xs text-amber-500 font-semibold border-t border-white/5">
-              <span>⚡ 8.5 Hours Saved Average / Student</span>
-            </div>
-          </div>
-
-          {/* Bento Card 2: Hygiene Score */}
-          <div className="md:col-span-5 rounded-3xl bg-[#151515] border border-white/5 p-8 flex flex-col justify-between min-h-[360px] hover:border-amber-500/20 transition-all duration-300 relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-24 h-24 bg-amber-500/5 rounded-full blur-2xl pointer-events-none" />
-
-            <div className="space-y-4">
-              <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center mb-4 border border-amber-500/20">
-                <ShieldCheck size={20} />
-              </div>
-              <h3 className="text-2xl font-bold text-white">Mess Hygiene Scores</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                Real-time quality audits flag messes with active issues, letting you make healthy choices on where to dine.
-              </p>
-            </div>
-
-            <div className="my-6 space-y-2.5">
-              {[
-                { name: 'Central Mess', rating: 'A+ (99.8%)', color: 'text-amber-500' },
-                { name: 'BH1 Dining', rating: 'A- (93.1%)', color: 'text-neutral-300' },
-                { name: 'BH2 Mess Cafeteria', rating: 'B (82.5%)', color: 'text-neutral-400' }
-              ].map((item, idx) => (
-                <div key={idx} className="flex justify-between items-center text-xs p-2.5 rounded-xl bg-white/[0.01] border border-white/5">
-                  <span className="text-gray-300 font-medium">{item.name}</span>
-                  <span className={`font-bold ${item.color}`}>{item.rating}</span>
+            {/* Card 1: Time Saver */}
+            <div className="md:col-span-8 rounded-[2.5rem] bg-[#151515] border border-white/5 p-8 md:p-10 flex flex-col justify-between min-h-[380px] hover:border-amber-500/20 transition-all duration-300 relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-44 h-44 bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
+              
+              <div className="space-y-4 text-left">
+                <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center mb-2 border border-amber-500/20">
+                  <Clock size={20} />
                 </div>
-              ))}
-            </div>
-
-            <span className="text-xs text-amber-500 font-bold uppercase tracking-wider pt-2">Safety Verified</span>
-          </div>
-
-          {/* Bento Card 3: Voice */}
-          <div className="md:col-span-5 rounded-3xl bg-[#151515] border border-white/5 p-8 flex flex-col justify-between min-h-[360px] hover:border-amber-500/20 transition-all duration-300 relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-24 h-24 bg-amber-500/5 rounded-full blur-2xl pointer-events-none" />
-
-            <div className="space-y-4">
-              <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center mb-4 border border-amber-500/20">
-                <AlertTriangle size={20} />
+                <h3 className="text-2xl md:text-3xl font-display font-bold text-white tracking-tight">Queue-Free Dining Pipeline</h3>
+                <p className="text-gray-400 text-sm max-w-lg leading-relaxed font-light font-sans">
+                  Skip traditional 30-minute cafeteria waiting lines. Pre-order your chef-crafted meal on the smart marketplace, track wait curve forecasts, and grab your tray instantly.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-white">Gives Students a Voice</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                No more ignored feedback letters. Submit visual proof and let the automated computer vision verification hold kitchen operators accountable.
-              </p>
-            </div>
 
-            <div className="my-6 p-4 rounded-2xl bg-[#0B0B0B]/60 border border-white/5 flex items-center justify-between text-xs">
-              <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-ping" />
-                <div>
-                  <span className="text-gray-300 font-semibold block">Undercooked Meat Audit</span>
-                  <span className="text-[10px] text-gray-500">Scan Verified</span>
+              <div className="my-6 p-5 rounded-2xl bg-neutral-950/60 border border-white/5 space-y-3.5 text-left">
+                <div className="flex justify-between items-center text-xs font-bold text-amber-500">
+                  <span>Fast-Track Optimization Progress</span>
+                  <span>9.2 mins saved</span>
+                </div>
+                <div className="w-full h-2 bg-white/5 rounded-full overflow-hidden border border-white/5">
+                  <div className="h-full bg-gradient-to-r from-amber-600 to-yellow-500 w-[78%] rounded-full" />
+                </div>
+                <div className="flex justify-between text-[9px] text-gray-500 font-mono">
+                  <span>Standard Waiting: 25 mins</span>
+                  <span>FoodPulse Pipeline: 4.5 mins</span>
                 </div>
               </div>
-              <span className="text-amber-500 font-extrabold">+150 pts</span>
+
+              <div className="flex gap-4 items-center pt-4 text-[10px] text-amber-400 font-bold uppercase tracking-wider border-t border-white/5 text-left">
+                <span>⚡ optimized queuing saves average 8.5 hours per student</span>
+              </div>
             </div>
 
-            <span className="text-xs text-amber-500 font-bold uppercase tracking-wider pt-2">Direct Action</span>
+            {/* Card 2: Hygiene Score */}
+            <div className="md:col-span-4 rounded-[2.5rem] bg-[#151515] border border-white/5 p-8 flex flex-col justify-between min-h-[380px] hover:border-amber-500/20 transition-all duration-300 relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-amber-500/5 rounded-full blur-2xl pointer-events-none" />
+
+              <div className="space-y-4 text-left">
+                <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center mb-2 border border-amber-500/20">
+                  <ShieldCheck size={20} />
+                </div>
+                <h3 className="text-2xl font-display font-bold text-white tracking-tight">Hygiene Indices</h3>
+                <p className="text-gray-400 text-xs leading-relaxed font-light font-sans">
+                  Dynamic food freshness quality indexes let you confirm mess standards before you dine.
+                </p>
+              </div>
+
+              <div className="my-6 space-y-2.5 text-left">
+                {[
+                  { name: 'Central Mess', rating: 'A+ (99.8%)', color: 'text-amber-500' },
+                  { name: 'BH1 Dining', rating: 'A- (93.1%)', color: 'text-neutral-300' },
+                  { name: 'BH2 Mess Cafeteria', rating: 'B (82.5%)', color: 'text-neutral-500' }
+                ].map((item, idx) => (
+                  <div key={idx} className="flex justify-between items-center text-xs p-3 rounded-xl bg-neutral-950/60 border border-white/5">
+                    <span className="text-gray-400 font-medium">{item.name}</span>
+                    <span className={`font-bold ${item.color}`}>{item.rating}</span>
+                  </div>
+                ))}
+              </div>
+
+              <span className="text-[10px] text-amber-500 font-bold uppercase tracking-wider pt-2 border-t border-white/5 text-left block">
+                ★ safety verified indexes
+              </span>
+            </div>
+
           </div>
 
-          {/* Bento Card 4: Leaderboard */}
-          <div className="md:col-span-7 rounded-3xl bg-[#151515] border border-white/5 p-8 flex flex-col justify-between min-h-[360px] hover:border-amber-500/20 transition-all duration-300 relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-2xl pointer-events-none" />
+          {/* Premium Alternating/Horizontal Testimonial/Rankings Grid */}
+          <div className="w-full max-w-7xl mx-auto rounded-[2.5rem] border border-white/10 bg-[#151515] overflow-hidden shadow-2xl relative">
+            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-amber-500/30 to-transparent" />
             
-            <div className="space-y-4">
-              <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center mb-4 border border-amber-500/20">
-                <TrendingUp size={20} />
+            <div className="p-8 md:p-10 border-b border-white/5 flex justify-between items-center bg-white/[0.01]">
+              <div className="text-left">
+                <h3 className="text-xl font-display font-bold text-white tracking-tight">Gourmet Mess Rankings</h3>
+                <p className="text-xs text-neutral-400 mt-1 font-light">Live campus food statistics curated from student crowd audits.</p>
               </div>
-              <h3 className="text-2xl font-bold text-white">Audited Mess Performance Leaderboard</h3>
-              <p className="text-gray-400 text-sm max-w-md leading-relaxed">
-                Stall performance ratings, live queue speeds, and resolved complaints data are broadcast directly to the student leaderboard.
-              </p>
+              <span className="text-[10px] bg-amber-500/10 text-amber-400 border border-amber-500/20 px-3 py-1 rounded-full font-bold uppercase tracking-wider shrink-0">
+                Live updates
+              </span>
             </div>
 
-            <div className="my-6 grid grid-cols-3 gap-3">
-              {[
-                { place: '🥇 #1 Central Mess', score: '4.95 ⭐' },
-                { place: '🥈 #2 BH2 Cafe', score: '4.88 ⭐' },
-                { place: '🥉 #3 Central Cafe', score: '4.79 ⭐' }
-              ].map((item, idx) => (
-                <div key={idx} className="p-3 bg-white/[0.02] border border-white/5 rounded-2xl text-center">
-                  <span className="block font-bold text-xs text-white mb-1">{item.place}</span>
-                  <span className="text-[10px] text-amber-500 font-semibold">{item.score}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="flex gap-4 items-center pt-4 text-xs text-amber-500 font-semibold border-t border-white/5">
-              <span>📊 Full Campus Food Quality Statistics Available</span>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-xs border-collapse min-w-[700px]">
+                <thead>
+                  <tr className="border-b border-white/5 bg-[#0B0B0B]/60 text-gray-500 font-bold uppercase tracking-wider text-[10px]">
+                    <th className="py-5 px-8">Rank</th>
+                    <th className="py-5 px-6">Dining Venue</th>
+                    <th className="py-5 px-6">Quality Rating</th>
+                    <th className="py-5 px-6">Average Wait</th>
+                    <th className="py-5 px-6">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { rank: '🥇 #1', name: 'Central Mess Hall', rating: 'A+ (99.8%)', rColor: 'text-[#7BA05B]', wait: '4.2 mins', status: 'Stable', sClass: 'bg-[#7BA05B]/10 text-[#7BA05B] border-[#7BA05B]/20' },
+                    { rank: '🥈 #2', name: 'BH2 Dining Hall', rating: 'A- (93.1%)', rColor: 'text-[#7BA05B]', wait: '6.5 mins', status: 'Notice', sClass: 'bg-amber-500/10 text-amber-400 border-amber-500/20' },
+                    { rank: '🥉 #3', name: 'Block 34 Foodcourt', rating: 'B+ (88.4%)', rColor: 'text-amber-500', wait: '8.0 mins', status: 'Alert Active', sClass: 'bg-red-500/10 text-red-400 border-red-500/20' }
+                  ].map((row, idx) => (
+                    <tr key={idx} className="border-b border-white/5 last:border-0 hover:bg-white/[0.01] transition-colors">
+                      <td className="py-5 px-8 font-display font-extrabold text-sm text-white">{row.rank}</td>
+                      <td className="py-5 px-6 font-semibold text-white">{row.name}</td>
+                      <td className={`py-5 px-6 font-bold ${row.rColor}`}>{row.rating}</td>
+                      <td className="py-5 px-6 text-gray-300">{row.wait}</td>
+                      <td className="py-5 px-6">
+                        <span className={`px-2.5 py-1 rounded-full text-[9px] font-bold border ${row.sClass}`}>
+                          {row.status}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
+
         </div>
-      </div>
-    </section>
+      </section>
     </>
   );
 
@@ -482,7 +595,7 @@ const LandingPage = () => {
 
         <div className="relative z-10 w-full">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-display font-extrabold text-white mb-2">Welcome Back</h2>
+            <h2 className="text-3xl font-display font-extrabold text-white mb-2 uppercase tracking-widest text-sm">Welcome Back</h2>
             <p className="text-xs text-neutral-400 font-light">Log in to manage your FoodPulse dashboard and wallet points</p>
           </div>
 
@@ -505,7 +618,7 @@ const LandingPage = () => {
             <div className="space-y-2 text-left">
               <div className="flex justify-between items-center">
                 <label className="text-[10px] uppercase font-bold text-neutral-400 tracking-wider block">Account Password</label>
-                <button type="button" className="text-[10px] font-bold text-amber-500 hover:underline">Forgot?</button>
+                <button type="button" className="text-[10px] font-bold text-amber-500 hover:underline bg-transparent border-none cursor-pointer">Forgot?</button>
               </div>
               <div className="relative flex items-center">
                 <Lock size={16} className="absolute left-4 text-neutral-500" />
@@ -552,7 +665,7 @@ const LandingPage = () => {
 
         <div className="relative z-10 w-full">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-display font-extrabold text-white mb-2">Create Account</h2>
+            <h2 className="text-3xl font-display font-extrabold text-white mb-2 uppercase tracking-widest text-sm">Create Account</h2>
             <p className="text-xs text-neutral-400 font-light">Join FoodPulse to browse stalls and earn verified points</p>
           </div>
 
@@ -622,127 +735,110 @@ const LandingPage = () => {
   );
 
   const renderHowItWorks = () => (
-    <div className="w-full py-20">
-      <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+    <div className="w-full py-24 select-none">
+      <div className="text-left max-w-3xl mb-20 space-y-4">
         <span className="text-[10px] bg-amber-500/10 text-amber-500 font-bold px-2.5 py-1 rounded-full border border-amber-500/20 uppercase tracking-widest inline-block">
-          Documentation
+          Technical Architecture Documentation
         </span>
-        <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white">How FoodPulse <span className="bg-gradient-to-r from-amber-500 to-yellow-200 bg-clip-text text-transparent">Works</span></h2>
-        <p className="text-gray-400 text-base leading-relaxed font-light">A comprehensive breakdown of LPU's automated student dining and crowd auditing platform.</p>
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-display font-light text-white leading-tight">
+          How FoodPulse <br/>
+          <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-200">Maintains Dining Quality</span>
+        </h2>
+        <div className="h-[1px] w-24 bg-amber-500/30 mt-4" />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl mx-auto">
-        <div className="rounded-3xl bg-[#151515] border border-white/5 p-8 backdrop-blur-md hover:border-amber-500/20 transition-all duration-300">
-          <div className="text-3xl mb-4">🛒</div>
-          <h3 className="text-xl font-bold text-white mb-2">1. Marketplace Discovery</h3>
-          <p className="text-xs text-gray-400 leading-relaxed font-light">
-            Students access LPU's decentralized digital food marketplace to view live menus, queue predictions, and place pre-orders. Skip traditional dining hall lines by purchasing tokens directly using dining reward points or wallet balances.
-          </p>
-        </div>
-
-        <div className="rounded-3xl bg-[#151515] border border-white/5 p-8 backdrop-blur-md hover:border-amber-500/20 transition-all duration-300">
-          <div className="text-3xl mb-4">🤖</div>
-          <h3 className="text-xl font-bold text-white mb-2">2. AI Kitchen Verification</h3>
-          <p className="text-xs text-gray-400 leading-relaxed font-light">
-            Every meal served can be photographed and uploaded for instantaneous verification. FoodPulse's proprietary computer vision models verify portion control, structural parameters, food color profiles, and detect preparation anomalies like undercooked components.
-          </p>
-        </div>
-
-        <div className="rounded-3xl bg-[#151515] border border-white/5 p-8 backdrop-blur-md hover:border-amber-500/20 transition-all duration-300">
-          <div className="text-3xl mb-4">⚠️</div>
-          <h3 className="text-xl font-bold text-white mb-2">3. Real-Time Crowd Auditing</h3>
-          <p className="text-xs text-gray-400 leading-relaxed font-light">
-            Any food preparation discrepancy automatically creates an active audit ticket on the student dashboard. Neighboring students act as decentralized auditors, reviewing photos to confirm or reject anomalies, enforcing dining hall transparency and hygiene.
-          </p>
-        </div>
-
-        <div className="rounded-3xl bg-[#151515] border border-white/5 p-8 backdrop-blur-md hover:border-amber-500/20 transition-all duration-300">
-          <div className="text-3xl mb-4">🪙</div>
-          <h3 className="text-xl font-bold text-white mb-2">4. Rewards Compensation</h3>
-          <p className="text-xs text-gray-400 leading-relaxed font-light">
-            Once the crowd-audited quality ticket is flagged and verified by the system, points are instantly refunded to the student's Smart Wallet. Users redeem these verified points at LPU campus stalls, ensuring dining hall operator accountability.
-          </p>
-        </div>
+      <div className="space-y-16 w-full max-w-5xl mx-auto">
+        {[
+          { icon: "🛒", title: "1. Digital Pre-Orders & Token Reservation", text: "Students pre-order from LPU messes or food stalls remotely using Smart Wallet points, locking in tokens and avoiding lines completely." },
+          { icon: "📸", title: "2. Image Uplink & Computer Vision Verification", text: "Upon receipt, any meal can be photographed and uploaded. FoodPulse's proprietary computer vision pipeline inspects baking ratios, starch parameters, and counts portions to verify quality." },
+          { icon: "🛡️", title: "3. Decentralized Crowd Compliance Audit", text: "Quality flags create direct community auditing tasks. Students vote on anomaly reports anonymously, building absolute dining administration accountability." },
+          { icon: "🪙", title: "4. Wallet Reimbursements & Compensations", text: "Validated claims instantly unlock points compensation back to the Smart Wallet, enforcing high culinary standards among operator kitchens." }
+        ].map((item, idx) => (
+          <div key={idx} className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center p-8 bg-[#151515] border border-white/5 rounded-[2rem] hover:border-amber-500/25 transition-all shadow-xl">
+            <div className="md:col-span-2 text-center text-4xl shrink-0 bg-neutral-950/60 w-16 h-16 rounded-2xl flex items-center justify-center border border-white/5 mx-auto">
+              {item.icon}
+            </div>
+            <div className="md:col-span-10 text-left space-y-2">
+              <h3 className="text-lg font-display font-bold text-white">{item.title}</h3>
+              <p className="text-xs text-gray-400 leading-relaxed font-light">{item.text}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
 
   const renderFeatures = () => (
-    <div className="w-full py-20">
-      <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+    <div className="w-full py-24 select-none">
+      <div className="text-left max-w-3xl mb-20 space-y-4">
         <span className="text-[10px] bg-amber-500/10 text-amber-500 font-bold px-2.5 py-1 rounded-full border border-amber-500/20 uppercase tracking-widest inline-block">
-          Capabilities Matrix
+          Capabilities Spec Sheet
         </span>
-        <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white">Platform <span className="bg-gradient-to-r from-amber-500 to-yellow-200 bg-clip-text text-transparent">Features</span></h2>
-        <p className="text-gray-400 text-base leading-relaxed font-light">Explore LPU FoodPulse's advanced AI-powered dining optimization technologies.</p>
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-display font-light text-white leading-tight">
+          FoodPulse Core <br/>
+          <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-200">Dining Innovations</span>
+        </h2>
+        <div className="h-[1px] w-24 bg-amber-500/30 mt-4" />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl mx-auto">
-        <div className="rounded-3xl bg-[#151515] border border-white/5 p-8 backdrop-blur-md hover:border-amber-500/20 transition-all duration-300">
-          <div className="text-3xl mb-4">⏱️</div>
-          <h3 className="text-xl font-bold text-white mb-2">Queue-Free Pipeline</h3>
-          <p className="text-xs text-gray-400 leading-relaxed font-light">
-            Our smart routing algorithm allows students to order food items remotely and pick them up instantly upon arrival. Real-time updates track preparation status directly on the web app.
-          </p>
-        </div>
-
-        <div className="rounded-3xl bg-[#151515] border border-white/5 p-8 backdrop-blur-md hover:border-amber-500/20 transition-all duration-300">
-          <div className="text-3xl mb-4">📷</div>
-          <h3 className="text-xl font-bold text-white mb-2">AI Texture Tracking</h3>
-          <p className="text-xs text-gray-400 leading-relaxed font-light">
-            Harnessing state-of-the-art computer vision to analyze plate contents. Automatically flags hygiene indices, undercooked roti, cold gravy, or incorrect portion sizing before the first bite.
-          </p>
-        </div>
-
-        <div className="rounded-3xl bg-[#151515] border border-white/5 p-8 backdrop-blur-md hover:border-amber-500/20 transition-all duration-300">
-          <div className="text-3xl mb-4">📊</div>
-          <h3 className="text-xl font-bold text-white mb-2">Predictive Load Balancing</h3>
-          <p className="text-xs text-gray-400 leading-relaxed font-light">
-            Minimizes peak dining hall congestion by tracking wait-time curves. Directs students to under-utilized messes, improving campus load distribution and saving hours of waiting time.
-          </p>
-        </div>
+        {[
+          { icon: "⏱️", title: "Queue-Free Fast-Track", desc: "Allows students to pre-order campus dishes ahead of time. Digital tokens enable instant tray pickups upon kitchen arrival, keeping checkout wait curves under 5 minutes." },
+          { icon: "📷", title: "AI Plate Density Verification", desc: "Automated texture verification scans quality. Computer vision registers undercooked indices, sanitation anomalies, cold gravity metrics, and portion parameters in real-time." },
+          { icon: "📊", title: "Dynamic Load Balancing", desc: "Intelligent analytics curves forecast wait intervals, routing student footfall away from congested zones to optimal dining halls." }
+        ].map((item, idx) => (
+          <div key={idx} className="rounded-[2.5rem] bg-[#151515] border border-white/5 p-8 flex flex-col justify-between min-h-[300px] hover:border-amber-500/20 transition-all shadow-xl">
+            <div className="space-y-4 text-left">
+              <div className="text-3xl mb-2 bg-neutral-950/60 w-12 h-12 rounded-xl flex items-center justify-center border border-white/5">{item.icon}</div>
+              <h3 className="text-lg font-display font-bold text-white">{item.title}</h3>
+              <p className="text-xs text-gray-400 leading-relaxed font-light">{item.desc}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
 
   const renderLeaderboard = () => (
-    <div className="w-full py-20">
-      <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+    <div className="w-full py-24 select-none">
+      <div className="text-left max-w-3xl mb-20 space-y-4">
         <span className="text-[10px] bg-amber-500/10 text-amber-500 font-bold px-2.5 py-1 rounded-full border border-amber-500/20 uppercase tracking-widest inline-block">
-          Leaderboard
+          Dining Performance Index
         </span>
-        <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white">Audited Mess <span className="bg-gradient-to-r from-amber-500 to-yellow-200 bg-clip-text text-transparent">Rankings</span></h2>
-        <p className="text-gray-400 text-base leading-relaxed font-light">Live student-curated food quality ratings, AI-verified audits, and queue metrics across LPU dining halls.</p>
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-display font-light text-white leading-tight">
+          Audited Mess <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-200">Rankings Index</span>
+        </h2>
+        <div className="h-[1px] w-24 bg-amber-500/30 mt-4" />
       </div>
 
-      <div className="w-full max-w-5xl mx-auto rounded-3xl border border-white/5 bg-[#151515] backdrop-blur-md overflow-hidden shadow-2xl">
+      <div className="w-full max-w-5xl mx-auto rounded-[2.5rem] border border-white/10 bg-[#151515] overflow-hidden shadow-2xl relative">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs border-collapse min-w-[700px]">
             <thead>
-              <tr className="border-b border-white/5 bg-[#0B0B0B]/60 text-[#8A8A8A] font-bold uppercase tracking-wider text-[10px]">
-                <th className="py-4 px-6">Rank</th>
-                <th className="py-4 px-6">Dining Venue / Stall</th>
-                <th className="py-4 px-6">Hygiene Rating</th>
-                <th className="py-4 px-6">Avg Waiting Time</th>
-                <th className="py-4 px-6">Anomalies Verified</th>
-                <th className="py-4 px-6">Platform Status</th>
+              <tr className="border-b border-white/5 bg-[#0B0B0B]/60 text-gray-500 font-bold uppercase tracking-wider text-[10px]">
+                <th className="py-5 px-8">Rank</th>
+                <th className="py-5 px-6">Dining Venue / Stall</th>
+                <th className="py-5 px-6">Hygiene Rating</th>
+                <th className="py-5 px-6">Average Wait</th>
+                <th className="py-5 px-6">Issues Flagged</th>
+                <th className="py-5 px-6">Status</th>
               </tr>
             </thead>
             <tbody>
               {[
-                { rank: '🥇 #1', name: 'Central Mess Hall', rating: 'A+ (99.8%)', rColor: 'text-[#7BA05B]', wait: '4.2 minutes', complaints: '12 complaints', status: 'Stable', sClass: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20' },
-                { rank: '🥈 #2', name: 'BH2 Cafe & Stall', rating: 'A- (93.1%)', rColor: 'text-[#7BA05B]', wait: '6.5 minutes', complaints: '19 complaints', status: 'Check Quality', sClass: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20' },
+                { rank: '🥇 #1', name: 'Central Mess Hall', rating: 'A+ (99.8%)', rColor: 'text-[#7BA05B]', wait: '4.2 minutes', complaints: '12 complaints', status: 'Stable', sClass: 'bg-[#7BA05B]/10 text-[#7BA05B] border-[#7BA05B]/20' },
+                { rank: '🥈 #2', name: 'BH2 Cafe & Stall', rating: 'A- (93.1%)', rColor: 'text-[#7BA05B]', wait: '6.5 minutes', complaints: '19 complaints', status: 'Verify', sClass: 'bg-amber-500/10 text-amber-400 border-amber-500/20' },
                 { rank: '🥉 #3', name: 'Block 34 Cafeteria', rating: 'B+ (88.4%)', rColor: 'text-amber-500', wait: '8.0 minutes', complaints: '34 complaints', status: 'Alert Active', sClass: 'bg-red-500/10 text-red-400 border-red-500/20' },
-                { rank: '#4', name: 'BH1 Student Dining', rating: 'A (91.5%)', rColor: 'text-[#7BA05B]', wait: '5.0 minutes', complaints: '8 complaints', status: 'Stable', sClass: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20' },
-                { rank: '#5', name: 'Central Cafe Annex', rating: 'B (82.5%)', rColor: 'text-neutral-400', wait: '9.5 minutes', complaints: '45 complaints', status: 'Quality Notice', sClass: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20' }
+                { rank: '#4', name: 'BH1 Student Dining', rating: 'A (91.5%)', rColor: 'text-[#7BA05B]', wait: '5.0 minutes', complaints: '8 complaints', status: 'Stable', sClass: 'bg-[#7BA05B]/10 text-[#7BA05B] border-[#7BA05B]/20' },
+                { rank: '#5', name: 'Central Cafe Annex', rating: 'B (82.5%)', rColor: 'text-neutral-400', wait: '9.5 minutes', complaints: '45 complaints', status: 'Inspect', sClass: 'bg-amber-500/10 text-amber-400 border-amber-500/20' }
               ].map((row, idx) => (
-                <tr key={idx} className="border-b border-white/5 last:border-0 hover:bg-white/[0.02] transition-colors">
-                  <td className="py-4.5 px-6 font-display font-extrabold text-sm text-white">{row.rank}</td>
-                  <td className="py-4.5 px-6 font-semibold text-white">{row.name}</td>
-                  <td className={`py-4.5 px-6 font-bold ${row.rColor}`}>{row.rating}</td>
-                  <td className="py-4.5 px-6 text-gray-300">{row.wait}</td>
-                  <td className="py-4.5 px-6 text-gray-300">{row.complaints}</td>
-                  <td className="py-4.5 px-6">
+                <tr key={idx} className="border-b border-white/5 last:border-0 hover:bg-white/[0.01] transition-colors">
+                  <td className="py-5 px-8 font-display font-extrabold text-sm text-white">{row.rank}</td>
+                  <td className="py-5 px-6 font-semibold text-white">{row.name}</td>
+                  <td className={`py-5 px-6 font-bold ${row.rColor}`}>{row.rating}</td>
+                  <td className="py-5 px-6 text-gray-300">{row.wait}</td>
+                  <td className="py-5 px-6 text-gray-400 font-mono">{row.complaints}</td>
+                  <td className="py-5 px-6">
                     <span className={`px-2.5 py-1 rounded-full text-[9px] font-bold border ${row.sClass}`}>
                       {row.status}
                     </span>
