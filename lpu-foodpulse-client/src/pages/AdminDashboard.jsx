@@ -173,8 +173,8 @@ const AdminDashboard = () => {
                 <XAxis dataKey="name" stroke="#a1a1aa" axisLine={false} tickLine={false} />
                 <YAxis stroke="#a1a1aa" axisLine={false} tickLine={false} domain={[0, 100]} />
                 <RechartsTooltip contentStyle={{ backgroundColor: '#020208', border: '1px solid #ffffff10', borderRadius: '8px' }}/>
-                <Line type="monotone" dataKey="taste" stroke="#00D4FF" strokeWidth={3} dot={{r: 4, strokeWidth: 2}} activeDot={{r: 6}} />
-                <Line type="monotone" dataKey="hygiene" stroke="#06B6D4" strokeWidth={3} dot={{r: 4, strokeWidth: 2}} activeDot={{r: 6}} />
+                <Line type="monotone" dataKey="taste" stroke="#C68A2B" strokeWidth={3} dot={{r: 4, strokeWidth: 2}} activeDot={{r: 6}} />
+                <Line type="monotone" dataKey="hygiene" stroke="#ECE6DD" strokeWidth={3} dot={{r: 4, strokeWidth: 2}} activeDot={{r: 6}} />
               </LineChart>
             </ResponsiveContainer>
           </div>
@@ -183,7 +183,7 @@ const AdminDashboard = () => {
               <div className="w-3 h-1 bg-amber-500 rounded"></div> Taste Score
             </div>
             <div className="flex items-center gap-2 text-sm text-gray-300">
-              <div className="w-3 h-1 bg-blue-600 rounded"></div> Hygiene Score
+              <div className="w-3 h-1 bg-[#ECE6DD] rounded"></div> Hygiene Score
             </div>
           </div>
         </div>

@@ -545,11 +545,11 @@ const Profile = () => {
               <circle cx="140" cy="70" r="12" fill="url(#glowG)" />
               <text x="134" y="75" fontSize="10" fontWeight="bold" fill="white">★</text>
               
-              <circle cx="70" cy="60" r="6" fill="#3b82f6" opacity="0.7" />
-              <circle cx="210" cy="140" r="8" fill="#10b981" opacity="0.6" />
-              <circle cx="220" cy="50" r="6" fill="#06B6D4" opacity="0.5" />
+              <circle cx="70" cy="60" r="6" fill="#C68A2B" opacity="0.7" />
+              <circle cx="210" cy="140" r="8" fill="#7BA05B" opacity="0.6" />
+              <circle cx="220" cy="50" r="6" fill="#ECE6DD" opacity="0.5" />
 
-              <text x="110" y="145" fontSize="9" fontWeight="bold" fill="#00D4FF" opacity="0.9" fontFamily="Outfit">+150 PTS</text>
+              <text x="110" y="145" fontSize="9" fontWeight="bold" fill="#C68A2B" opacity="0.9" fontFamily="Outfit">+150 PTS</text>
             </svg>
           </div>
         </div>

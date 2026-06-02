@@ -580,8 +580,8 @@ const Marketplace = () => {
                       <AreaChart data={queueTimeData} margin={{ top: 10, right: 10, left: -25, bottom: 0 }}>
                         <defs>
                           <linearGradient id="colorWait" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="5%" stopColor="#00D4FF" stopOpacity={0.4}/>
-                            <stop offset="95%" stopColor="#00D4FF" stopOpacity={0}/>
+                            <stop offset="5%" stopColor="#C68A2B" stopOpacity={0.4}/>
+                            <stop offset="95%" stopColor="#C68A2B" stopOpacity={0}/>
                           </linearGradient>
                         </defs>
                         <CartesianGrid strokeDasharray="3 3" stroke="#27272a" vertical={false} />
@@ -590,9 +590,9 @@ const Marketplace = () => {
                         <Tooltip 
                           contentStyle={{ backgroundColor: '#020208', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '12px' }}
                           labelStyle={{ color: '#fff', fontWeight: 'bold', fontSize: '11px' }}
-                          itemStyle={{ color: '#c084fc', fontSize: '11px' }}
+                          itemStyle={{ color: '#ECE6DD', fontSize: '11px' }}
                         />
-                        <Area type="monotone" dataKey="waitTime" name="Wait Mins" stroke="#00D4FF" strokeWidth={2} fillOpacity={1} fill="url(#colorWait)" />
+                        <Area type="monotone" dataKey="waitTime" name="Wait Mins" stroke="#C68A2B" strokeWidth={2} fillOpacity={1} fill="url(#colorWait)" />
                       </AreaChart>
                     </ResponsiveContainer>
                   </div>

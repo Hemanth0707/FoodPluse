@@ -152,12 +152,12 @@ const Wallet = () => {
               <AreaChart data={analyticsData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
                 <defs>
                   <linearGradient id="colorEarned" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#00D4FF" stopOpacity={0.25}/>
-                    <stop offset="95%" stopColor="#00D4FF" stopOpacity={0}/>
+                    <stop offset="5%" stopColor="#C68A2B" stopOpacity={0.25}/>
+                    <stop offset="95%" stopColor="#C68A2B" stopOpacity={0}/>
                   </linearGradient>
                   <linearGradient id="colorSpent" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#06B6D4" stopOpacity={0.2}/>
-                    <stop offset="95%" stopColor="#06B6D4" stopOpacity={0}/>
+                    <stop offset="5%" stopColor="#ECE6DD" stopOpacity={0.2}/>
+                    <stop offset="95%" stopColor="#ECE6DD" stopOpacity={0}/>
                   </linearGradient>
                 </defs>
                 <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.03)" vertical={false} />
@@ -191,7 +191,7 @@ const Wallet = () => {
                   type="monotone" 
                   dataKey="earned" 
                   name="Points Earned"
-                  stroke="#00D4FF" 
+                  stroke="#C68A2B" 
                   strokeWidth={2}
                   fillOpacity={1} 
                   fill="url(#colorEarned)" 
@@ -200,7 +200,7 @@ const Wallet = () => {
                   type="monotone" 
                   dataKey="spent" 
                   name="Points Spent"
-                  stroke="#06B6D4" 
+                  stroke="#ECE6DD" 
                   strokeWidth={2}
                   fillOpacity={1} 
                   fill="url(#colorSpent)" 
