@@ -142,7 +142,7 @@ const LandingPage = () => {
             </div>
           </motion.div>
 
-          {/* Right Visual Column (Futuristic UI mockups / Phone Visual) */}
+          {/* Right Visual Column (Apple Vision + Tesla dashboard hologram) */}
           <motion.div 
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -150,73 +150,76 @@ const LandingPage = () => {
             className="lg:col-span-5 relative flex justify-center lg:justify-end w-full"
           >
             {/* Neon Glow Circle Behind */}
-            <div className="absolute inset-0 m-auto w-80 h-80 bg-gradient-to-tr from-cyan-500 via-blue-600 to-blue-600 rounded-full blur-[100px] opacity-35" />
+            <div className="absolute inset-0 m-auto w-80 h-80 bg-gradient-to-tr from-cyan-500/20 via-blue-600/10 to-blue-600/5 rounded-full blur-[100px] opacity-35" />
 
-            <div className="relative w-full max-w-[460px] h-[400px] md:h-[450px] select-none">
-              {/* Dashboard Window Mockup */}
-              <div className="absolute top-0 left-0 w-[82%] h-[78%] rounded-3xl border border-white/10 bg-[#060713]/80 backdrop-blur-2xl shadow-2xl p-5 overflow-hidden flex flex-col justify-between">
+            <div className="relative w-full max-w-[460px] h-[400px] md:h-[450px] select-none tesla-hologram">
+              {/* Dashboard Window Mockup (Apple Vision Glass style) */}
+              <div className="absolute top-0 left-0 w-[85%] h-[78%] vision-panel p-5 overflow-hidden flex flex-col justify-between">
                 {/* Header bar */}
                 <div className="flex items-center justify-between border-b border-white/5 pb-3">
                   <div className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-red-500" />
-                    <span className="w-2 h-2 rounded-full bg-yellow-500" />
-                    <span className="w-2 h-2 rounded-full bg-green-500" />
-                    <span className="text-[9px] text-gray-500 font-mono ml-2">foodpulse.lpu.in/dashboard</span>
+                    <span className="w-2.5 h-2.5 rounded-full bg-red-500/80 shadow-[0_0_8px_rgba(239,68,68,0.5)]" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80 shadow-[0_0_8px_rgba(245,158,11,0.5)]" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-green-500/80 shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
+                    <span className="text-[9px] text-gray-400 font-mono ml-2 tracking-wide">foodpulse-os.lpu.in</span>
                   </div>
+                  <span className="text-[8px] bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 px-2 py-0.5 rounded font-bold font-mono uppercase">AI HUD</span>
                 </div>
                 
                 {/* Mock Content */}
                 <div className="flex-1 py-4 space-y-4">
                   <div className="flex justify-between items-center">
-                    <h5 className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Mess 1 Queue Prediction</h5>
-                    <span className="text-[8px] bg-green-500/10 text-green-300 font-semibold px-2 py-0.5 rounded border border-green-500/20">Optimal</span>
+                    <h5 className="text-[10px] text-white font-bold uppercase tracking-wider">Queue Prediction Index</h5>
+                    <span className="text-[8px] bg-green-500/10 text-green-300 font-semibold px-2 py-0.5 rounded border border-green-500/20">Optimal Load</span>
                   </div>
                   {/* Visual Graph bars */}
-                  <div className="flex items-end gap-2 h-20 pt-2 border-b border-white/5 pb-1">
-                    <div className="flex-1 h-[25%] bg-cyan-500/20 rounded-t" />
-                    <div className="flex-1 h-[40%] bg-cyan-500/20 rounded-t" />
-                    <div className="flex-1 h-[75%] bg-cyan-500/40 rounded-t" />
-                    <div className="flex-1 h-[90%] bg-gradient-to-t from-cyan-500 to-blue-600 rounded-t relative">
-                      <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-[8px] text-white bg-black/80 px-1 py-0.5 rounded font-bold font-mono">12:30</span>
+                  <div className="flex items-end gap-2.5 h-20 pt-2 border-b border-white/5 pb-1">
+                    <div className="flex-1 h-[25%] bg-cyan-500/20 rounded-t-md hover:bg-cyan-500/40 transition-colors" />
+                    <div className="flex-1 h-[40%] bg-cyan-500/20 rounded-t-md hover:bg-cyan-500/40 transition-colors" />
+                    <div className="flex-1 h-[75%] bg-cyan-500/40 rounded-t-md hover:bg-cyan-500/60 transition-colors" />
+                    <div className="flex-1 h-[90%] bg-gradient-to-t from-cyan-400 to-blue-600 rounded-t-md relative shadow-[0_0_15px_rgba(6,182,212,0.4)]">
+                      <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-[8px] text-white bg-black/85 border border-white/10 px-1.5 py-0.5 rounded font-bold font-mono shadow-md">12:30</span>
                     </div>
-                    <div className="flex-1 h-[60%] bg-cyan-500/30 rounded-t" />
-                    <div className="flex-1 h-[30%] bg-cyan-500/20 rounded-t" />
-                    <div className="flex-1 h-[20%] bg-cyan-500/20 rounded-t" />
+                    <div className="flex-1 h-[60%] bg-cyan-500/30 rounded-t-md hover:bg-cyan-500/40 transition-colors" />
+                    <div className="flex-1 h-[30%] bg-cyan-500/20 rounded-t-md hover:bg-cyan-500/40 transition-colors" />
+                    <div className="flex-1 h-[20%] bg-cyan-500/20 rounded-t-md hover:bg-cyan-500/40 transition-colors" />
                   </div>
-                  <div className="flex justify-between text-[9px] text-gray-500 font-mono">
+                  <div className="flex justify-between text-[9px] text-gray-500 font-mono font-semibold">
                     <span>11:00 AM</span>
-                    <span>Peak (12:30)</span>
+                    <span className="text-cyan-400">Peak Load (12:30)</span>
                     <span>3:00 PM</span>
                   </div>
                 </div>
               </div>
 
-              {/* Overlapping Phone UI / Floating Card (spans right & bottom) */}
-              <div className="absolute bottom-0 right-0 w-[55%] h-[75%] rounded-3xl border border-white/10 bg-[#020208] p-4 shadow-2xl overflow-hidden flex flex-col justify-between animate-premium-float">
-                {/* Phone details */}
+              {/* Overlapping Phone UI / Floating Holographic Card (spans right & bottom) */}
+              <div className="absolute bottom-0 right-0 w-[58%] h-[78%] vision-panel p-4 shadow-2xl overflow-hidden flex flex-col justify-between animate-premium-float" style={{ animationDelay: '1.5s' }}>
+                {/* HUD Header */}
                 <div className="flex justify-between items-center border-b border-white/5 pb-2.5">
-                  <span className="text-[10px] font-bold text-white">Verification HUD</span>
-                  <span className="text-[8px] bg-blue-600/10 text-blue-500 font-extrabold px-1.5 py-0.5 rounded-full border border-blue-600/20">AI LIVE</span>
+                  <span className="text-[10px] font-bold text-white tracking-wide">AI Food Audit HUD</span>
+                  <span className="text-[8px] bg-cyan-500/10 text-cyan-300 font-extrabold px-1.5 py-0.5 rounded-full border border-cyan-500/20 animate-pulse">ACTIVE SCAN</span>
                 </div>
                 
-                {/* Image analysis area */}
+                {/* Food Image Scanning area with HUD features */}
                 <div className="flex-1 my-3 bg-white/5 rounded-2xl relative overflow-hidden flex items-center justify-center border border-white/5">
-                  <div className="text-3xl">🍲</div>
+                  <div className="text-3xl drop-shadow-[0_0_15px_rgba(6,182,212,0.3)]">🍲</div>
                   {/* Glowing scanner scanning line */}
-                  <div className="absolute inset-x-0 h-[2px] bg-cyan-500 shadow-[0_0_10px_#00D4FF] top-0 animate-radarScan pointer-events-none" />
+                  <div className="absolute inset-x-0 h-[2px] bg-cyan-400 shadow-[0_0_10px_#00D4FF] top-0 animate-radarScan pointer-events-none" />
                   
-                  {/* Bounding box */}
-                  <div className="absolute top-4 left-4 w-12 h-12 border-2 border-red-500/40 rounded">
-                    <span className="absolute -top-4 left-0 text-[8px] font-bold font-mono bg-red-500 text-white px-1 rounded">Roti: Undercooked</span>
+                  {/* Holographic Bounding box */}
+                  <div className="absolute top-3 left-3 w-16 h-16 border border-cyan-500/60 rounded-xl shadow-[0_0_8px_rgba(6,182,212,0.3)] flex flex-col justify-between p-1">
+                    <span className="w-1.5 h-1.5 border-t border-l border-cyan-300" />
+                    <span className="text-[7px] font-extrabold font-mono text-cyan-300 bg-black/75 px-1 py-0.5 rounded text-center truncate">AI_VERIFY</span>
+                    <span className="w-1.5 h-1.5 border-b border-r border-cyan-300 align-self-end ml-auto" />
                   </div>
                 </div>
 
-                <div className="bg-red-500/10 border border-red-500/20 p-2.5 rounded-xl flex items-center justify-between">
+                <div className="bg-cyan-500/10 border border-cyan-500/25 p-2 rounded-xl flex items-center justify-between shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
                   <div>
-                    <span className="text-[9px] text-red-300 font-bold block leading-none">Quality Alert</span>
-                    <span className="text-[8px] text-gray-400">BH2 Mess • +150 Points</span>
+                    <span className="text-[9px] text-cyan-300 font-bold block leading-none">Hygiene Pass Index</span>
+                    <span className="text-[8px] text-gray-400 font-medium">Block 25 Stall • Approved</span>
                   </div>
-                  <span className="text-xs">📸</span>
+                  <span className="text-xs bg-cyan-500/20 p-1 rounded-lg">✅</span>
                 </div>
               </div>
             </div>
