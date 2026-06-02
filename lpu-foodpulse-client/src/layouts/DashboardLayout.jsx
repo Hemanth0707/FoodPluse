@@ -52,20 +52,22 @@ const DashboardLayout = () => {
       )}
 
       <main className="dash-main min-h-screen">
-        <Topbar title={title} subtitle={sub} toggleMobile={() => setIsMobileOpen(true)} />
-        
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={location.pathname}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.3 }}
-            className="w-full h-full"
-          >
-            <Outlet />
-          </motion.div>
-        </AnimatePresence>
+        <div className="max-w-[1400px] mx-auto w-full flex flex-col h-full">
+          <Topbar title={title} subtitle={sub} toggleMobile={() => setIsMobileOpen(true)} />
+          
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={location.pathname}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.3 }}
+              className="w-full h-full"
+            >
+              <Outlet />
+            </motion.div>
+          </AnimatePresence>
+        </div>
       </main>
 
       {/* Sticky Bottom Navigation for Mobile */}

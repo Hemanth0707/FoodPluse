@@ -81,7 +81,8 @@ const LandingPage = () => {
     <>
       {/* 1. HERO SECTION */}
       <section className="relative min-h-screen pt-36 pb-28 flex items-center w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center w-full">
+        <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center w-full">
           
           {/* Left Text Column */}
           <motion.div 
@@ -226,10 +227,12 @@ const LandingPage = () => {
           </motion.div>
 
         </div>
-      </section>
+      </div>
+    </section>
 
-      {/* 2. HOW IT WORKS SECTION */}
-      <section id="how-it-works" className="relative py-28 border-t border-white/5 bg-[#020208]/30 w-full">
+    {/* 2. HOW IT WORKS SECTION */}
+    <section id="how-it-works" className="relative py-28 border-t border-white/5 bg-[#020208]/30 w-full">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
         <div className="text-center max-w-2xl mx-auto mb-20 space-y-4">
           <span className="text-[10px] bg-cyan-500/10 text-cyan-300 font-bold px-2.5 py-1 rounded-full border border-cyan-500/20 uppercase tracking-widest inline-block">
             + WORKFLOW
@@ -284,10 +287,12 @@ const LandingPage = () => {
             </motion.div>
           ))}
         </motion.div>
-      </section>
+      </div>
+    </section>
 
-      {/* 3. ADVANTAGES SECTION */}
-      <section id="advantages" className="py-28 w-full">
+    {/* 3. ADVANTAGES SECTION */}
+    <section id="advantages" className="py-28 w-full">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
         <div className="bg-[#020208]/35 border border-white/5 rounded-[36px] p-8 md:p-12 relative overflow-hidden">
           {/* Neon background blur */}
           <div className="absolute top-[20%] left-[50%] translate-x-[-50%] w-[500px] h-[200px] bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none" />
@@ -370,10 +375,12 @@ const LandingPage = () => {
           </div>
 
         </div>
-      </section>
+      </div>
+    </section>
 
-      {/* 4. STUDENT BENEFITS SECTION (Bento Grid) */}
-      <section id="benefits" className="relative py-28 border-t border-white/5 bg-[#020208]/20 w-full">
+    {/* 4. STUDENT BENEFITS SECTION (Bento Grid) */}
+    <section id="benefits" className="relative py-28 border-t border-white/5 bg-[#020208]/20 w-full">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
         <div className="text-center max-w-2xl mx-auto mb-20 space-y-4">
           <h4 className="text-blue-400 text-sm font-bold uppercase tracking-widest">Bento Grid</h4>
           <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white">How FoodPulse Helps Students</h2>
@@ -505,7 +512,8 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
     </>
   );
 
@@ -880,13 +888,18 @@ const LandingPage = () => {
       </motion.nav>
 
       {/* ══ MAIN WORKSPACE CONTAINER ══ */}
-      <div className="w-full max-w-7xl mx-auto px-6 md:px-8 flex flex-col items-center justify-center relative z-10">
+      <div className="w-full relative z-10">
         {currentView === 'home' && renderHome()}
-        {currentView === 'login' && renderLogin()}
-        {currentView === 'signup' && renderSignup()}
-        {currentView === 'how-it-works' && renderHowItWorks()}
-        {currentView === 'features' && renderFeatures()}
-        {currentView === 'leaderboard' && renderLeaderboard()}
+        
+        {currentView !== 'home' && (
+          <div className="w-full max-w-7xl mx-auto px-6 md:px-8 flex flex-col items-center justify-center">
+            {currentView === 'login' && renderLogin()}
+            {currentView === 'signup' && renderSignup()}
+            {currentView === 'how-it-works' && renderHowItWorks()}
+            {currentView === 'features' && renderFeatures()}
+            {currentView === 'leaderboard' && renderLeaderboard()}
+          </div>
+        )}
       </div>
 
       {/* FOOTER */}
