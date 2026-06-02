@@ -33,7 +33,7 @@ const Login = () => {
   const isFormValid = email.length > 0 && password.length > 0;
 
   return (
-    <div className="min-h-screen w-full bg-[#030308] text-white flex flex-col justify-center items-center p-4 md:p-8 lg:p-12 relative overflow-hidden font-body">
+    <div className="min-h-screen w-full bg-[#030308] text-white relative overflow-hidden font-body">
       
       {/* Background Ambient Glow Blobs */}
       <motion.div 
@@ -72,16 +72,13 @@ const Login = () => {
         className="absolute top-[30%] left-[30%] w-[35vw] h-[35vw] rounded-full bg-pink-500/8 blur-[100px] pointer-events-none z-0"
       />
 
-      {/* Main Grid Wrapper Container */}
-      <div className="w-full max-w-6xl z-10 flex flex-col gap-6 relative">
+      {/* Main 2-Column Layout Wrapper Container */}
+      <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 md:px-16 xl:px-24 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16 relative z-10 py-12 lg:py-0 min-h-screen">
         
-        {/* Top Header & Logo */}
-        <motion.div 
-          initial={{ opacity: 0, y: -15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="flex justify-start items-center px-1"
-        >
+        {/* LEFT COLUMN: HERO SECTION (55%) */}
+        <div className="w-full lg:w-[55%] flex flex-col justify-center text-left space-y-6 lg:space-y-8">
+          
+          {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-purple-600 to-pink-500 flex items-center justify-center text-white shadow-[0_0_20px_rgba(168,85,247,0.4)] group-hover:scale-105 transition-all duration-300">
               <Zap className="w-4.5 h-4.5 fill-white text-white" />
@@ -90,115 +87,102 @@ const Login = () => {
               Food<span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">Pulse</span>
             </span>
           </Link>
-        </motion.div>
 
-        {/* Large Layout Split-screen Card */}
-        <motion.div 
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full rounded-[28px] overflow-hidden border border-white/5 bg-[#090916]/40 backdrop-blur-2xl shadow-[0_24px_80px_rgba(0,0,0,0.85)] flex flex-col lg:flex-row min-h-[600px] relative"
-        >
+          {/* Eyebrow Tag */}
+          <div className="text-xs font-bold text-pink-500 tracking-wider uppercase">
+            ⚡ NEXT-GEN CAMPUS DINING
+          </div>
+
+          {/* Title Heading */}
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-black tracking-tight text-white leading-[1.1] text-left">
+            FoodPulse<br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">Smart Campus</span><br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-400">Food Ecosystem</span>
+          </h1>
           
-          {/* LEFT SIDE: BRANDING & FEATURES (Hidden on mobile) */}
-          <div className="w-full lg:w-[48%] p-8 lg:p-12 flex flex-col justify-between relative overflow-hidden border-b lg:border-b-0 lg:border-r border-white/5">
+          {/* Small Subtitle */}
+          <p className="text-gray-400 text-sm sm:text-base leading-relaxed max-w-lg text-left">
+            AI-powered campus food quality verification, smart meal ordering, reward points, and queue management.
+          </p>
+
+          {/* Grid of 4 Feature Cards (2x2) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
             
-            {/* Background radial gradient for left side */}
-            <div className="absolute inset-0 bg-radial-at-t from-purple-900/5 via-transparent to-transparent pointer-events-none" />
-
-            <div className="relative z-10 flex flex-col">
-              
-              {/* Eyebrow Tag */}
-              <div className="text-xs font-bold text-pink-500 tracking-wider uppercase mb-5 text-left">
-                ⚡ NEXT-GEN CAMPUS DINING
+            {/* Feature 1 */}
+            <div className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-white/[0.01] border border-white/[0.03] backdrop-blur-md">
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-purple-500/10 border border-purple-500/20 text-purple-400 shrink-0">
+                <ShieldCheck className="w-5 h-5" />
               </div>
-
-              {/* Title Heading */}
-              <h1 className="text-3xl sm:text-4xl lg:text-[42px] font-display font-black tracking-tight text-white mb-4 leading-[1.15] text-left">
-                FoodPulse<br/>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">Smart Campus</span><br/>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-400">Food Ecosystem</span>
-              </h1>
-              
-              {/* Small Subtitle */}
-              <p className="text-gray-400 text-sm leading-relaxed mb-8 text-left max-w-md">
-                AI-powered campus food quality verification, smart meal ordering, reward points, and queue management.
-              </p>
-
-              {/* Grid of 4 Feature Cards (2x2) */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
-                
-                {/* Feature 1 */}
-                <div className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-white/[0.01] border border-white/[0.03] backdrop-blur-md">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-purple-500/10 border border-purple-500/20 text-purple-400 shrink-0">
-                    <ShieldCheck className="w-5 h-5" />
-                  </div>
-                  <div className="text-left">
-                    <h4 className="text-xs sm:text-sm font-bold text-white">AI Food Verification</h4>
-                    <p className="text-[10px] text-gray-500">Computer vision issue scan</p>
-                  </div>
-                </div>
-
-                {/* Feature 2 */}
-                <div className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-white/[0.01] border border-white/[0.03] backdrop-blur-md">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-pink-500/10 border border-pink-500/20 text-pink-400 shrink-0">
-                    <ShoppingBag className="w-5 h-5" />
-                  </div>
-                  <div className="text-left">
-                    <h4 className="text-xs sm:text-sm font-bold text-white">Smart Ordering</h4>
-                    <p className="text-[10px] text-gray-500">Pre-order from campus stalls</p>
-                  </div>
-                </div>
-
-                {/* Feature 3 */}
-                <div className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-white/[0.01] border border-white/[0.03] backdrop-blur-md">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-amber-500/10 border border-amber-500/20 text-amber-400 shrink-0">
-                    <Award className="w-5 h-5" />
-                  </div>
-                  <div className="text-left">
-                    <h4 className="text-xs sm:text-sm font-bold text-white">Reward Points</h4>
-                    <p className="text-[10px] text-gray-500">Earn from feedback & audits</p>
-                  </div>
-                </div>
-
-                {/* Feature 4 */}
-                <div className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-white/[0.01] border border-white/[0.03] backdrop-blur-md">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-blue-500/10 border border-blue-500/20 text-blue-400 shrink-0">
-                    <Clock className="w-5 h-5" />
-                  </div>
-                  <div className="text-left">
-                    <h4 className="text-xs sm:text-sm font-bold text-white">Queue Prediction</h4>
-                    <p className="text-[10px] text-gray-500">Real-time wait times tracker</p>
-                  </div>
-                </div>
-
+              <div className="text-left">
+                <h4 className="text-xs sm:text-sm font-bold text-white">AI Food Verification</h4>
+                <p className="text-[10px] text-gray-500">Computer vision issue scan</p>
               </div>
-
             </div>
 
-            {/* Glowing Bottom Graphic */}
-            <div className="relative mt-8 pt-4 flex justify-center items-center select-none">
-              <div className="absolute bottom-0 w-52 h-24 bg-purple-600/35 rounded-full blur-[40px] pointer-events-none" />
-              
-              <motion.img 
-                src={saladBowlImg} 
-                alt="Glowing Food Illustration" 
-                animate={{ y: [0, -5, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="w-full max-w-[260px] object-contain relative z-10 drop-shadow-[0_15px_30px_rgba(168,85,247,0.35)]" 
-              />
+            {/* Feature 2 */}
+            <div className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-white/[0.01] border border-white/[0.03] backdrop-blur-md">
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-pink-500/10 border border-pink-500/20 text-pink-400 shrink-0">
+                <ShoppingBag className="w-5 h-5" />
+              </div>
+              <div className="text-left">
+                <h4 className="text-xs sm:text-sm font-bold text-white">Smart Ordering</h4>
+                <p className="text-[10px] text-gray-500">Pre-order from campus stalls</p>
+              </div>
+            </div>
+
+            {/* Feature 3 */}
+            <div className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-white/[0.01] border border-white/[0.03] backdrop-blur-md">
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-amber-500/10 border border-amber-500/20 text-amber-400 shrink-0">
+                <Award className="w-5 h-5" />
+              </div>
+              <div className="text-left">
+                <h4 className="text-xs sm:text-sm font-bold text-white">Reward Points</h4>
+                <p className="text-[10px] text-gray-500">Earn from feedback & audits</p>
+              </div>
+            </div>
+
+            {/* Feature 4 */}
+            <div className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-white/[0.01] border border-white/[0.03] backdrop-blur-md">
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-blue-500/10 border border-blue-500/20 text-blue-400 shrink-0">
+                <Clock className="w-5 h-5" />
+              </div>
+              <div className="text-left">
+                <h4 className="text-xs sm:text-sm font-bold text-white">Queue Prediction</h4>
+                <p className="text-[10px] text-gray-500">Real-time wait times tracker</p>
+              </div>
             </div>
 
           </div>
 
-          {/* RIGHT SIDE: CENTERED FORM PANEL */}
-          <div className="w-full lg:w-[52%] p-8 lg:p-12 xl:p-16 flex flex-col justify-center relative bg-gradient-to-b lg:bg-gradient-to-tr from-purple-900/5 via-transparent to-transparent">
+          {/* Glowing Bottom Salad Bowl Graphic */}
+          <div className="relative mt-4 pt-2 flex justify-center lg:justify-start items-center select-none">
+            <div className="absolute w-40 h-20 bg-purple-600/30 rounded-full blur-[40px] pointer-events-none" />
             
-            {/* Top-Right Neon Glow Border Effect */}
-            <div className="absolute top-0 right-0 w-40 h-[2px] bg-gradient-to-r from-purple-500 to-pink-500 opacity-70 shadow-[0_0_12px_rgba(168,85,247,0.5)] hidden lg:block" />
-            <div className="absolute top-0 right-0 w-[2px] h-40 bg-gradient-to-b from-purple-500 to-pink-500 opacity-70 shadow-[0_0_12px_rgba(168,85,247,0.5)] hidden lg:block" />
+            <motion.img 
+              src={saladBowlImg} 
+              alt="Glowing Food Illustration" 
+              animate={{ y: [0, -5, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              className="w-full max-w-[180px] object-contain relative z-10 drop-shadow-[0_15px_30px_rgba(168,85,247,0.35)]" 
+            />
+          </div>
 
-            <div className="w-full max-w-[400px] mx-auto">
+        </div>
+
+        {/* RIGHT COLUMN: PERFECTLY CENTERED LOGIN CARD (45%) */}
+        <div className="w-full lg:w-[45%] flex justify-center items-center lg:justify-end">
+          
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full max-w-[480px] rounded-[28px] border border-white/5 bg-[#090916]/65 backdrop-blur-3xl p-8 sm:p-10 md:p-12 shadow-[0_24px_80px_rgba(0,0,0,0.85)] relative overflow-hidden flex flex-col justify-between"
+          >
+            {/* Top-Right Neon Glow Border Effect */}
+            <div className="absolute top-0 right-0 w-40 h-[2px] bg-gradient-to-r from-purple-500 to-pink-500 opacity-70 shadow-[0_0_12px_rgba(168,85,247,0.5)]" />
+            <div className="absolute top-0 right-0 w-[2px] h-40 bg-gradient-to-b from-purple-500 to-pink-500 opacity-70 shadow-[0_0_12px_rgba(168,85,247,0.5)]" />
+
+            <div className="w-full mx-auto">
               
               {/* Header Titles */}
               <div className="text-center mb-8">
@@ -219,9 +203,9 @@ const Login = () => {
               )}
 
               {/* Authentication Form */}
-              <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+              <form onSubmit={handleSubmit} className="flex flex-col gap-6">
                 
-                {/* Email Input */}
+                {/* Student Email Input */}
                 <div className="flex flex-col text-left">
                   <label className="text-[10px] font-bold text-gray-400 tracking-wider mb-2 block uppercase font-sans">
                     Student Email
@@ -232,7 +216,7 @@ const Login = () => {
                       type="email" 
                       required 
                       placeholder="Enter your email"
-                      className="w-full h-13 bg-[#080814]/40 border border-white/10 rounded-xl py-3 pl-12 pr-4 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/30 hover:border-white/20 transition-all font-body"
+                      className="w-full h-14 bg-[#080814]/40 border border-white/10 rounded-2xl py-3 pl-12 pr-5 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/30 hover:border-white/20 transition-all font-body"
                       value={email} 
                       onChange={(e) => setEmail(e.target.value)}
                     />
@@ -250,7 +234,7 @@ const Login = () => {
                       type={showPassword ? "text" : "password"} 
                       required 
                       placeholder="Enter your password"
-                      className="w-full h-13 bg-[#080814]/40 border border-white/10 rounded-xl py-3 pl-12 pr-12 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/30 hover:border-white/20 transition-all font-body"
+                      className="w-full h-14 bg-[#080814]/40 border border-white/10 rounded-2xl py-3 pl-12 pr-12 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/30 hover:border-white/20 transition-all font-body"
                       value={password} 
                       onChange={(e) => setPassword(e.target.value)}
                     />
@@ -286,7 +270,7 @@ const Login = () => {
                   <button
                     type="submit"
                     disabled={!isFormValid || loading}
-                    className="w-full h-13 rounded-xl font-bold text-white bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-500 hover:to-pink-400 transition-all shadow-[0_8px_25px_rgba(168,85,247,0.35)] disabled:opacity-50 disabled:cursor-not-allowed hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2 border-none cursor-pointer text-sm"
+                    className="w-full h-14 rounded-2xl font-bold text-white bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-500 hover:to-pink-400 transition-all shadow-[0_8px_25px_rgba(168,85,247,0.35)] disabled:opacity-50 disabled:cursor-not-allowed hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2 border-none cursor-pointer text-sm"
                   >
                     {loading ? (
                       <div className="flex items-center gap-2">
@@ -310,7 +294,7 @@ const Login = () => {
                 <div>
                   <button
                     type="button"
-                    className="w-full h-13 rounded-xl font-semibold text-white bg-white/[0.02] border border-white/10 hover:bg-white/[0.05] hover:border-white/20 transition-all flex items-center justify-center gap-3 active:scale-[0.99] cursor-pointer text-sm"
+                    className="w-full h-14 rounded-2xl font-semibold text-white bg-white/[0.02] border border-white/10 hover:bg-white/[0.05] hover:border-white/20 transition-all flex items-center justify-center gap-3 active:scale-[0.99] cursor-pointer text-sm"
                   >
                     <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24">
                       <path fill="#EA4335" d="M12.24 10.285V14.4h6.887c-.648 2.41-2.519 4.114-5.136 4.114-3.555 0-6.437-2.883-6.437-6.438 0-3.555 2.882-6.437 6.437-6.437 1.545 0 2.96.545 4.077 1.455l3.057-3.057C19.122 2.127 15.89 1 12.24 1A10.99 10.99 0 0 0 1.25 12a10.99 10.99 0 0 0 10.99 11c5.945 0 10.923-4.3 10.923-11.026 0-.618-.056-1.183-.157-1.689H12.24Z"/>
@@ -331,9 +315,9 @@ const Login = () => {
 
             </div>
 
-          </div>
+          </motion.div>
 
-        </motion.div>
+        </div>
 
       </div>
     </div>
