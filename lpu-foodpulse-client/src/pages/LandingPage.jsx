@@ -91,14 +91,14 @@ const LandingPage = () => {
             className="lg:col-span-7 space-y-8 z-10 text-left"
           >
             {/* Startup Tagline Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-purple-500/20 bg-purple-500/5 text-purple-300 text-xs font-semibold uppercase tracking-wider backdrop-blur-md">
-              <Sparkles size={14} className="text-pink-400 animate-pulse" /> 
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-500/20 bg-cyan-500/5 text-cyan-300 text-xs font-semibold uppercase tracking-wider backdrop-blur-md">
+              <Sparkles size={14} className="text-blue-500 animate-pulse" /> 
               Next-Gen Student Dining
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-extrabold text-white tracking-tight leading-[1.1]">
               FoodPulse – Smart <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-indigo-400 font-extrabold filter drop-shadow-[0_0_30px_rgba(168,85,247,0.25)]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-600 to-blue-500 font-extrabold filter drop-shadow-[0_0_30px_rgba(6, 182, 212,0.25)]">
                 Campus Food
               </span> <br />
               Ecosystem
@@ -112,14 +112,14 @@ const LandingPage = () => {
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <button 
                 onClick={() => handleViewChange('login')} 
-                className="group px-8 py-4 rounded-2xl bg-gradient-to-r from-purple-600 to-pink-500 text-white font-bold text-base shadow-[0_8px_30px_rgba(168,85,247,0.45)] hover:shadow-[0_8px_35px_rgba(168,85,247,0.65)] hover:-translate-y-1 transition-all flex items-center justify-center gap-2 cursor-pointer border-none"
+                className="group px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-base shadow-[0_8px_30px_rgba(6, 182, 212,0.45)] hover:shadow-[0_8px_35px_rgba(6, 182, 212,0.65)] hover:-translate-y-1 transition-all flex items-center justify-center gap-2 cursor-pointer border-none"
               >
                 Explore Marketplace 
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </button>
               <button 
                 onClick={() => handleViewChange('signup')} 
-                className="px-8 py-4 rounded-2xl border border-white/10 bg-white/5 text-white font-bold text-base hover:bg-white/10 hover:border-purple-500/30 transition-all flex items-center justify-center gap-2 backdrop-blur-md hover:-translate-y-1 cursor-pointer"
+                className="px-8 py-4 rounded-2xl border border-white/10 bg-white/5 text-white font-bold text-base hover:bg-white/10 hover:border-cyan-500/30 transition-all flex items-center justify-center gap-2 backdrop-blur-md hover:-translate-y-1 cursor-pointer"
               >
                 Report Food Issue
               </button>
@@ -132,11 +132,11 @@ const LandingPage = () => {
                 <p className="text-[10px] text-gray-500 uppercase tracking-widest mt-1 font-semibold">Active Students</p>
               </div>
               <div>
-                <h4 className="text-2xl sm:text-3xl font-display font-bold text-purple-400">99.8%</h4>
+                <h4 className="text-2xl sm:text-3xl font-display font-bold text-cyan-400">99.8%</h4>
                 <p className="text-[10px] text-gray-500 uppercase tracking-widest mt-1 font-semibold">AI Scan Accuracy</p>
               </div>
               <div>
-                <h4 className="text-2xl sm:text-3xl font-display font-bold text-pink-400">20k+</h4>
+                <h4 className="text-2xl sm:text-3xl font-display font-bold text-blue-500">20k+</h4>
                 <p className="text-[10px] text-gray-500 uppercase tracking-widest mt-1 font-semibold">Points Redeemed</p>
               </div>
             </div>
@@ -150,11 +150,11 @@ const LandingPage = () => {
             className="lg:col-span-5 relative flex justify-center lg:justify-end w-full"
           >
             {/* Neon Glow Circle Behind */}
-            <div className="absolute inset-0 m-auto w-80 h-80 bg-gradient-to-tr from-purple-600 via-pink-500 to-indigo-500 rounded-full blur-[100px] opacity-35" />
+            <div className="absolute inset-0 m-auto w-80 h-80 bg-gradient-to-tr from-cyan-500 via-blue-600 to-blue-600 rounded-full blur-[100px] opacity-35" />
 
             <div className="relative w-full max-w-[460px] h-[400px] md:h-[450px] select-none">
               {/* Dashboard Window Mockup */}
-              <div className="absolute top-0 left-0 w-[82%] h-[78%] rounded-3xl border border-white/10 bg-[#0d0d21]/80 backdrop-blur-2xl shadow-2xl p-5 overflow-hidden flex flex-col justify-between">
+              <div className="absolute top-0 left-0 w-[82%] h-[78%] rounded-3xl border border-white/10 bg-[#060713]/80 backdrop-blur-2xl shadow-2xl p-5 overflow-hidden flex flex-col justify-between">
                 {/* Header bar */}
                 <div className="flex items-center justify-between border-b border-white/5 pb-3">
                   <div className="flex items-center gap-1.5">
@@ -173,15 +173,15 @@ const LandingPage = () => {
                   </div>
                   {/* Visual Graph bars */}
                   <div className="flex items-end gap-2 h-20 pt-2 border-b border-white/5 pb-1">
-                    <div className="flex-1 h-[25%] bg-purple-500/20 rounded-t" />
-                    <div className="flex-1 h-[40%] bg-purple-500/20 rounded-t" />
-                    <div className="flex-1 h-[75%] bg-purple-500/40 rounded-t" />
-                    <div className="flex-1 h-[90%] bg-gradient-to-t from-purple-600 to-pink-500 rounded-t relative">
+                    <div className="flex-1 h-[25%] bg-cyan-500/20 rounded-t" />
+                    <div className="flex-1 h-[40%] bg-cyan-500/20 rounded-t" />
+                    <div className="flex-1 h-[75%] bg-cyan-500/40 rounded-t" />
+                    <div className="flex-1 h-[90%] bg-gradient-to-t from-cyan-500 to-blue-600 rounded-t relative">
                       <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-[8px] text-white bg-black/80 px-1 py-0.5 rounded font-bold font-mono">12:30</span>
                     </div>
-                    <div className="flex-1 h-[60%] bg-purple-500/30 rounded-t" />
-                    <div className="flex-1 h-[30%] bg-purple-500/20 rounded-t" />
-                    <div className="flex-1 h-[20%] bg-purple-500/20 rounded-t" />
+                    <div className="flex-1 h-[60%] bg-cyan-500/30 rounded-t" />
+                    <div className="flex-1 h-[30%] bg-cyan-500/20 rounded-t" />
+                    <div className="flex-1 h-[20%] bg-cyan-500/20 rounded-t" />
                   </div>
                   <div className="flex justify-between text-[9px] text-gray-500 font-mono">
                     <span>11:00 AM</span>
@@ -192,18 +192,18 @@ const LandingPage = () => {
               </div>
 
               {/* Overlapping Phone UI / Floating Card (spans right & bottom) */}
-              <div className="absolute bottom-0 right-0 w-[55%] h-[75%] rounded-3xl border border-white/10 bg-[#070714] p-4 shadow-2xl overflow-hidden flex flex-col justify-between animate-premium-float">
+              <div className="absolute bottom-0 right-0 w-[55%] h-[75%] rounded-3xl border border-white/10 bg-[#020208] p-4 shadow-2xl overflow-hidden flex flex-col justify-between animate-premium-float">
                 {/* Phone details */}
                 <div className="flex justify-between items-center border-b border-white/5 pb-2.5">
                   <span className="text-[10px] font-bold text-white">Verification HUD</span>
-                  <span className="text-[8px] bg-pink-500/10 text-pink-400 font-extrabold px-1.5 py-0.5 rounded-full border border-pink-500/20">AI LIVE</span>
+                  <span className="text-[8px] bg-blue-600/10 text-blue-500 font-extrabold px-1.5 py-0.5 rounded-full border border-blue-600/20">AI LIVE</span>
                 </div>
                 
                 {/* Image analysis area */}
                 <div className="flex-1 my-3 bg-white/5 rounded-2xl relative overflow-hidden flex items-center justify-center border border-white/5">
                   <div className="text-3xl">🍲</div>
                   {/* Glowing scanner scanning line */}
-                  <div className="absolute inset-x-0 h-[2px] bg-purple-500 shadow-[0_0_10px_#a855f7] top-0 animate-radarScan pointer-events-none" />
+                  <div className="absolute inset-x-0 h-[2px] bg-cyan-500 shadow-[0_0_10px_#00D4FF] top-0 animate-radarScan pointer-events-none" />
                   
                   {/* Bounding box */}
                   <div className="absolute top-4 left-4 w-12 h-12 border-2 border-red-500/40 rounded">
@@ -226,12 +226,12 @@ const LandingPage = () => {
       </section>
 
       {/* 2. HOW IT WORKS SECTION */}
-      <section id="how-it-works" className="relative py-28 border-t border-white/5 bg-[#0b0b1f]/30 w-full">
+      <section id="how-it-works" className="relative py-28 border-t border-white/5 bg-[#020208]/30 w-full">
         <div className="text-center max-w-2xl mx-auto mb-20 space-y-4">
-          <span className="text-[10px] bg-purple-500/10 text-purple-300 font-bold px-2.5 py-1 rounded-full border border-purple-500/20 uppercase tracking-widest inline-block">
+          <span className="text-[10px] bg-cyan-500/10 text-cyan-300 font-bold px-2.5 py-1 rounded-full border border-cyan-500/20 uppercase tracking-widest inline-block">
             + WORKFLOW
           </span>
-          <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white">How FoodPulse <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Works</span></h2>
+          <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white">How FoodPulse <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Works</span></h2>
           <p className="text-gray-400 text-base leading-relaxed">Our ecosystem is engineered to keep dining high-quality and order checkout frictionless.</p>
         </div>
 
@@ -243,21 +243,21 @@ const LandingPage = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative w-full"
         >
           {[
-            { step: "01", title: "Browse Marketplace", desc: "Access the campus digital food court, check menus, and order your favorite meals.", icon: <ShoppingBag size={24} />, color: "from-purple-500 to-indigo-500" },
-            { step: "02", title: "Order or Report", desc: "Enjoy quick queue-free meals or report poor-quality food items instantly.", icon: <Utensils size={24} />, color: "from-pink-500 to-purple-500" },
-            { step: "03", title: "AI Verification", desc: "Computer vision scans details to verify complaints automatically in seconds.", icon: <ShieldCheck size={24} />, color: "from-blue-500 to-indigo-500" },
-            { step: "04", title: "Earn Rewards", desc: "Receive instant compensation points and unlock premium reward badges.", icon: <Award size={24} />, color: "from-amber-500 to-pink-500" }
+            { step: "01", title: "Browse Marketplace", desc: "Access the campus digital food court, check menus, and order your favorite meals.", icon: <ShoppingBag size={24} />, color: "from-cyan-500 to-blue-600" },
+            { step: "02", title: "Order or Report", desc: "Enjoy quick queue-free meals or report poor-quality food items instantly.", icon: <Utensils size={24} />, color: "from-blue-600 to-cyan-500" },
+            { step: "03", title: "AI Verification", desc: "Computer vision scans details to verify complaints automatically in seconds.", icon: <ShieldCheck size={24} />, color: "from-blue-500 to-blue-600" },
+            { step: "04", title: "Earn Rewards", desc: "Receive instant compensation points and unlock premium reward badges.", icon: <Award size={24} />, color: "from-amber-500 to-blue-600" }
           ].map((card, idx) => (
             <motion.div 
               key={idx} 
               variants={itemVariants}
-              className="group relative rounded-3xl bg-[#111126]/40 border border-white/5 p-8 backdrop-blur-md hover:border-purple-500/40 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)] transition-all duration-500 overflow-hidden flex flex-col justify-between min-h-[300px]"
+              className="group relative rounded-3xl bg-[#0c0d21]/40 border border-white/5 p-8 backdrop-blur-md hover:border-cyan-500/40 hover:shadow-[0_0_30px_rgba(6, 182, 212,0.15)] transition-all duration-500 overflow-hidden flex flex-col justify-between min-h-[300px]"
             >
               {/* Accent glow corner */}
               <div className={`absolute top-0 right-0 w-24 h-24 bg-gradient-to-tr ${card.color} opacity-0 group-hover:opacity-10 rounded-bl-full transition-opacity duration-500`} />
               
               {/* Step indicator inside card */}
-              <div className="absolute top-6 left-6 text-xs font-mono font-extrabold text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded-full border border-purple-500/20">
+              <div className="absolute top-6 left-6 text-xs font-mono font-extrabold text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded-full border border-cyan-500/20">
                 {card.step}
               </div>
 
@@ -268,13 +268,13 @@ const LandingPage = () => {
               </div>
 
               <div className="mt-8 space-y-2 text-center">
-                <h3 className="text-xl font-bold text-white group-hover:text-purple-300 transition-colors">{card.title}</h3>
+                <h3 className="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors">{card.title}</h3>
                 <p className="text-xs text-gray-400 leading-relaxed">{card.desc}</p>
               </div>
 
               {/* Arrow pointers between cards */}
               {idx < 3 && (
-                <div className="hidden lg:flex absolute right-[-20px] top-[50%] translate-y-[-50%] z-20 items-center justify-center text-purple-500/40">
+                <div className="hidden lg:flex absolute right-[-20px] top-[50%] translate-y-[-50%] z-20 items-center justify-center text-cyan-500/40">
                   <span className="text-2xl font-bold">➔</span>
                 </div>
               )}
@@ -285,12 +285,12 @@ const LandingPage = () => {
 
       {/* 3. ADVANTAGES SECTION */}
       <section id="advantages" className="py-28 w-full">
-        <div className="bg-[#0b0b1f]/35 border border-white/5 rounded-[36px] p-8 md:p-12 relative overflow-hidden">
+        <div className="bg-[#020208]/35 border border-white/5 rounded-[36px] p-8 md:p-12 relative overflow-hidden">
           {/* Neon background blur */}
-          <div className="absolute top-[20%] left-[50%] translate-x-[-50%] w-[500px] h-[200px] bg-purple-600/10 rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute top-[20%] left-[50%] translate-x-[-50%] w-[500px] h-[200px] bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none" />
 
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-4 relative z-10">
-            <span className="text-[10px] bg-pink-500/10 text-pink-300 font-bold px-2.5 py-1 rounded-full border border-pink-500/20 uppercase tracking-widest inline-block">
+            <span className="text-[10px] bg-blue-600/10 text-blue-400 font-bold px-2.5 py-1 rounded-full border border-blue-600/20 uppercase tracking-widest inline-block">
               ✦ PLATFORM BENEFITS
             </span>
             <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white">Engineered for LPU Campus</h2>
@@ -313,14 +313,14 @@ const LandingPage = () => {
               <motion.div 
                 key={idx}
                 variants={itemVariants}
-                className="p-6 rounded-3xl bg-[#08081a]/40 border border-white/5 hover:border-purple-500/30 transition-all duration-300 flex flex-col justify-between min-h-[260px] hover:shadow-[0_8px_30px_rgba(168,85,247,0.08)]"
+                className="p-6 rounded-3xl bg-[#08081a]/40 border border-white/5 hover:border-cyan-500/30 transition-all duration-300 flex flex-col justify-between min-h-[260px] hover:shadow-[0_8px_30px_rgba(6, 182, 212,0.08)]"
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center border border-purple-500/20">
+                    <div className="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center border border-cyan-500/20">
                       {feat.icon}
                     </div>
-                    <span className="text-[10px] bg-purple-500/10 text-purple-300 font-bold px-2 py-0.5 rounded-full border border-purple-500/20">{feat.status}</span>
+                    <span className="text-[10px] bg-cyan-500/10 text-cyan-300 font-bold px-2 py-0.5 rounded-full border border-cyan-500/20">{feat.status}</span>
                   </div>
                   <h4 className="font-extrabold text-white text-lg">{feat.title}</h4>
                   <p className="text-xs text-gray-400 leading-relaxed">{feat.desc}</p>
@@ -329,7 +329,7 @@ const LandingPage = () => {
                 <div className="mt-4 pt-4 border-t border-white/5 space-y-2">
                   {feat.points.map((pt, pIdx) => (
                     <div key={pIdx} className="flex items-center gap-2 text-[10px] text-gray-400 font-medium">
-                      <span className="w-4 h-4 rounded-full bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-[8px] font-bold">✓</span>
+                      <span className="w-4 h-4 rounded-full bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 text-[8px] font-bold">✓</span>
                       <span>{pt}</span>
                     </div>
                   ))}
@@ -370,7 +370,7 @@ const LandingPage = () => {
       </section>
 
       {/* 4. STUDENT BENEFITS SECTION (Bento Grid) */}
-      <section id="benefits" className="relative py-28 border-t border-white/5 bg-[#0b0b1f]/20 w-full">
+      <section id="benefits" className="relative py-28 border-t border-white/5 bg-[#020208]/20 w-full">
         <div className="text-center max-w-2xl mx-auto mb-20 space-y-4">
           <h4 className="text-blue-400 text-sm font-bold uppercase tracking-widest">Bento Grid</h4>
           <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white">How FoodPulse Helps Students</h2>
@@ -380,11 +380,11 @@ const LandingPage = () => {
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 w-full">
           {/* Bento Card 1: Time Saver */}
-          <div className="md:col-span-7 rounded-3xl bg-[#0d0d21] border border-purple-500/20 p-8 flex flex-col justify-between min-h-[360px] hover:border-purple-500/40 transition-all duration-300 relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl pointer-events-none" />
+          <div className="md:col-span-7 rounded-3xl bg-[#060713] border border-cyan-500/20 p-8 flex flex-col justify-between min-h-[360px] hover:border-cyan-500/40 transition-all duration-300 relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none" />
             
             <div className="space-y-4">
-              <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4 border border-purple-500/20">
+              <div className="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-4 border border-cyan-500/20">
                 <Clock size={20} />
               </div>
               <h3 className="text-2xl font-bold text-white">Saves Time & Reduces Waiting</h3>
@@ -394,12 +394,12 @@ const LandingPage = () => {
             </div>
 
             <div className="my-6 p-4 rounded-2xl bg-white/[0.02] border border-white/5 space-y-3">
-              <div className="flex justify-between items-center text-xs font-bold text-purple-300">
+              <div className="flex justify-between items-center text-xs font-bold text-cyan-300">
                 <span>Checkout Wait-Time Progress</span>
                 <span>9.2 min saved</span>
               </div>
               <div className="w-full h-2.5 bg-white/5 rounded-full overflow-hidden border border-white/5">
-                <div className="h-full bg-gradient-to-r from-purple-500 to-pink-500 w-[78%] rounded-full" />
+                <div className="h-full bg-gradient-to-r from-cyan-500 to-blue-600 w-[78%] rounded-full" />
               </div>
               <div className="flex justify-between text-[10px] text-gray-500">
                 <span>Traditional: 25 mins waiting</span>
@@ -407,17 +407,17 @@ const LandingPage = () => {
               </div>
             </div>
 
-            <div className="flex gap-4 items-center pt-4 text-xs text-purple-400 font-semibold border-t border-white/5">
+            <div className="flex gap-4 items-center pt-4 text-xs text-cyan-400 font-semibold border-t border-white/5">
               <span>⚡ 8.5 Hours Saved Average / Student</span>
             </div>
           </div>
 
           {/* Bento Card 2: Hygiene Score */}
-          <div className="md:col-span-5 rounded-3xl bg-white/[0.03] border border-white/5 p-8 flex flex-col justify-between min-h-[360px] hover:border-purple-500/30 transition-all duration-300 relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-24 h-24 bg-pink-500/10 rounded-full blur-2xl pointer-events-none" />
+          <div className="md:col-span-5 rounded-3xl bg-white/[0.03] border border-white/5 p-8 flex flex-col justify-between min-h-[360px] hover:border-cyan-500/30 transition-all duration-300 relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-24 h-24 bg-blue-600/10 rounded-full blur-2xl pointer-events-none" />
 
             <div className="space-y-4">
-              <div className="w-10 h-10 rounded-xl bg-pink-500/10 text-pink-400 flex items-center justify-center mb-4 border border-pink-500/20">
+              <div className="w-10 h-10 rounded-xl bg-blue-600/10 text-blue-500 flex items-center justify-center mb-4 border border-blue-600/20">
                 <ShieldCheck size={20} />
               </div>
               <h3 className="text-2xl font-bold text-white">Mess Hygiene Scores</h3>
@@ -439,11 +439,11 @@ const LandingPage = () => {
               ))}
             </div>
 
-            <span className="text-xs text-pink-400 font-bold uppercase tracking-wider pt-2">Safety Verified</span>
+            <span className="text-xs text-blue-500 font-bold uppercase tracking-wider pt-2">Safety Verified</span>
           </div>
 
           {/* Bento Card 3: Voice */}
-          <div className="md:col-span-5 rounded-3xl bg-white/[0.03] border border-white/5 p-8 flex flex-col justify-between min-h-[360px] hover:border-purple-500/30 transition-all duration-300 relative overflow-hidden group">
+          <div className="md:col-span-5 rounded-3xl bg-white/[0.03] border border-white/5 p-8 flex flex-col justify-between min-h-[360px] hover:border-cyan-500/30 transition-all duration-300 relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 rounded-full blur-2xl pointer-events-none" />
 
             <div className="space-y-4">
@@ -456,7 +456,7 @@ const LandingPage = () => {
               </p>
             </div>
 
-            <div className="my-6 p-4 rounded-2xl bg-[#0b0b1f]/60 border border-white/5 flex items-center justify-between text-xs">
+            <div className="my-6 p-4 rounded-2xl bg-[#020208]/60 border border-white/5 flex items-center justify-between text-xs">
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-yellow-500 animate-ping" />
                 <div>
@@ -471,11 +471,11 @@ const LandingPage = () => {
           </div>
 
           {/* Bento Card 4: Leaderboard */}
-          <div className="md:col-span-7 rounded-3xl bg-[#0d0d21] border border-indigo-500/20 p-8 flex flex-col justify-between min-h-[360px] hover:border-indigo-500/40 transition-all duration-300 relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl pointer-events-none" />
+          <div className="md:col-span-7 rounded-3xl bg-[#060713] border border-blue-600/20 p-8 flex flex-col justify-between min-h-[360px] hover:border-blue-600/40 transition-all duration-300 relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/10 rounded-full blur-2xl pointer-events-none" />
             
             <div className="space-y-4">
-              <div className="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-4 border border-indigo-500/20">
+              <div className="w-10 h-10 rounded-xl bg-blue-600/10 text-blue-500 flex items-center justify-center mb-4 border border-blue-600/20">
                 <TrendingUp size={20} />
               </div>
               <h3 className="text-2xl font-bold text-white">Audited Mess Performance Leaderboard</h3>
@@ -492,12 +492,12 @@ const LandingPage = () => {
               ].map((item, idx) => (
                 <div key={idx} className="p-3 bg-white/[0.02] border border-white/5 rounded-2xl text-center">
                   <span className="block font-bold text-xs text-white mb-1">{item.place}</span>
-                  <span className="text-[10px] text-purple-300 font-semibold">{item.score}</span>
+                  <span className="text-[10px] text-cyan-300 font-semibold">{item.score}</span>
                 </div>
               ))}
             </div>
 
-            <div className="flex gap-4 items-center pt-4 text-xs text-indigo-400 font-semibold border-t border-white/5">
+            <div className="flex gap-4 items-center pt-4 text-xs text-blue-500 font-semibold border-t border-white/5">
               <span>📊 Full Campus Food Quality Statistics Available</span>
             </div>
           </div>
@@ -512,11 +512,11 @@ const LandingPage = () => {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.4 }}
-        className="w-full max-w-[440px] rounded-[2rem] border border-white/5 bg-[#111126]/60 p-8 md:p-10 backdrop-blur-2xl shadow-2xl relative overflow-hidden flex flex-col justify-between"
+        className="w-full max-w-[440px] rounded-[2rem] border border-white/5 bg-[#0c0d21]/60 p-8 md:p-10 backdrop-blur-2xl shadow-2xl relative overflow-hidden flex flex-col justify-between"
       >
         {/* Glow circles */}
-        <div className="absolute -top-10 -right-10 w-40 h-40 bg-purple-600/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-pink-600/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -top-10 -right-10 w-40 h-40 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative z-10 w-full">
           <div className="text-center mb-8">
@@ -533,7 +533,7 @@ const LandingPage = () => {
                   type="email" 
                   required 
                   placeholder="e.g. student@lpu.in"
-                  className="w-full bg-[#08081a]/60 border border-white/10 rounded-2xl py-3.5 px-4 pl-12 text-white text-xs focus:border-purple-500 focus:bg-[#08081a]/80 outline-none transition-all"
+                  className="w-full bg-[#08081a]/60 border border-white/10 rounded-2xl py-3.5 px-4 pl-12 text-white text-xs focus:border-cyan-500 focus:bg-[#08081a]/80 outline-none transition-all"
                   value={authEmail}
                   onChange={(e) => setAuthEmail(e.target.value)}
                 />
@@ -543,7 +543,7 @@ const LandingPage = () => {
             <div className="space-y-2 text-left">
               <div className="flex justify-between items-center">
                 <label className="text-[10px] uppercase font-bold text-gray-400 tracking-wider block">Account Password</label>
-                <button type="button" className="text-[10px] font-bold text-purple-400 hover:underline">Forgot?</button>
+                <button type="button" className="text-[10px] font-bold text-cyan-400 hover:underline">Forgot?</button>
               </div>
               <div className="relative flex items-center">
                 <Lock size={16} className="absolute left-4 text-gray-500" />
@@ -551,7 +551,7 @@ const LandingPage = () => {
                   type="password" 
                   required 
                   placeholder="••••••••••••"
-                  className="w-full bg-[#08081a]/60 border border-white/10 rounded-2xl py-3.5 px-4 pl-12 text-white text-xs focus:border-purple-500 focus:bg-[#08081a]/80 outline-none transition-all"
+                  className="w-full bg-[#08081a]/60 border border-white/10 rounded-2xl py-3.5 px-4 pl-12 text-white text-xs focus:border-cyan-500 focus:bg-[#08081a]/80 outline-none transition-all"
                   value={authPassword}
                   onChange={(e) => setAuthPassword(e.target.value)}
                 />
@@ -559,18 +559,18 @@ const LandingPage = () => {
             </div>
 
             <div className="flex items-center gap-2 pt-1 text-left">
-              <input type="checkbox" id="remember-me" className="w-3.5 h-3.5 accent-purple-600 rounded bg-[#08081a]/60 border-white/10 cursor-pointer" />
+              <input type="checkbox" id="remember-me" className="w-3.5 h-3.5 accent-cyan-500 rounded bg-[#08081a]/60 border-white/10 cursor-pointer" />
               <label htmlFor="remember-me" className="text-[10px] text-gray-400 cursor-pointer select-none">Remember me for 30 days</label>
             </div>
 
-            <button type="submit" className="w-full py-3.5 rounded-2xl bg-gradient-to-r from-purple-600 to-pink-500 hover:scale-[1.02] text-white font-bold text-xs shadow-lg shadow-purple-500/25 transition-all cursor-pointer mt-4 border-none">
+            <button type="submit" className="w-full py-3.5 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:scale-[1.02] text-white font-bold text-xs shadow-lg shadow-cyan-500/25 transition-all cursor-pointer mt-4 border-none">
               Sign In
             </button>
           </form>
 
           <p className="text-center text-xs text-gray-400 mt-8 font-semibold">
             Don't have an account? 
-            <button onClick={() => handleViewChange('signup')} className="text-purple-400 hover:underline font-bold ml-1 bg-transparent border-none cursor-pointer">Sign Up</button>
+            <button onClick={() => handleViewChange('signup')} className="text-cyan-400 hover:underline font-bold ml-1 bg-transparent border-none cursor-pointer">Sign Up</button>
           </p>
         </div>
       </motion.div>
@@ -583,11 +583,11 @@ const LandingPage = () => {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.4 }}
-        className="w-full max-w-[440px] rounded-[2rem] border border-white/5 bg-[#111126]/60 p-8 md:p-10 backdrop-blur-2xl shadow-2xl relative overflow-hidden flex flex-col justify-between"
+        className="w-full max-w-[440px] rounded-[2rem] border border-white/5 bg-[#0c0d21]/60 p-8 md:p-10 backdrop-blur-2xl shadow-2xl relative overflow-hidden flex flex-col justify-between"
       >
         {/* Glow circles */}
-        <div className="absolute -top-10 -right-10 w-40 h-40 bg-purple-600/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-pink-600/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -top-10 -right-10 w-40 h-40 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative z-10 w-full">
           <div className="text-center mb-8">
@@ -604,7 +604,7 @@ const LandingPage = () => {
                   type="text" 
                   required 
                   placeholder="e.g. 12015382"
-                  className="w-full bg-[#08081a]/60 border border-white/10 rounded-2xl py-3.5 px-4 pl-12 text-white text-xs focus:border-purple-500 focus:bg-[#08081a]/80 outline-none transition-all"
+                  className="w-full bg-[#08081a]/60 border border-white/10 rounded-2xl py-3.5 px-4 pl-12 text-white text-xs focus:border-cyan-500 focus:bg-[#08081a]/80 outline-none transition-all"
                   value={authStudentId}
                   onChange={(e) => setAuthStudentId(e.target.value)}
                 />
@@ -619,7 +619,7 @@ const LandingPage = () => {
                   type="email" 
                   required 
                   placeholder="e.g. student@lpu.in"
-                  className="w-full bg-[#08081a]/60 border border-white/10 rounded-2xl py-3.5 px-4 pl-12 text-white text-xs focus:border-purple-500 focus:bg-[#08081a]/80 outline-none transition-all"
+                  className="w-full bg-[#08081a]/60 border border-white/10 rounded-2xl py-3.5 px-4 pl-12 text-white text-xs focus:border-cyan-500 focus:bg-[#08081a]/80 outline-none transition-all"
                   value={authEmail}
                   onChange={(e) => setAuthEmail(e.target.value)}
                 />
@@ -634,7 +634,7 @@ const LandingPage = () => {
                   type="password" 
                   required 
                   placeholder="••••••••••••"
-                  className="w-full bg-[#08081a]/60 border border-white/10 rounded-2xl py-3.5 px-4 pl-12 text-white text-xs focus:border-purple-500 focus:bg-[#08081a]/80 outline-none transition-all"
+                  className="w-full bg-[#08081a]/60 border border-white/10 rounded-2xl py-3.5 px-4 pl-12 text-white text-xs focus:border-cyan-500 focus:bg-[#08081a]/80 outline-none transition-all"
                   value={authPassword}
                   onChange={(e) => setAuthPassword(e.target.value)}
                 />
@@ -642,18 +642,18 @@ const LandingPage = () => {
             </div>
 
             <div className="flex items-center gap-2 pt-1 text-left">
-              <input type="checkbox" id="terms" required className="w-3.5 h-3.5 accent-purple-600 rounded bg-[#08081a]/60 border-white/10 cursor-pointer" />
+              <input type="checkbox" id="terms" required className="w-3.5 h-3.5 accent-cyan-500 rounded bg-[#08081a]/60 border-white/10 cursor-pointer" />
               <label htmlFor="terms" className="text-[10px] text-gray-400 cursor-pointer select-none">I agree to LPU campus terms and conditions</label>
             </div>
 
-            <button type="submit" className="w-full py-3.5 rounded-2xl bg-gradient-to-r from-purple-600 to-pink-500 hover:scale-[1.02] text-white font-bold text-xs shadow-lg shadow-purple-500/25 transition-all cursor-pointer mt-4 border-none">
+            <button type="submit" className="w-full py-3.5 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:scale-[1.02] text-white font-bold text-xs shadow-lg shadow-cyan-500/25 transition-all cursor-pointer mt-4 border-none">
               Sign Up
             </button>
           </form>
 
           <p className="text-center text-xs text-gray-400 mt-8 font-semibold">
             Already have an account? 
-            <button onClick={() => handleViewChange('login')} className="text-purple-400 hover:underline font-bold ml-1 bg-transparent border-none cursor-pointer">Log In</button>
+            <button onClick={() => handleViewChange('login')} className="text-cyan-400 hover:underline font-bold ml-1 bg-transparent border-none cursor-pointer">Log In</button>
           </p>
         </div>
       </motion.div>
@@ -663,15 +663,15 @@ const LandingPage = () => {
   const renderHowItWorks = () => (
     <div className="w-full py-20">
       <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-        <span className="text-[10px] bg-purple-500/10 text-purple-300 font-bold px-2.5 py-1 rounded-full border border-purple-500/20 uppercase tracking-widest inline-block">
+        <span className="text-[10px] bg-cyan-500/10 text-cyan-300 font-bold px-2.5 py-1 rounded-full border border-cyan-500/20 uppercase tracking-widest inline-block">
           Documentation
         </span>
-        <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white">How FoodPulse <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Works</span></h2>
+        <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white">How FoodPulse <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Works</span></h2>
         <p className="text-gray-400 text-base leading-relaxed">A comprehensive breakdown of LPU's automated student dining and crowd auditing platform.</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl mx-auto">
-        <div className="rounded-3xl bg-[#111126]/40 border border-white/5 p-8 backdrop-blur-md hover:border-purple-500/30 transition-all duration-300">
+        <div className="rounded-3xl bg-[#0c0d21]/40 border border-white/5 p-8 backdrop-blur-md hover:border-cyan-500/30 transition-all duration-300">
           <div className="text-3xl mb-4">🛒</div>
           <h3 className="text-xl font-bold text-white mb-2">1. Marketplace Discovery</h3>
           <p className="text-xs text-gray-400 leading-relaxed">
@@ -679,7 +679,7 @@ const LandingPage = () => {
           </p>
         </div>
 
-        <div className="rounded-3xl bg-[#111126]/40 border border-white/5 p-8 backdrop-blur-md hover:border-purple-500/30 transition-all duration-300">
+        <div className="rounded-3xl bg-[#0c0d21]/40 border border-white/5 p-8 backdrop-blur-md hover:border-cyan-500/30 transition-all duration-300">
           <div className="text-3xl mb-4">🤖</div>
           <h3 className="text-xl font-bold text-white mb-2">2. AI Kitchen Verification</h3>
           <p className="text-xs text-gray-400 leading-relaxed">
@@ -687,7 +687,7 @@ const LandingPage = () => {
           </p>
         </div>
 
-        <div className="rounded-3xl bg-[#111126]/40 border border-white/5 p-8 backdrop-blur-md hover:border-purple-500/30 transition-all duration-300">
+        <div className="rounded-3xl bg-[#0c0d21]/40 border border-white/5 p-8 backdrop-blur-md hover:border-cyan-500/30 transition-all duration-300">
           <div className="text-3xl mb-4">⚠️</div>
           <h3 className="text-xl font-bold text-white mb-2">3. Real-Time Crowd Auditing</h3>
           <p className="text-xs text-gray-400 leading-relaxed">
@@ -695,7 +695,7 @@ const LandingPage = () => {
           </p>
         </div>
 
-        <div className="rounded-3xl bg-[#111126]/40 border border-white/5 p-8 backdrop-blur-md hover:border-purple-500/30 transition-all duration-300">
+        <div className="rounded-3xl bg-[#0c0d21]/40 border border-white/5 p-8 backdrop-blur-md hover:border-cyan-500/30 transition-all duration-300">
           <div className="text-3xl mb-4">🪙</div>
           <h3 className="text-xl font-bold text-white mb-2">4. Rewards Compensation</h3>
           <p className="text-xs text-gray-400 leading-relaxed">
@@ -709,15 +709,15 @@ const LandingPage = () => {
   const renderFeatures = () => (
     <div className="w-full py-20">
       <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-        <span className="text-[10px] bg-purple-500/10 text-purple-300 font-bold px-2.5 py-1 rounded-full border border-purple-500/20 uppercase tracking-widest inline-block">
+        <span className="text-[10px] bg-cyan-500/10 text-cyan-300 font-bold px-2.5 py-1 rounded-full border border-cyan-500/20 uppercase tracking-widest inline-block">
           Capabilities Matrix
         </span>
-        <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white">Platform <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Features</span></h2>
+        <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white">Platform <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Features</span></h2>
         <p className="text-gray-400 text-base leading-relaxed">Explore LPU FoodPulse's advanced AI-powered dining optimization technologies.</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl mx-auto">
-        <div className="rounded-3xl bg-[#111126]/40 border border-white/5 p-8 backdrop-blur-md hover:border-purple-500/30 transition-all duration-300">
+        <div className="rounded-3xl bg-[#0c0d21]/40 border border-white/5 p-8 backdrop-blur-md hover:border-cyan-500/30 transition-all duration-300">
           <div className="text-3xl mb-4">⏱️</div>
           <h3 className="text-xl font-bold text-white mb-2">Queue-Free Pipeline</h3>
           <p className="text-xs text-gray-400 leading-relaxed">
@@ -725,7 +725,7 @@ const LandingPage = () => {
           </p>
         </div>
 
-        <div className="rounded-3xl bg-[#111126]/40 border border-white/5 p-8 backdrop-blur-md hover:border-purple-500/30 transition-all duration-300">
+        <div className="rounded-3xl bg-[#0c0d21]/40 border border-white/5 p-8 backdrop-blur-md hover:border-cyan-500/30 transition-all duration-300">
           <div className="text-3xl mb-4">📷</div>
           <h3 className="text-xl font-bold text-white mb-2">AI Texture Tracking</h3>
           <p className="text-xs text-gray-400 leading-relaxed">
@@ -733,7 +733,7 @@ const LandingPage = () => {
           </p>
         </div>
 
-        <div className="rounded-3xl bg-[#111126]/40 border border-white/5 p-8 backdrop-blur-md hover:border-purple-500/30 transition-all duration-300">
+        <div className="rounded-3xl bg-[#0c0d21]/40 border border-white/5 p-8 backdrop-blur-md hover:border-cyan-500/30 transition-all duration-300">
           <div className="text-3xl mb-4">📊</div>
           <h3 className="text-xl font-bold text-white mb-2">Predictive Load Balancing</h3>
           <p className="text-xs text-gray-400 leading-relaxed">
@@ -747,18 +747,18 @@ const LandingPage = () => {
   const renderLeaderboard = () => (
     <div className="w-full py-20">
       <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-        <span className="text-[10px] bg-purple-500/10 text-purple-300 font-bold px-2.5 py-1 rounded-full border border-purple-500/20 uppercase tracking-widest inline-block">
+        <span className="text-[10px] bg-cyan-500/10 text-cyan-300 font-bold px-2.5 py-1 rounded-full border border-cyan-500/20 uppercase tracking-widest inline-block">
           Leaderboard
         </span>
-        <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white">Audited Mess <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Rankings</span></h2>
+        <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white">Audited Mess <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Rankings</span></h2>
         <p className="text-gray-400 text-base leading-relaxed">Live student-curated food quality ratings, AI-verified audits, and queue metrics across LPU dining halls.</p>
       </div>
 
-      <div className="w-full max-w-5xl mx-auto rounded-3xl border border-white/5 bg-[#111126]/40 backdrop-blur-md overflow-hidden shadow-2xl">
+      <div className="w-full max-w-5xl mx-auto rounded-3xl border border-white/5 bg-[#0c0d21]/40 backdrop-blur-md overflow-hidden shadow-2xl">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs border-collapse min-w-[700px]">
             <thead>
-              <tr className="border-b border-white/5 bg-[#0b0b1f]/60 text-gray-500 font-bold uppercase tracking-wider text-[10px]">
+              <tr className="border-b border-white/5 bg-[#020208]/60 text-gray-500 font-bold uppercase tracking-wider text-[10px]">
                 <th className="py-4 px-6">Rank</th>
                 <th className="py-4 px-6">Dining Venue / Stall</th>
                 <th className="py-4 px-6">Hygiene Rating</th>
@@ -796,17 +796,17 @@ const LandingPage = () => {
   );
 
   return (
-    <div className="min-h-screen bg-[#070714] text-[#f3f4f6] font-sans overflow-x-hidden relative selection:bg-purple-500/30 selection:text-purple-200">
+    <div className="min-h-screen bg-[#020208] text-[#f3f4f6] font-sans overflow-x-hidden relative selection:bg-cyan-500/30 selection:text-cyan-200">
       
       {/* Background Neon Glowing Orbs */}
-      <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-purple-600/10 blur-[130px] pointer-events-none z-0" />
-      <div className="absolute top-[40%] right-[-10%] w-[500px] h-[500px] rounded-full bg-pink-600/10 blur-[130px] pointer-events-none z-0" />
+      <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-cyan-500/10 blur-[130px] pointer-events-none z-0" />
+      <div className="absolute top-[40%] right-[-10%] w-[500px] h-[500px] rounded-full bg-blue-600/10 blur-[130px] pointer-events-none z-0" />
       <div className="absolute bottom-[10%] left-[20%] w-[450px] h-[450px] rounded-full bg-blue-600/5 blur-[120px] pointer-events-none z-0" />
 
       {/* Floating Particles Backdrop Effect */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 opacity-40">
-        <div className="absolute top-[20%] left-[15%] w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
-        <div className="absolute top-[45%] left-[80%] w-2 h-2 rounded-full bg-pink-400 animate-bounce" style={{ animationDuration: '4s' }} />
+        <div className="absolute top-[20%] left-[15%] w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+        <div className="absolute top-[45%] left-[80%] w-2 h-2 rounded-full bg-blue-500 animate-bounce" style={{ animationDuration: '4s' }} />
         <div className="absolute top-[75%] left-[30%] w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
       </div>
 
@@ -817,25 +817,25 @@ const LandingPage = () => {
         transition={{ duration: 0.5 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
           scrolled 
-            ? 'bg-[#070714]/80 backdrop-blur-xl border-white/5 py-4 shadow-[0_10px_30px_rgba(0,0,0,0.5)]' 
+            ? 'bg-[#020208]/80 backdrop-blur-xl border-white/5 py-4 shadow-[0_10px_30px_rgba(0,0,0,0.5)]' 
             : 'bg-transparent border-transparent py-6'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-8 flex items-center justify-between">
           <button onClick={() => handleViewChange('home')} className="flex items-center gap-2 group bg-transparent border-none cursor-pointer text-left">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-600 to-pink-500 flex items-center justify-center text-white shadow-[0_0_20px_rgba(168,85,247,0.4)] group-hover:scale-105 transition-transform duration-300">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white shadow-[0_0_20px_rgba(6, 182, 212,0.4)] group-hover:scale-105 transition-transform duration-300">
               <Zap size={20} fill="currentColor" />
             </div>
             <span className="text-xl font-display font-extrabold text-white tracking-tight">
-              Food<span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">Pulse</span>
+              Food<span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">Pulse</span>
             </span>
           </button>
 
           {/* Desktop Nav Links */}
           <ul className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
-            <li><button onClick={() => handleViewChange('how-it-works')} className={`hover:text-purple-400 transition-colors bg-transparent border-none cursor-pointer ${currentView === 'how-it-works' ? 'text-purple-400 font-bold' : ''}`}>How It Works</button></li>
-            <li><button onClick={() => handleViewChange('features')} className={`hover:text-purple-400 transition-colors bg-transparent border-none cursor-pointer ${currentView === 'features' ? 'text-purple-400 font-bold' : ''}`}>Features</button></li>
-            <li><button onClick={() => handleViewChange('leaderboard')} className={`hover:text-purple-400 transition-colors bg-transparent border-none cursor-pointer ${currentView === 'leaderboard' ? 'text-purple-400 font-bold' : ''}`}>Leaderboard</button></li>
+            <li><button onClick={() => handleViewChange('how-it-works')} className={`hover:text-cyan-400 transition-colors bg-transparent border-none cursor-pointer ${currentView === 'how-it-works' ? 'text-cyan-400 font-bold' : ''}`}>How It Works</button></li>
+            <li><button onClick={() => handleViewChange('features')} className={`hover:text-cyan-400 transition-colors bg-transparent border-none cursor-pointer ${currentView === 'features' ? 'text-cyan-400 font-bold' : ''}`}>Features</button></li>
+            <li><button onClick={() => handleViewChange('leaderboard')} className={`hover:text-cyan-400 transition-colors bg-transparent border-none cursor-pointer ${currentView === 'leaderboard' ? 'text-cyan-400 font-bold' : ''}`}>Leaderboard</button></li>
           </ul>
 
           {/* Desktop Action Buttons */}
@@ -843,7 +843,7 @@ const LandingPage = () => {
             <button onClick={() => handleViewChange('login')} className={`text-sm font-semibold hover:text-white px-4 py-2 hover:bg-white/5 rounded-xl transition-all bg-transparent border-none cursor-pointer ${currentView === 'login' ? 'text-white' : 'text-gray-300'}`}>
               Sign In
             </button>
-            <button onClick={() => handleViewChange('signup')} className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 text-white font-bold text-sm shadow-[0_4px_20px_rgba(168,85,247,0.35)] hover:shadow-[0_4px_25px_rgba(168,85,247,0.5)] hover:-translate-y-0.5 transition-all cursor-pointer border-none">
+            <button onClick={() => handleViewChange('signup')} className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-sm shadow-[0_4px_20px_rgba(6, 182, 212,0.35)] hover:shadow-[0_4px_25px_rgba(6, 182, 212,0.5)] hover:-translate-y-0.5 transition-all cursor-pointer border-none">
               Register
             </button>
           </div>
@@ -862,15 +862,15 @@ const LandingPage = () => {
           <motion.div 
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
-            className="md:hidden bg-[#0b0b1f] border-b border-white/10 px-6 py-6 space-y-4 text-left"
+            className="md:hidden bg-[#020208] border-b border-white/10 px-6 py-6 space-y-4 text-left"
           >
-            <button onClick={() => handleViewChange('how-it-works')} className="block w-full text-left text-gray-300 hover:text-purple-400 font-semibold bg-transparent border-none cursor-pointer py-1">How It Works</button>
-            <button onClick={() => handleViewChange('features')} className="block w-full text-left text-gray-300 hover:text-purple-400 font-semibold bg-transparent border-none cursor-pointer py-1">Features</button>
-            <button onClick={() => handleViewChange('leaderboard')} className="block w-full text-left text-gray-300 hover:text-purple-400 font-semibold bg-transparent border-none cursor-pointer py-1">Leaderboard</button>
+            <button onClick={() => handleViewChange('how-it-works')} className="block w-full text-left text-gray-300 hover:text-cyan-400 font-semibold bg-transparent border-none cursor-pointer py-1">How It Works</button>
+            <button onClick={() => handleViewChange('features')} className="block w-full text-left text-gray-300 hover:text-cyan-400 font-semibold bg-transparent border-none cursor-pointer py-1">Features</button>
+            <button onClick={() => handleViewChange('leaderboard')} className="block w-full text-left text-gray-300 hover:text-cyan-400 font-semibold bg-transparent border-none cursor-pointer py-1">Leaderboard</button>
             <div className="h-[1px] bg-white/5 my-4" />
             <div className="flex gap-4">
               <button onClick={() => handleViewChange('login')} className="flex-1 text-center py-2.5 border border-white/10 rounded-xl font-bold text-gray-300 hover:text-white bg-transparent cursor-pointer">Sign In</button>
-              <button onClick={() => handleViewChange('signup')} className="flex-1 text-center py-2.5 bg-gradient-to-r from-purple-600 to-pink-500 rounded-xl font-bold text-white shadow-lg border-none cursor-pointer">Register</button>
+              <button onClick={() => handleViewChange('signup')} className="flex-1 text-center py-2.5 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl font-bold text-white shadow-lg border-none cursor-pointer">Register</button>
             </div>
           </motion.div>
         )}
@@ -887,12 +887,12 @@ const LandingPage = () => {
       </div>
 
       {/* FOOTER */}
-      <footer className="border-t border-white/5 bg-[#0b0b1f] py-16 px-6 md:px-8 relative z-10 w-full">
+      <footer className="border-t border-white/5 bg-[#020208] py-16 px-6 md:px-8 relative z-10 w-full">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
           
           <div className="space-y-4 text-left">
             <button onClick={() => handleViewChange('home')} className="flex items-center gap-2 group bg-transparent border-none cursor-pointer text-left">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-purple-600 to-pink-500 flex items-center justify-center text-white text-sm font-bold">⚡</div>
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white text-sm font-bold">⚡</div>
               <span className="text-lg font-bold text-white">FoodPulse</span>
             </button>
             <p className="text-xs text-gray-500 leading-relaxed max-w-xs">
@@ -903,18 +903,18 @@ const LandingPage = () => {
           <div className="space-y-3 text-left">
             <h5 className="text-sm font-bold text-white">Quick Links</h5>
             <ul className="space-y-2 text-xs text-gray-400 list-none">
-              <li><button onClick={() => handleViewChange('login')} className="hover:text-purple-400 transition-colors bg-transparent border-none cursor-pointer">Stall Marketplace</button></li>
-              <li><button onClick={() => handleViewChange('signup')} className="hover:text-purple-400 transition-colors bg-transparent border-none cursor-pointer">Report Issue</button></li>
-              <li><button onClick={() => handleViewChange('how-it-works')} className="hover:text-purple-400 transition-colors bg-transparent border-none cursor-pointer">How It Works</button></li>
+              <li><button onClick={() => handleViewChange('login')} className="hover:text-cyan-400 transition-colors bg-transparent border-none cursor-pointer">Stall Marketplace</button></li>
+              <li><button onClick={() => handleViewChange('signup')} className="hover:text-cyan-400 transition-colors bg-transparent border-none cursor-pointer">Report Issue</button></li>
+              <li><button onClick={() => handleViewChange('how-it-works')} className="hover:text-cyan-400 transition-colors bg-transparent border-none cursor-pointer">How It Works</button></li>
             </ul>
           </div>
 
           <div className="space-y-3 text-left">
             <h5 className="text-sm font-bold text-white">Support</h5>
             <ul className="space-y-2 text-xs text-gray-400 list-none">
-              <li><a href="#" className="hover:text-purple-400 transition-colors">Contact Us</a></li>
-              <li><a href="#" className="hover:text-purple-400 transition-colors">FAQ</a></li>
-              <li><a href="#" className="hover:text-purple-400 transition-colors">Privacy Policy</a></li>
+              <li><a href="#" className="hover:text-cyan-400 transition-colors">Contact Us</a></li>
+              <li><a href="#" className="hover:text-cyan-400 transition-colors">FAQ</a></li>
+              <li><a href="#" className="hover:text-cyan-400 transition-colors">Privacy Policy</a></li>
             </ul>
           </div>
 
@@ -925,7 +925,7 @@ const LandingPage = () => {
                 <a 
                   key={social}
                   href="#" 
-                  className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 hover:border-purple-500/20 text-xs font-semibold text-gray-400 hover:text-white transition-all"
+                  className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 hover:border-cyan-500/20 text-xs font-semibold text-gray-400 hover:text-white transition-all"
                 >
                   {social}
                 </a>

@@ -86,22 +86,22 @@ const Register = () => {
       <div className="auth-split-left flex flex-col justify-between h-full relative">
         
         {/* Abstract Floating Glows */}
-        <div className="absolute top-[-10%] left-[-20%] w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-pink-500/5 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute top-[-10%] left-[-20%] w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-blue-600/5 rounded-full blur-[100px] pointer-events-none" />
         
         {/* Logo and Hero Title Header */}
         <div className="relative z-10">
           <Link to="/" className="flex items-center gap-3 mb-8">
-            <div className="w-11 h-11 rounded-xl bg-gradient-to-tr from-purple-600 to-pink-500 flex items-center justify-center text-white shadow-[0_0_20px_rgba(168,85,247,0.3)]">
+            <div className="w-11 h-11 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white shadow-[0_0_20px_rgba(6, 182, 212,0.3)]">
               <Zap size={22} fill="currentColor" />
             </div>
-            <span className="text-2xl font-display font-extrabold text-white">Food<span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Pulse</span></span>
+            <span className="text-2xl font-display font-extrabold text-white">Food<span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Pulse</span></span>
           </Link>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <h1 className="text-4xl md:text-5xl font-display font-extrabold text-white leading-tight mb-4">
               Reimagining<br/>
-              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Campus Dining.</span>
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Campus Dining.</span>
             </h1>
             
             <p className="text-sm text-gray-400 leading-relaxed max-w-md">
@@ -118,7 +118,7 @@ const Register = () => {
           className="relative z-10 grid grid-cols-2 gap-4 my-6"
         >
           {/* Card 1: LIVE MESS QUALITY INDEX */}
-          <div className="bg-[#111126]/40 border border-white/5 rounded-3xl p-4 flex flex-col justify-between backdrop-blur-md">
+          <div className="bg-[#0c0d21]/40 border border-white/5 rounded-3xl p-4 flex flex-col justify-between backdrop-blur-md">
             <span className="text-[8px] font-bold text-gray-500 uppercase tracking-widest block mb-2.5">Live Mess Quality Index</span>
             <div className="flex gap-2.5 items-center">
               <div className="w-10 h-10 rounded-xl overflow-hidden shrink-0 border border-white/10 relative bg-black/40">
@@ -139,7 +139,7 @@ const Register = () => {
           </div>
 
           {/* Card 2: QUEUE PREDICTION */}
-          <div className="bg-[#111126]/40 border border-white/5 rounded-3xl p-4 flex flex-col justify-between backdrop-blur-md overflow-hidden relative">
+          <div className="bg-[#0c0d21]/40 border border-white/5 rounded-3xl p-4 flex flex-col justify-between backdrop-blur-md overflow-hidden relative">
             <span className="text-[8px] font-bold text-gray-500 uppercase tracking-widest block mb-1">Queue Prediction</span>
             <div className="min-w-0">
               <div className="flex items-center justify-between">
@@ -164,7 +164,7 @@ const Register = () => {
           </div>
 
           {/* Card 3: TODAY'S ORDERS */}
-          <div className="bg-[#111126]/40 border border-white/5 rounded-3xl p-4 flex flex-col justify-between backdrop-blur-md">
+          <div className="bg-[#0c0d21]/40 border border-white/5 rounded-3xl p-4 flex flex-col justify-between backdrop-blur-md">
             <span className="text-[8px] font-bold text-gray-500 uppercase tracking-widest block mb-2.5">Today's Orders</span>
             <div className="flex justify-between items-end">
               <div>
@@ -172,7 +172,7 @@ const Register = () => {
                 <span className="text-[9px] text-green-400 font-bold block mt-0.5">+18% from yesterday</span>
               </div>
               {/* Mini Bar Chart */}
-              <svg className="w-12 h-8 text-purple-400" viewBox="0 0 60 30">
+              <svg className="w-12 h-8 text-cyan-400" viewBox="0 0 60 30">
                 <rect x="5" y="15" width="6" height="15" rx="1.5" fill="currentColor" opacity="0.3" />
                 <rect x="15" y="8" width="6" height="22" rx="1.5" fill="currentColor" opacity="0.5" />
                 <rect x="25" y="18" width="6" height="12" rx="1.5" fill="currentColor" opacity="0.3" />
@@ -183,7 +183,7 @@ const Register = () => {
           </div>
 
           {/* Card 4: AI VERIFICATIONS */}
-          <div className="bg-[#111126]/40 border border-white/5 rounded-3xl p-4 flex flex-col justify-between backdrop-blur-md">
+          <div className="bg-[#0c0d21]/40 border border-white/5 rounded-3xl p-4 flex flex-col justify-between backdrop-blur-md">
             <span className="text-[8px] font-bold text-gray-500 uppercase tracking-widest block mb-2">AI Verifications</span>
             <div className="flex justify-between items-center">
               <div>
@@ -192,11 +192,11 @@ const Register = () => {
               </div>
               {/* Progress Ring */}
               <div className="relative w-10 h-10 flex items-center justify-center shrink-0">
-                <svg className="w-full h-full text-purple-500 transform -rotate-90" viewBox="0 0 36 36">
+                <svg className="w-full h-full text-cyan-500 transform -rotate-90" viewBox="0 0 36 36">
                   <path className="text-white/5" stroke="currentColor" strokeWidth="3" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                  <path className="text-purple-400" strokeDasharray="98.7, 100" stroke="currentColor" strokeWidth="3" strokeLinecap="round" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                  <path className="text-cyan-400" strokeDasharray="98.7, 100" stroke="currentColor" strokeWidth="3" strokeLinecap="round" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
                 </svg>
-                <span className="absolute text-[8px] font-bold text-purple-300">98%</span>
+                <span className="absolute text-[8px] font-bold text-cyan-300">98%</span>
               </div>
             </div>
           </div>
@@ -207,12 +207,12 @@ const Register = () => {
             <div className="flex items-center gap-1.5">
               <div className="flex -space-x-2">
                 {['👦', '👧', '👨', '👩', '🧑'].map((avatar, idx) => (
-                  <div key={idx} className="w-5 h-5 rounded-full border border-purple-900 bg-[#12122b] text-[10px] flex items-center justify-center select-none shadow">
+                  <div key={idx} className="w-5 h-5 rounded-full border border-cyan-900 bg-[#12122b] text-[10px] flex items-center justify-center select-none shadow">
                     {avatar}
                   </div>
                 ))}
               </div>
-              <span className="text-[9px] bg-purple-500/10 text-purple-300 border border-purple-500/20 px-2 py-0.5 rounded-full font-extrabold tracking-wider">
+              <span className="text-[9px] bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 px-2 py-0.5 rounded-full font-extrabold tracking-wider">
                 +2.3K
               </span>
             </div>
@@ -222,13 +222,13 @@ const Register = () => {
         {/* Bottom Metrics Bar Footer */}
         <div className="relative z-10 border-t border-white/5 pt-4 mt-auto flex justify-between text-gray-400 text-[10px] font-bold">
           <span className="flex items-center gap-1.5">
-            <Users size={12} className="text-purple-400" /> 5K+ Active Students
+            <Users size={12} className="text-cyan-400" /> 5K+ Active Students
           </span>
           <span className="flex items-center gap-1.5">
-            <Target size={12} className="text-purple-400" /> 99.8% AI Accuracy
+            <Target size={12} className="text-cyan-400" /> 99.8% AI Accuracy
           </span>
           <span className="flex items-center gap-1.5">
-            <Gift size={12} className="text-purple-400" /> 20K+ Rewards Redeemed
+            <Gift size={12} className="text-cyan-400" /> 20K+ Rewards Redeemed
           </span>
         </div>
 
@@ -241,13 +241,13 @@ const Register = () => {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             <div style={{ marginBottom: '2.5rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
-                <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'rgba(168,85,247,0.1)', border: '1px solid rgba(168,85,247,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#c084fc' }}>
+                <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'rgba(6, 182, 212,0.1)', border: '1px solid rgba(6, 182, 212,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#c084fc' }}>
                   <Users size={20} />
                 </div>
                 <div>
                   <h2 style={{ fontSize: '1.875rem', fontFamily: 'var(--font-display)', fontWeight: 800, color: 'white', lineHeight: '1.2' }}>Create your account</h2>
                   <p style={{ color: '#9ca3af', fontSize: '0.875rem', marginTop: '0.25rem' }}>
-                    Already have an account? <Link to="/login" style={{ color: '#ec4899', fontWeight: 700 }}>Sign in here</Link>
+                    Already have an account? <Link to="/login" style={{ color: '#06B6D4', fontWeight: 700 }}>Sign in here</Link>
                   </p>
                 </div>
               </div>
@@ -265,7 +265,7 @@ const Register = () => {
               {/* SECTION: PERSONAL INFO */}
               <div>
                 <h3 style={{ fontSize: '0.75rem', fontWeight: 700, color: '#9ca3af', textTransform: 'uppercase', letterSpacing: '0.1em', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '0.5rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <span className="w-1.5 h-1.5 rounded-full bg-purple-500" /> PERSONAL INFORMATION
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-500" /> PERSONAL INFORMATION
                 </h3>
                 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem', marginBottom: '1.5rem' }}>
@@ -319,7 +319,7 @@ const Register = () => {
               {/* SECTION: ACADEMIC & HOSTEL */}
               <div>
                 <h3 style={{ fontSize: '0.75rem', fontWeight: 700, color: '#9ca3af', textTransform: 'uppercase', letterSpacing: '0.1em', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '0.5rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <span className="w-1.5 h-1.5 rounded-full bg-purple-500" /> ACADEMIC & HOSTEL DETAILS
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-500" /> ACADEMIC & HOSTEL DETAILS
                 </h3>
                 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem', marginBottom: '1.5rem' }}>
@@ -401,7 +401,7 @@ const Register = () => {
               {/* SECTION: SECURITY */}
               <div>
                 <h3 style={{ fontSize: '0.75rem', fontWeight: 700, color: '#9ca3af', textTransform: 'uppercase', letterSpacing: '0.1em', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '0.5rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <span className="w-1.5 h-1.5 rounded-full bg-purple-500" /> SECURITY
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-500" /> SECURITY
                 </h3>
                 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem' }}>
@@ -462,9 +462,9 @@ const Register = () => {
                     justifyContent: 'center', 
                     alignItems: 'center', 
                     gap: '0.5rem', 
-                    background: 'linear-gradient(to right, #9333ea, #db2777)',
+                    background: 'linear-gradient(to right, #00D4FF, #2563EB)',
                     borderColor: 'transparent',
-                    boxShadow: '0 4px 20px rgba(147, 51, 234, 0.25)',
+                    boxShadow: '0 4px 20px rgba(0, 212, 255, 0.25)',
                     padding: '1rem',
                     fontSize: '1rem',
                     borderRadius: '16px',

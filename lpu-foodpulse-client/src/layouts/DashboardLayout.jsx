@@ -70,25 +70,25 @@ const DashboardLayout = () => {
 
       {/* Sticky Bottom Navigation for Mobile */}
       {user?.role === 'student' && (
-        <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-[#0d0d1c]/90 backdrop-blur-xl border-t border-white/10 z-50 px-6 py-3 flex justify-between items-center pb-safe">
-          <Link to="/marketplace" className={`flex flex-col items-center gap-1 ${location.pathname === '/marketplace' ? 'text-purple-400' : 'text-gray-500'}`}>
+        <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-[#020208]/90 backdrop-blur-xl border-t border-white/10 z-50 px-6 py-3 flex justify-between items-center pb-safe">
+          <Link to="/marketplace" className={`flex flex-col items-center gap-1 ${location.pathname === '/marketplace' ? 'text-cyan-400' : 'text-gray-500'}`}>
             <Home size={22} />
             <span className="text-[10px] font-medium">Home</span>
           </Link>
-          <Link to="/orders" className={`flex flex-col items-center gap-1 ${location.pathname === '/orders' ? 'text-purple-400' : 'text-gray-500'}`}>
+          <Link to="/orders" className={`flex flex-col items-center gap-1 ${location.pathname === '/orders' ? 'text-cyan-400' : 'text-gray-500'}`}>
             <ShoppingBag size={22} />
             <span className="text-[10px] font-medium">Orders</span>
           </Link>
           <div className="relative -top-6">
-            <Link to="/report-food" className="w-14 h-14 bg-gradient-to-tr from-purple-600 to-pink-500 rounded-full flex items-center justify-center text-white shadow-[0_8px_32px_rgba(168,85,247,0.5)] transform hover:scale-105 transition-transform">
+            <Link to="/report-food" className="w-14 h-14 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white shadow-[0_8px_32px_rgba(6,182,212,0.4)] transform hover:scale-105 transition-transform">
               <PlusCircle size={28} />
             </Link>
           </div>
-          <Link to="/profile" className={`flex flex-col items-center gap-1 ${location.pathname === '/profile' ? 'text-purple-400' : 'text-gray-500'}`}>
+          <Link to="/profile" className={`flex flex-col items-center gap-1 ${location.pathname === '/profile' ? 'text-cyan-400' : 'text-gray-500'}`}>
             <User size={22} />
             <span className="text-[10px] font-medium">Profile</span>
           </Link>
-          <Link to="/settings" className={`flex flex-col items-center gap-1 ${location.pathname === '/settings' ? 'text-purple-400' : 'text-gray-500'}`}>
+          <Link to="/settings" className={`flex flex-col items-center gap-1 ${location.pathname === '/settings' ? 'text-cyan-400' : 'text-gray-500'}`}>
             <SettingsIcon size={22} />
             <span className="text-[10px] font-medium">Settings</span>
           </Link>

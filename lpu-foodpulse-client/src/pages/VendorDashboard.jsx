@@ -29,17 +29,17 @@ const VendorDashboard = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        <div className="bg-[#12122a] border border-purple-500/30 rounded-2xl p-6 shadow-[0_8px_30px_rgba(168,85,247,0.15)] relative overflow-hidden">
+        <div className="bg-[#0c0d21] border border-cyan-500/30 rounded-2xl p-6 shadow-[0_8px_30px_rgba(6, 182, 212,0.15)] relative overflow-hidden">
           <div className="absolute top-0 right-0 p-4 opacity-10">
             <Package size={80} />
           </div>
-          <div className="text-purple-400 mb-2"><Package size={28} /></div>
+          <div className="text-cyan-400 mb-2"><Package size={28} /></div>
           <div className="text-3xl font-display font-bold text-white mb-1">24</div>
           <div className="text-sm font-medium text-gray-400 mb-2">Active Orders</div>
           <div className="text-xs text-green-400 font-bold">High Volume Time</div>
         </div>
 
-        <div className="bg-[#12122a] border border-green-500/30 rounded-2xl p-6 shadow-[0_8px_30px_rgba(16,185,129,0.1)] relative overflow-hidden">
+        <div className="bg-[#0c0d21] border border-green-500/30 rounded-2xl p-6 shadow-[0_8px_30px_rgba(16,185,129,0.1)] relative overflow-hidden">
           <div className="absolute top-0 right-0 p-4 opacity-10">
             <DollarSign size={80} />
           </div>
@@ -49,7 +49,7 @@ const VendorDashboard = () => {
           <div className="text-xs text-green-400 font-bold">↑ 15% vs Yesterday</div>
         </div>
 
-        <div className="bg-[#12122a] border border-blue-500/30 rounded-2xl p-6 shadow-[0_8px_30px_rgba(59,130,246,0.1)] relative overflow-hidden">
+        <div className="bg-[#0c0d21] border border-blue-500/30 rounded-2xl p-6 shadow-[0_8px_30px_rgba(59,130,246,0.1)] relative overflow-hidden">
           <div className="absolute top-0 right-0 p-4 opacity-10">
             <Star size={80} />
           </div>
@@ -62,7 +62,7 @@ const VendorDashboard = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2 space-y-6">
-          <div className="bg-[#12122a] border border-white/10 rounded-2xl p-6">
+          <div className="bg-[#0c0d21] border border-white/10 rounded-2xl p-6">
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-xl font-display font-bold text-white flex items-center gap-2">
                 <AlertTriangle className="text-yellow-500" /> Action Required: Complaints
@@ -83,7 +83,7 @@ const VendorDashboard = () => {
             ) : (
               <div className="space-y-4">
                 {activeComplaints.map(complaint => (
-                  <div key={complaint._id} className="bg-[#080810] border border-white/10 rounded-xl p-5 hover:border-purple-500/40 transition-colors">
+                  <div key={complaint._id} className="bg-[#020208] border border-white/10 rounded-xl p-5 hover:border-cyan-500/40 transition-colors">
                     <div className="flex flex-col md:flex-row gap-4">
                       {complaint.imageProof ? (
                         <div className="w-full md:w-32 h-32 shrink-0 rounded-lg overflow-hidden border border-white/10">
@@ -142,7 +142,7 @@ const VendorDashboard = () => {
         </div>
         
         <div className="space-y-6">
-          <div className="bg-[#12122a] border border-white/10 rounded-2xl p-6">
+          <div className="bg-[#0c0d21] border border-white/10 rounded-2xl p-6">
             <h3 className="text-lg font-display font-bold text-white mb-4">AI Waste Predictor</h3>
             <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4 mb-4">
               <p className="text-red-400 font-bold text-sm mb-1 flex items-center gap-1">
@@ -151,13 +151,13 @@ const VendorDashboard = () => {
               <p className="text-xs text-gray-400">Based on today's weather (Rainy) and weekday (Tuesday), expect 30% lower footfall for evening snacks.</p>
             </div>
             <h4 className="text-sm font-bold text-gray-300 mb-2">Recommended Actions:</h4>
-            <ul className="text-xs text-gray-400 space-y-2 list-disc pl-4 marker:text-purple-500">
+            <ul className="text-xs text-gray-400 space-y-2 list-disc pl-4 marker:text-cyan-500">
               <li>Reduce Samosa prep by 50 units</li>
               <li>Offer 20% point discount on hot beverages</li>
             </ul>
           </div>
 
-          <div className="bg-[#12122a] border border-white/10 rounded-2xl p-6">
+          <div className="bg-[#0c0d21] border border-white/10 rounded-2xl p-6">
             <h3 className="text-lg font-display font-bold text-white mb-4">Recently Resolved</h3>
             <div className="space-y-3">
               {resolvedComplaints.length === 0 ? (

@@ -22,7 +22,7 @@ const StartupSplash = () => (
     initial={{ opacity: 1 }}
     exit={{ opacity: 0 }}
     transition={{ duration: 0.5, ease: "easeInOut" }}
-    className="fixed inset-0 z-50 flex flex-col items-center justify-center min-h-screen bg-[#080810] overflow-hidden"
+    className="fixed inset-0 z-50 flex flex-col items-center justify-center min-h-screen bg-[#020208] overflow-hidden"
   >
     {/* Animated background glow */}
     <div className="absolute inset-0 flex items-center justify-center">
@@ -32,7 +32,7 @@ const StartupSplash = () => (
           opacity: [0.3, 0.6, 0.3]
         }}
         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-        className="w-96 h-96 bg-purple-600/20 rounded-full blur-[100px]"
+        className="w-96 h-96 bg-cyan-600/20 rounded-full blur-[100px]"
       />
     </div>
     
@@ -42,15 +42,15 @@ const StartupSplash = () => (
       transition={{ delay: 0.2, duration: 0.8, type: "spring" }}
       className="relative z-10 flex flex-col items-center"
     >
-      <div className="w-24 h-24 bg-gradient-to-tr from-purple-600 to-pink-500 rounded-3xl flex items-center justify-center text-4xl shadow-[0_0_40px_rgba(168,85,247,0.5)] mb-6 overflow-hidden relative">
+      <div className="w-24 h-24 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-3xl flex items-center justify-center text-4xl shadow-[0_0_40px_rgba(6,182,212,0.4)] mb-6 overflow-hidden relative">
         <motion.div
           animate={{ y: ["100%", "-100%"] }}
           transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-          className="absolute inset-0 bg-gradient-to-b from-transparent via-white/20 to-transparent"
+          className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-transparent"
         />
         🍕
       </div>
-      <h1 className="text-4xl font-display font-bold text-white mb-2 tracking-tight">Food<span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">Pulse</span></h1>
+      <h1 className="text-4xl font-display font-bold text-white mb-2 tracking-tight">Food<span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Pulse</span></h1>
       <p className="text-gray-400 text-sm tracking-widest uppercase mb-8">Smart Campus Ecosystem</p>
       
       <div className="flex gap-2">
@@ -62,7 +62,7 @@ const StartupSplash = () => (
               opacity: [0.3, 1, 0.3]
             }}
             transition={{ duration: 1, repeat: Infinity, delay: i * 0.2 }}
-            className="w-2 h-2 rounded-full bg-purple-500"
+            className="w-2 h-2 rounded-full bg-cyan-500"
           />
         ))}
       </div>

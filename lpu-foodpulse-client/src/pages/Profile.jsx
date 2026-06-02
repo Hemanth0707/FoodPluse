@@ -62,7 +62,7 @@ const Profile = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 md:px-8 pb-24 lg:pb-12 space-y-8 animate-[fadeUp_0.4s_both] selection:bg-purple-500/30 selection:text-purple-200">
+    <div className="max-w-7xl mx-auto px-4 md:px-8 pb-24 lg:pb-12 space-y-8 animate-[fadeUp_0.4s_both] selection:bg-cyan-500/30 selection:text-cyan-200">
       
       {/* Toast Notification */}
       <AnimatePresence>
@@ -71,9 +71,9 @@ const Profile = () => {
             initial={{ opacity: 0, y: -20, x: '-50%' }}
             animate={{ opacity: 1, y: 0, x: '-50%' }}
             exit={{ opacity: 0, y: -20, x: '-50%' }}
-            className="fixed top-6 left-1/2 z-50 bg-[#0d0d21]/90 border border-purple-500/30 text-white px-5 py-3 rounded-2xl flex items-center gap-2.5 shadow-2xl backdrop-blur-md text-xs font-bold"
+            className="fixed top-6 left-1/2 z-50 bg-[#060713]/90 border border-cyan-500/30 text-white px-5 py-3 rounded-2xl flex items-center gap-2.5 shadow-2xl backdrop-blur-md text-xs font-bold"
           >
-            <Zap size={14} className="text-purple-400 animate-pulse" />
+            <Zap size={14} className="text-cyan-400 animate-pulse" />
             {toastMessage}
           </motion.div>
         )}
@@ -81,15 +81,15 @@ const Profile = () => {
 
       {/* 1. HEADER SECTION (High-Fidelity Profile card) */}
       <div className="relative rounded-[2.5rem] p-8 md:p-10 bg-white/[0.02] border border-white/5 shadow-2xl overflow-hidden backdrop-blur-3xl">
-        <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-gradient-to-tr from-purple-600/10 to-pink-500/10 rounded-full blur-[80px] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-gradient-to-tr from-cyan-500/10 to-blue-600/10 rounded-full blur-[80px] pointer-events-none" />
         
         <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
           {/* Left Side: Avatar + Details */}
           <div className="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
             {/* Circular Avatar */}
-            <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-purple-600 to-pink-500 p-0.5 shadow-[0_0_20px_rgba(168,85,247,0.3)] shrink-0">
-              <div className="w-full h-full rounded-full overflow-hidden bg-[#070714] flex items-center justify-center">
-                <span className="text-3xl font-display font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">
+            <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-cyan-500 to-blue-600 p-0.5 shadow-[0_0_20px_rgba(6, 182, 212,0.3)] shrink-0">
+              <div className="w-full h-full rounded-full overflow-hidden bg-[#020208] flex items-center justify-center">
+                <span className="text-3xl font-display font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">
                   {user?.name?.charAt(0).toUpperCase() || 'H'}
                 </span>
               </div>
@@ -104,7 +104,7 @@ const Profile = () => {
                 
                 {/* Badges */}
                 <div className="flex items-center justify-center gap-2 shrink-0">
-                  <span className="px-2.5 py-0.5 rounded-lg text-[9px] font-bold uppercase tracking-wider border border-purple-500/20 bg-purple-500/10 text-purple-300">
+                  <span className="px-2.5 py-0.5 rounded-lg text-[9px] font-bold uppercase tracking-wider border border-cyan-500/20 bg-cyan-500/10 text-cyan-300">
                     Level 4
                   </span>
                   <span className="flex items-center gap-1 text-[10px] text-green-400 font-bold bg-green-500/10 border border-green-500/20 px-2 py-0.5 rounded-lg">
@@ -130,7 +130,7 @@ const Profile = () => {
           {/* Right Side: Edit Button */}
           <button 
             onClick={() => triggerToast('Profile details form coming soon!')}
-            className="px-5 py-3 rounded-xl border border-white/10 hover:border-purple-500/30 bg-white/5 text-white text-xs font-bold transition-all flex items-center gap-1.5 hover:bg-white/10 shrink-0 cursor-pointer"
+            className="px-5 py-3 rounded-xl border border-white/10 hover:border-cyan-500/30 bg-white/5 text-white text-xs font-bold transition-all flex items-center gap-1.5 hover:bg-white/10 shrink-0 cursor-pointer"
           >
             <Edit3 size={14} /> Edit Profile
           </button>
@@ -145,9 +145,9 @@ const Profile = () => {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           <button 
             onClick={() => navigate('/marketplace')}
-            className="group relative overflow-hidden border border-white/5 hover:border-purple-500/30 bg-white/[0.01] hover:bg-white/[0.03] rounded-2xl p-5 flex items-center gap-4 transition-all duration-300 text-left cursor-pointer"
+            className="group relative overflow-hidden border border-white/5 hover:border-cyan-500/30 bg-white/[0.01] hover:bg-white/[0.03] rounded-2xl p-5 flex items-center gap-4 transition-all duration-300 text-left cursor-pointer"
           >
-            <div className="p-3 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 group-hover:scale-105 transition-transform">
+            <div className="p-3 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 group-hover:scale-105 transition-transform">
               <ShoppingBag size={20} />
             </div>
             <div>
@@ -158,9 +158,9 @@ const Profile = () => {
 
           <button 
             onClick={() => navigate('/report-food')}
-            className="group relative overflow-hidden border border-white/5 hover:border-pink-500/30 bg-white/[0.01] hover:bg-white/[0.03] rounded-2xl p-5 flex items-center gap-4 transition-all duration-300 text-left cursor-pointer"
+            className="group relative overflow-hidden border border-white/5 hover:border-blue-600/30 bg-white/[0.01] hover:bg-white/[0.03] rounded-2xl p-5 flex items-center gap-4 transition-all duration-300 text-left cursor-pointer"
           >
-            <div className="p-3 rounded-xl bg-pink-500/10 border border-pink-500/20 text-pink-400 group-hover:scale-105 transition-transform">
+            <div className="p-3 rounded-xl bg-blue-600/10 border border-blue-600/20 text-blue-500 group-hover:scale-105 transition-transform">
               <AlertTriangle size={20} />
             </div>
             <div>
@@ -205,7 +205,7 @@ const Profile = () => {
           </h2>
           <button 
             onClick={() => navigate('/wallet')} 
-            className="text-xs font-bold text-purple-400 hover:text-purple-300 flex items-center gap-0.5 transition-colors cursor-pointer"
+            className="text-xs font-bold text-cyan-400 hover:text-cyan-300 flex items-center gap-0.5 transition-colors cursor-pointer"
           >
             View Analytics <ChevronRight size={14} />
           </button>
@@ -214,7 +214,7 @@ const Profile = () => {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Card 1 */}
           <div className="bg-white/[0.01] border border-white/5 rounded-3xl p-5 flex items-center gap-4 relative overflow-hidden">
-            <div className="w-11 h-11 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center shadow-inner">
+            <div className="w-11 h-11 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center shadow-inner">
               <Wallet size={18} />
             </div>
             <div>
@@ -224,7 +224,7 @@ const Profile = () => {
           </div>
           {/* Card 2 */}
           <div className="bg-white/[0.01] border border-white/5 rounded-3xl p-5 flex items-center gap-4 relative overflow-hidden">
-            <div className="w-11 h-11 rounded-xl bg-pink-500/10 text-pink-400 flex items-center justify-center shadow-inner">
+            <div className="w-11 h-11 rounded-xl bg-blue-600/10 text-blue-500 flex items-center justify-center shadow-inner">
               <ShoppingBag size={18} />
             </div>
             <div>
@@ -262,7 +262,7 @@ const Profile = () => {
         <div className="p-6 bg-white/[0.02] border border-white/5 rounded-[2rem] shadow-2xl relative overflow-hidden backdrop-blur-3xl flex flex-col justify-between min-h-[460px]">
           <div>
             <h3 className="text-base font-display font-extrabold text-white tracking-tight mb-5 flex items-center gap-2 border-b border-white/5 pb-3">
-              <ShoppingBag size={16} className="text-purple-400" /> Food Activity
+              <ShoppingBag size={16} className="text-cyan-400" /> Food Activity
             </h3>
 
             {/* Most Ordered Item Sub-widget */}
@@ -270,12 +270,12 @@ const Profile = () => {
               <div>
                 <span className="text-[10px] text-gray-500 uppercase tracking-widest font-semibold block mb-2">Most Ordered</span>
                 <div className="p-4 bg-white/5 border border-white/5 rounded-2xl flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-purple-500/10 to-pink-500/10 border border-purple-500/20 flex items-center justify-center text-2xl shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-cyan-500/10 to-blue-600/10 border border-cyan-500/20 flex items-center justify-center text-2xl shrink-0">
                     🍔
                   </div>
                   <div>
                     <h4 className="text-xs font-bold text-white">Spicy Veg Burger</h4>
-                    <p className="text-[10px] text-purple-300 font-semibold mt-0.5">Ordered 14 times</p>
+                    <p className="text-[10px] text-cyan-300 font-semibold mt-0.5">Ordered 14 times</p>
                     <p className="text-[9px] text-gray-500 mt-1">Stall: Central Mess (Block 25 Food Court)</p>
                   </div>
                 </div>
@@ -295,7 +295,7 @@ const Profile = () => {
                       <span className="text-base shrink-0">{item.emoji}</span>
                       <h5 className="text-[11px] font-bold text-white">{item.name}</h5>
                     </div>
-                    <span className="text-[10px] font-extrabold text-purple-300">{item.price}</span>
+                    <span className="text-[10px] font-extrabold text-cyan-300">{item.price}</span>
                   </div>
                 ))}
               </div>
@@ -304,7 +304,7 @@ const Profile = () => {
 
           <button 
             onClick={() => navigate('/orders')}
-            className="w-full py-2.5 mt-5 border border-white/5 hover:border-purple-500/20 bg-white/5 hover:bg-white/10 rounded-xl text-[10px] font-bold uppercase tracking-wider text-gray-300 hover:text-white transition-all flex items-center justify-center gap-1 cursor-pointer"
+            className="w-full py-2.5 mt-5 border border-white/5 hover:border-cyan-500/20 bg-white/5 hover:bg-white/10 rounded-xl text-[10px] font-bold uppercase tracking-wider text-gray-300 hover:text-white transition-all flex items-center justify-center gap-1 cursor-pointer"
           >
             View All Orders <ChevronRight size={12} />
           </button>
@@ -314,7 +314,7 @@ const Profile = () => {
         <div className="p-6 bg-white/[0.02] border border-white/5 rounded-[2rem] shadow-2xl relative overflow-hidden backdrop-blur-3xl flex flex-col justify-between min-h-[460px]">
           <div>
             <h3 className="text-base font-display font-extrabold text-white tracking-tight mb-5 flex items-center gap-2 border-b border-white/5 pb-3">
-              <AlertTriangle size={16} className="text-pink-400" /> Issue Reports
+              <AlertTriangle size={16} className="text-blue-500" /> Issue Reports
             </h3>
 
             <div className="space-y-4">
@@ -322,9 +322,9 @@ const Profile = () => {
               <div className="flex items-center gap-5 bg-white/5 border border-white/5 p-4 rounded-2xl">
                 {/* SVG Progress Circle */}
                 <div className="relative w-12 h-12 flex items-center justify-center shrink-0">
-                  <svg className="w-full h-full text-pink-500 transform -rotate-90" viewBox="0 0 36 36">
+                  <svg className="w-full h-full text-blue-600 transform -rotate-90" viewBox="0 0 36 36">
                     <path className="text-white/5" stroke="currentColor" strokeWidth="3" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                    <path className="text-pink-400" strokeDasharray="85, 100" stroke="currentColor" strokeWidth="3" strokeLinecap="round" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path className="text-blue-500" strokeDasharray="85, 100" stroke="currentColor" strokeWidth="3" strokeLinecap="round" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
                   </svg>
                   <span className="absolute text-[10px] font-black text-white">85%</span>
                 </div>
@@ -373,7 +373,7 @@ const Profile = () => {
 
           <button 
             onClick={() => navigate('/report-food')}
-            className="w-full py-2.5 mt-5 border border-white/5 hover:border-pink-500/20 bg-white/5 hover:bg-white/10 rounded-xl text-[10px] font-bold uppercase tracking-wider text-gray-300 hover:text-white transition-all flex items-center justify-center gap-1 cursor-pointer"
+            className="w-full py-2.5 mt-5 border border-white/5 hover:border-blue-600/20 bg-white/5 hover:bg-white/10 rounded-xl text-[10px] font-bold uppercase tracking-wider text-gray-300 hover:text-white transition-all flex items-center justify-center gap-1 cursor-pointer"
           >
             View All Reports <ChevronRight size={12} />
           </button>
@@ -388,7 +388,7 @@ const Profile = () => {
               </h3>
               <button 
                 onClick={() => triggerToast('All rewards unlocked summary!')} 
-                className="text-[10px] font-bold text-purple-400 hover:text-purple-300 transition-colors"
+                className="text-[10px] font-bold text-cyan-400 hover:text-cyan-300 transition-colors"
               >
                 View All
               </button>
@@ -436,11 +436,11 @@ const Profile = () => {
       <div className="p-8 bg-white/[0.02] border border-white/5 rounded-[2rem] shadow-2xl relative overflow-hidden backdrop-blur-3xl">
         <div className="flex justify-between items-center mb-6">
           <h3 className="text-lg font-display font-extrabold text-white tracking-tight flex items-center gap-2">
-            <History className="text-purple-400" /> Points Transaction History
+            <History className="text-cyan-400" /> Points Transaction History
           </h3>
           <button 
             onClick={() => navigate('/wallet')} 
-            className="text-xs font-bold text-purple-400 hover:text-purple-300 flex items-center gap-0.5 transition-colors cursor-pointer"
+            className="text-xs font-bold text-cyan-400 hover:text-cyan-300 flex items-center gap-0.5 transition-colors cursor-pointer"
           >
             View All Transactions <ChevronRight size={14} />
           </button>
@@ -450,7 +450,7 @@ const Profile = () => {
         <div className="overflow-x-auto w-full border border-white/5 rounded-2xl bg-black/20 hide-scrollbar">
           <table className="w-full text-left text-xs border-collapse min-w-[500px]">
             <thead>
-              <tr className="border-b border-white/5 bg-[#0b0b1f] text-gray-500 font-bold uppercase tracking-wider text-[10px]">
+              <tr className="border-b border-white/5 bg-[#020208] text-gray-500 font-bold uppercase tracking-wider text-[10px]">
                 <th className="py-4 px-6">Activity</th>
                 <th className="py-4 px-6">Date & Time</th>
                 <th className="py-4 px-6 text-right">Points</th>
@@ -461,7 +461,7 @@ const Profile = () => {
                 <tr key={idx} className="border-b border-white/5 last:border-0 hover:bg-white/[0.02] transition-colors">
                   <td className="py-4 px-6 font-bold text-white">{txn.activity}</td>
                   <td className="py-4 px-6 text-gray-400">{txn.dateTime}</td>
-                  <td className={`py-4 px-6 text-right font-display font-extrabold text-sm ${txn.type === 'earn' ? 'text-green-400' : 'text-pink-400'}`}>
+                  <td className={`py-4 px-6 text-right font-display font-extrabold text-sm ${txn.type === 'earn' ? 'text-green-400' : 'text-blue-500'}`}>
                     {txn.points}
                   </td>
                 </tr>
@@ -473,13 +473,13 @@ const Profile = () => {
 
       {/* 6. REFER & EARN SECTION */}
       <div className="p-8 bg-white/[0.02] border border-white/5 rounded-[2.5rem] shadow-2xl relative overflow-hidden backdrop-blur-3xl">
-        <div className="absolute top-0 left-0 w-32 h-32 bg-purple-500/5 rounded-full blur-2xl pointer-events-none" />
+        <div className="absolute top-0 left-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-2xl pointer-events-none" />
         
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-10">
           {/* Left Input Details */}
           <div className="md:col-span-7 space-y-6">
             <div className="space-y-2">
-              <span className="text-[10px] bg-purple-500/10 text-purple-300 font-bold px-2.5 py-1 rounded-full border border-purple-500/20 uppercase tracking-widest inline-block">
+              <span className="text-[10px] bg-cyan-500/10 text-cyan-300 font-bold px-2.5 py-1 rounded-full border border-cyan-500/20 uppercase tracking-widest inline-block">
                 Referral Program
               </span>
               <h3 className="text-3xl font-display font-extrabold text-white tracking-tight">Refer & Earn</h3>
@@ -493,11 +493,11 @@ const Profile = () => {
               <div className="space-y-2">
                 <label className="text-[10px] uppercase font-bold text-gray-500 tracking-wider">Your Referral Code</label>
                 <div className="flex gap-3 max-w-sm">
-                  <div className="flex-1 bg-[#111126]/60 border border-white/10 rounded-2xl py-3.5 px-4 text-white text-sm font-mono font-extrabold shadow-inner flex items-center justify-between">
+                  <div className="flex-1 bg-[#0c0d21]/60 border border-white/10 rounded-2xl py-3.5 px-4 text-white text-sm font-mono font-extrabold shadow-inner flex items-center justify-between">
                     <span>{referralCode}</span>
                     <button 
                       onClick={handleCopy} 
-                      className="text-gray-400 hover:text-purple-400 transition-colors p-1"
+                      className="text-gray-400 hover:text-cyan-400 transition-colors p-1"
                       title="Copy Code"
                     >
                       {copied ? <Check size={16} className="text-green-400" /> : <Copy size={16} />}
@@ -506,7 +506,7 @@ const Profile = () => {
                   
                   <button 
                     onClick={() => triggerToast('Referral invite link generated!')}
-                    className="px-6 py-3.5 rounded-2xl bg-gradient-to-tr from-purple-600 to-pink-500 hover:scale-[1.02] text-white font-bold text-xs shadow-lg transition-all cursor-pointer"
+                    className="px-6 py-3.5 rounded-2xl bg-gradient-to-tr from-cyan-500 to-blue-600 hover:scale-[1.02] text-white font-bold text-xs shadow-lg transition-all cursor-pointer"
                   >
                     Invite Now
                   </button>
@@ -517,25 +517,25 @@ const Profile = () => {
 
           {/* Right Vector Illustration (High-fidelity SVGs) */}
           <div className="md:col-span-5 flex justify-center">
-            <svg viewBox="0 0 280 200" className="w-full max-w-[280px] drop-shadow-[0_0_30px_rgba(168,85,247,0.2)]">
+            <svg viewBox="0 0 280 200" className="w-full max-w-[280px] drop-shadow-[0_0_30px_rgba(6, 182, 212,0.2)]">
               {/* Outer background elements */}
               <defs>
-                <linearGradient id="purplePink" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#a855f7" stopOpacity="0.4" />
-                  <stop offset="100%" stopColor="#ec4899" stopOpacity="0.1" />
+                <linearGradient id="cyanPink" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#00D4FF" stopOpacity="0.4" />
+                  <stop offset="100%" stopColor="#06B6D4" stopOpacity="0.1" />
                 </linearGradient>
                 <linearGradient id="glowG" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#a855f7" />
-                  <stop offset="100%" stopColor="#ec4899" />
+                  <stop offset="0%" stopColor="#00D4FF" />
+                  <stop offset="100%" stopColor="#06B6D4" />
                 </linearGradient>
               </defs>
               
               {/* Background Shapes */}
-              <rect x="20" y="20" width="240" height="160" rx="20" fill="url(#purplePink)" stroke="rgba(255,255,255,0.05)" strokeWidth="1" />
+              <rect x="20" y="20" width="240" height="160" rx="20" fill="url(#cyanPink)" stroke="rgba(255,255,255,0.05)" strokeWidth="1" />
               
               {/* Connecting Nodes */}
-              <circle cx="90" cy="100" r="25" fill="#070714" stroke="rgba(168,85,247,0.3)" strokeWidth="1.5" />
-              <circle cx="190" cy="100" r="25" fill="#070714" stroke="rgba(236,72,153,0.3)" strokeWidth="1.5" />
+              <circle cx="90" cy="100" r="25" fill="#020208" stroke="rgba(6, 182, 212,0.3)" strokeWidth="1.5" />
+              <circle cx="190" cy="100" r="25" fill="#020208" stroke="rgba(6, 182, 212,0.3)" strokeWidth="1.5" />
               <line x1="115" y1="100" x2="165" y2="100" stroke="url(#glowG)" strokeWidth="2.5" strokeDasharray="5,3" />
 
               {/* Handshake/Hi-Five representation or connection avatars */}
@@ -548,9 +548,9 @@ const Profile = () => {
               
               <circle cx="70" cy="60" r="6" fill="#3b82f6" opacity="0.7" />
               <circle cx="210" cy="140" r="8" fill="#10b981" opacity="0.6" />
-              <circle cx="220" cy="50" r="6" fill="#ec4899" opacity="0.5" />
+              <circle cx="220" cy="50" r="6" fill="#06B6D4" opacity="0.5" />
 
-              <text x="110" y="145" fontSize="9" fontWeight="bold" fill="#a855f7" opacity="0.9" fontFamily="Outfit">+150 PTS</text>
+              <text x="110" y="145" fontSize="9" fontWeight="bold" fill="#00D4FF" opacity="0.9" fontFamily="Outfit">+150 PTS</text>
             </svg>
           </div>
         </div>

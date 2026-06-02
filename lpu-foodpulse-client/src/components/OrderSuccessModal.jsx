@@ -5,7 +5,7 @@ const OrderSuccessModal = ({ order, walletPoints, onClose }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-[fadeIn_0.3s_ease-out]">
-      <div className="bg-[#12122a] border border-white/10 rounded-3xl max-w-md w-full overflow-hidden shadow-[0_0_50px_rgba(168,85,247,0.2)] animate-[slideUp_0.4s_ease-out]">
+      <div className="bg-[#0c0d21] border border-white/10 rounded-3xl max-w-md w-full overflow-hidden shadow-[0_0_50px_rgba(6, 182, 212,0.2)] animate-[slideUp_0.4s_ease-out]">
         
         {/* Animated Success Header */}
         <div className="p-8 pb-6 flex flex-col items-center justify-center border-b border-white/5 bg-gradient-to-b from-green-500/10 to-transparent">
@@ -21,7 +21,7 @@ const OrderSuccessModal = ({ order, walletPoints, onClose }) => {
         <div className="p-8">
           
           {/* Token Card */}
-          <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-6 mb-6 text-center shadow-lg relative overflow-hidden">
+          <div className="bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl p-6 mb-6 text-center shadow-lg relative overflow-hidden">
             <div className="absolute top-0 right-0 opacity-10 transform translate-x-4 -translate-y-4">
               <QrCode size={100} />
             </div>
@@ -34,7 +34,7 @@ const OrderSuccessModal = ({ order, walletPoints, onClose }) => {
           <div className="space-y-4 mb-8">
             <div className="flex justify-between items-center bg-white/5 p-4 rounded-xl border border-white/5">
               <div className="flex items-center gap-3 text-gray-300">
-                <Timer size={18} className="text-purple-400"/>
+                <Timer size={18} className="text-cyan-400"/>
                 <span className="text-sm">Est. Wait Time</span>
               </div>
               <span className="font-bold text-white">{order.items?.[0]?.prepTime || 15} mins</span>
@@ -42,7 +42,7 @@ const OrderSuccessModal = ({ order, walletPoints, onClose }) => {
             
             <div className="flex justify-between items-center bg-white/5 p-4 rounded-xl border border-white/5">
               <div className="flex items-center gap-3 text-gray-300">
-                <Wallet size={18} className="text-pink-400"/>
+                <Wallet size={18} className="text-blue-500"/>
                 <span className="text-sm">Points Left</span>
               </div>
               <span className="font-bold text-white">{walletPoints} pts</span>

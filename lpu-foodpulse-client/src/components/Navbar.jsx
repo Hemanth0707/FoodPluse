@@ -14,7 +14,7 @@ export default function Navbar() {
   return (
     <nav className="bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between sticky top-0 z-10">
       <div className="flex items-center gap-2">
-        <div className="bg-purple-600 text-white p-1.5 rounded-lg font-bold">FP</div>
+        <div className="bg-cyan-500 text-white p-1.5 rounded-lg font-bold">FP</div>
         <span className="text-xl font-bold text-gray-800">FoodPulse</span>
       </div>
       

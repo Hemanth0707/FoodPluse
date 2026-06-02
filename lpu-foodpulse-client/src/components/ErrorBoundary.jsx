@@ -20,7 +20,7 @@ class ErrorBoundary extends React.Component {
   render() {
     if (this.state.hasError) {
       return (
-        <div className="min-h-screen bg-[#080810] flex flex-col items-center justify-center p-6 text-center">
+        <div className="min-h-screen bg-[#020208] flex flex-col items-center justify-center p-6 text-center">
           <div className="w-24 h-24 bg-red-500/20 text-red-500 rounded-full flex items-center justify-center mb-6 text-4xl shadow-[0_0_30px_rgba(239,68,68,0.3)]">
             ⚠️
           </div>
@@ -28,7 +28,7 @@ class ErrorBoundary extends React.Component {
           <p className="text-gray-400 mb-8 max-w-md">The application encountered an unexpected error. Please try refreshing the page or navigating back home.</p>
           <div className="flex gap-4">
             <button 
-              className="px-6 py-3 bg-purple-600 text-white font-bold rounded-xl hover:bg-purple-500 transition-colors"
+              className="px-6 py-3 bg-cyan-500 text-white font-bold rounded-xl hover:bg-cyan-500 transition-colors"
               onClick={() => window.location.href = '/'}
             >
               Go to Home

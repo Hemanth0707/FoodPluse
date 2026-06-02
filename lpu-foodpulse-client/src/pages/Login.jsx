@@ -46,7 +46,7 @@ const Login = () => {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute top-[-20%] left-[-10%] w-[55vw] h-[55vw] rounded-full bg-purple-600/15 blur-[120px] pointer-events-none z-0"
+        className="absolute top-[-20%] left-[-10%] w-[55vw] h-[55vw] rounded-full bg-cyan-500/15 blur-[120px] pointer-events-none z-0"
       />
       <motion.div 
         animate={{
@@ -69,7 +69,7 @@ const Login = () => {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute top-[30%] left-[30%] w-[35vw] h-[35vw] rounded-full bg-pink-500/8 blur-[100px] pointer-events-none z-0"
+        className="absolute top-[30%] left-[30%] w-[35vw] h-[35vw] rounded-full bg-blue-600/8 blur-[100px] pointer-events-none z-0"
       />
 
       {/* Main 2-Column Layout Wrapper Container */}
@@ -80,24 +80,24 @@ const Login = () => {
           
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-purple-600 to-pink-500 flex items-center justify-center text-white shadow-[0_0_20px_rgba(168,85,247,0.4)] group-hover:scale-105 transition-all duration-300">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white shadow-[0_0_20px_rgba(6, 182, 212,0.4)] group-hover:scale-105 transition-all duration-300">
               <Zap className="w-4.5 h-4.5 fill-white text-white" />
             </div>
             <span className="font-display font-black text-xl sm:text-2xl tracking-tight text-white group-hover:opacity-90 transition-opacity">
-              Food<span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">Pulse</span>
+              Food<span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">Pulse</span>
             </span>
           </Link>
 
           {/* Eyebrow Tag */}
-          <div className="text-xs font-bold text-pink-500 tracking-wider uppercase">
+          <div className="text-xs font-bold text-blue-600 tracking-wider uppercase">
             ⚡ NEXT-GEN CAMPUS DINING
           </div>
 
           {/* Title Heading */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-black tracking-tight text-white leading-[1.1] text-left">
             FoodPulse<br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">Smart Campus</span><br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-400">Food Ecosystem</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">Smart Campus</span><br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">Food Ecosystem</span>
           </h1>
           
           {/* Small Subtitle */}
@@ -110,7 +110,7 @@ const Login = () => {
             
             {/* Feature 1 */}
             <div className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-white/[0.01] border border-white/[0.03] backdrop-blur-md">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-purple-500/10 border border-purple-500/20 text-purple-400 shrink-0">
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 shrink-0">
                 <ShieldCheck className="w-5 h-5" />
               </div>
               <div className="text-left">
@@ -121,7 +121,7 @@ const Login = () => {
 
             {/* Feature 2 */}
             <div className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-white/[0.01] border border-white/[0.03] backdrop-blur-md">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-pink-500/10 border border-pink-500/20 text-pink-400 shrink-0">
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-blue-600/10 border border-blue-600/20 text-blue-500 shrink-0">
                 <ShoppingBag className="w-5 h-5" />
               </div>
               <div className="text-left">
@@ -156,14 +156,14 @@ const Login = () => {
 
           {/* Glowing Bottom Salad Bowl Graphic */}
           <div className="relative mt-4 pt-2 flex justify-center lg:justify-start items-center select-none">
-            <div className="absolute w-40 h-20 bg-purple-600/30 rounded-full blur-[40px] pointer-events-none" />
+            <div className="absolute w-40 h-20 bg-cyan-500/30 rounded-full blur-[40px] pointer-events-none" />
             
             <motion.img 
               src={saladBowlImg} 
               alt="Glowing Food Illustration" 
               animate={{ y: [0, -5, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="w-full max-w-[180px] object-contain relative z-10 drop-shadow-[0_15px_30px_rgba(168,85,247,0.35)]" 
+              className="w-full max-w-[180px] object-contain relative z-10 drop-shadow-[0_15px_30px_rgba(6, 182, 212,0.35)]" 
             />
           </div>
 
@@ -176,11 +176,11 @@ const Login = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full max-w-[480px] rounded-[28px] border border-white/5 bg-[#090916]/65 backdrop-blur-3xl p-8 sm:p-10 md:p-12 shadow-[0_24px_80px_rgba(0,0,0,0.85)] relative overflow-hidden flex flex-col justify-between"
+            className="w-full max-w-[480px] rounded-[28px] border border-white/5 bg-[#060713]/65 backdrop-blur-3xl p-8 sm:p-10 md:p-12 shadow-[0_24px_80px_rgba(0,0,0,0.85)] relative overflow-hidden flex flex-col justify-between"
           >
             {/* Top-Right Neon Glow Border Effect */}
-            <div className="absolute top-0 right-0 w-40 h-[2px] bg-gradient-to-r from-purple-500 to-pink-500 opacity-70 shadow-[0_0_12px_rgba(168,85,247,0.5)]" />
-            <div className="absolute top-0 right-0 w-[2px] h-40 bg-gradient-to-b from-purple-500 to-pink-500 opacity-70 shadow-[0_0_12px_rgba(168,85,247,0.5)]" />
+            <div className="absolute top-0 right-0 w-40 h-[2px] bg-gradient-to-r from-cyan-500 to-blue-600 opacity-70 shadow-[0_0_12px_rgba(6, 182, 212,0.5)]" />
+            <div className="absolute top-0 right-0 w-[2px] h-40 bg-gradient-to-b from-cyan-500 to-blue-600 opacity-70 shadow-[0_0_12px_rgba(6, 182, 212,0.5)]" />
 
             <div className="w-full mx-auto">
               
@@ -216,7 +216,7 @@ const Login = () => {
                       type="email" 
                       required 
                       placeholder="Enter your email"
-                      className="w-full h-14 bg-[#080814]/40 border border-white/10 rounded-2xl py-3 pl-12 pr-5 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/30 hover:border-white/20 transition-all font-body"
+                      className="w-full h-14 bg-[#020208]/40 border border-white/10 rounded-2xl py-3 pl-12 pr-5 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/30 hover:border-white/20 transition-all font-body"
                       value={email} 
                       onChange={(e) => setEmail(e.target.value)}
                     />
@@ -234,7 +234,7 @@ const Login = () => {
                       type={showPassword ? "text" : "password"} 
                       required 
                       placeholder="Enter your password"
-                      className="w-full h-14 bg-[#080814]/40 border border-white/10 rounded-2xl py-3 pl-12 pr-12 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/30 hover:border-white/20 transition-all font-body"
+                      className="w-full h-14 bg-[#020208]/40 border border-white/10 rounded-2xl py-3 pl-12 pr-12 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/30 hover:border-white/20 transition-all font-body"
                       value={password} 
                       onChange={(e) => setPassword(e.target.value)}
                     />
@@ -256,11 +256,11 @@ const Login = () => {
                       id="remember"
                       checked={rememberMe}
                       onChange={(e) => setRememberMe(e.target.checked)}
-                      className="w-4 h-4 rounded border-white/10 bg-[#080814]/40 text-purple-600 focus:ring-purple-500/30 cursor-pointer accent-purple-600" 
+                      className="w-4 h-4 rounded border-white/10 bg-[#020208]/40 text-cyan-500 focus:ring-cyan-500/30 cursor-pointer accent-cyan-500" 
                     />
                     <span>Remember me</span>
                   </label>
-                  <a href="#" className="font-semibold text-pink-500 hover:text-pink-400 transition-colors">
+                  <a href="#" className="font-semibold text-blue-600 hover:text-blue-500 transition-colors">
                     Forgot Password?
                   </a>
                 </div>
@@ -270,7 +270,7 @@ const Login = () => {
                   <button
                     type="submit"
                     disabled={!isFormValid || loading}
-                    className="w-full h-14 rounded-2xl font-bold text-white bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-500 hover:to-pink-400 transition-all shadow-[0_8px_25px_rgba(168,85,247,0.35)] disabled:opacity-50 disabled:cursor-not-allowed hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2 border-none cursor-pointer text-sm"
+                    className="w-full h-14 rounded-2xl font-bold text-white bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-500 hover:to-blue-500 transition-all shadow-[0_8px_25px_rgba(6, 182, 212,0.35)] disabled:opacity-50 disabled:cursor-not-allowed hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2 border-none cursor-pointer text-sm"
                   >
                     {loading ? (
                       <div className="flex items-center gap-2">
@@ -306,7 +306,7 @@ const Login = () => {
                 {/* Sign Up Link */}
                 <div className="mt-2 text-center text-xs text-gray-400">
                   Don't have an account?{' '}
-                  <Link to="/register" className="font-bold text-pink-500 hover:text-pink-400 transition-colors">
+                  <Link to="/register" className="font-bold text-blue-600 hover:text-blue-500 transition-colors">
                     Sign Up
                   </Link>
                 </div>

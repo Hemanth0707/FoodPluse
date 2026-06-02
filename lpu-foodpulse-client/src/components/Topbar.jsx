@@ -32,12 +32,12 @@ const Topbar = ({ title, subtitle, toggleMobile }) => {
   const unreadCount = notifications.filter(n => !n.read).length;
 
   return (
-    <header className="w-full flex items-center justify-between py-5 px-6 md:px-8 border-b border-white/5 bg-[#070714]/80 backdrop-blur-2xl sticky top-0 z-30">
+    <header className="w-full flex items-center justify-between py-5 px-6 md:px-8 border-b border-white/5 bg-[#020208]/80 backdrop-blur-2xl sticky top-0 z-30 animate-page-enter">
       
       {/* Title Details */}
       <div>
         <h2 className="text-xl md:text-2xl font-display font-extrabold text-white tracking-tight">{title}</h2>
-        <p className="text-xs text-gray-500 mt-0.5">{subtitle}</p>
+        <p className="text-xs text-gray-400 mt-0.5">{subtitle}</p>
       </div>
 
       {/* Topbar Operations */}
@@ -50,8 +50,8 @@ const Topbar = ({ title, subtitle, toggleMobile }) => {
 
         {/* Smart Points Chip */}
         {user?.role === 'student' && (
-          <div className="hidden sm:flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl border border-purple-500/20 bg-purple-500/10 text-purple-300 text-xs font-bold shadow-[0_0_15px_rgba(168,85,247,0.1)]">
-            <Wallet size={14} className="text-purple-400" />
+          <div className="hidden sm:flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl border border-cyan-500/20 bg-cyan-500/10 text-cyan-300 text-xs font-bold shadow-[0_0_15px_rgba(6,182,212,0.1)]">
+            <Wallet size={14} className="text-cyan-400" />
             {walletPoints} pts
           </div>
         )}
@@ -63,13 +63,13 @@ const Topbar = ({ title, subtitle, toggleMobile }) => {
             onClick={() => setShowNotifs(!showNotifs)}
           >
             <Bell size={18} />
-            {unreadCount > 0 && <span className="absolute top-2 right-2 w-2 h-2 rounded-full bg-pink-500 shadow-[0_0_10px_rgba(236,72,153,1)]" />}
+            {unreadCount > 0 && <span className="absolute top-2 right-2 w-2 h-2 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,1)]" />}
           </button>
           
           {/* Notification Dropdown Panel */}
           <AnimatePresence>
             {showNotifs && (
-              <div className="absolute right-0 mt-3.5 w-80 bg-[#0b0b1f] border border-white/10 rounded-2xl shadow-2xl z-50 overflow-hidden">
+              <div className="absolute right-0 mt-3.5 w-80 bg-[#060713] border border-white/10 rounded-2xl shadow-2xl z-50 overflow-hidden">
                 <div className="p-4 border-b border-white/5 flex justify-between items-center bg-white/[0.01]">
                   <h3 className="font-bold text-white text-sm">Notifications</h3>
                   <button className="text-gray-400 hover:text-white" onClick={() => setShowNotifs(false)}>
@@ -86,7 +86,7 @@ const Topbar = ({ title, subtitle, toggleMobile }) => {
                         <div className={`w-7.5 h-7.5 rounded-lg flex items-center justify-center shrink-0 text-xs font-bold ${
                           notif.type === 'success' ? 'bg-green-500/10 text-green-400' :
                           notif.type === 'order' ? 'bg-blue-500/10 text-blue-400' :
-                          'bg-purple-500/10 text-purple-400'
+                          'bg-cyan-500/10 text-cyan-400'
                         }`}>
                           {notif.type === 'success' ? <Check size={12}/> : '🔔'}
                         </div>
@@ -100,7 +100,7 @@ const Topbar = ({ title, subtitle, toggleMobile }) => {
                 </div>
                 
                 <div className="p-3 text-center border-t border-white/5 bg-white/[0.01]">
-                  <button className="text-[10px] text-purple-400 hover:text-purple-300 font-bold uppercase tracking-wider" onClick={() => setShowNotifs(false)}>Mark all read</button>
+                  <button className="text-[10px] text-cyan-400 hover:text-cyan-300 font-bold uppercase tracking-wider" onClick={() => setShowNotifs(false)}>Mark all read</button>
                 </div>
               </div>
             )}
@@ -108,8 +108,8 @@ const Topbar = ({ title, subtitle, toggleMobile }) => {
         </div>
 
         {/* User Chip Avatar */}
-        <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-600 to-pink-500 p-0.5 shadow-md flex items-center justify-center text-xs font-extrabold text-white">
-          <div className="w-full h-full rounded-[10px] bg-[#0b0b1f] flex items-center justify-center uppercase">
+        <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 p-0.5 shadow-md flex items-center justify-center text-xs font-extrabold text-white">
+          <div className="w-full h-full rounded-[10px] bg-[#060713] flex items-center justify-center uppercase">
             {user?.name?.charAt(0) || 'S'}
           </div>
         </div>

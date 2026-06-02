@@ -65,17 +65,17 @@ const Orders = () => {
       {/* Active Orders Section */}
       <div className="space-y-6">
         <h2 className="text-xl font-display font-extrabold text-white tracking-tight flex items-center gap-2">
-          <Clock className="text-purple-400 animate-pulse" size={20} /> Active Orders ({activeOrders.length})
+          <Clock className="text-cyan-400 animate-pulse" size={20} /> Active Orders ({activeOrders.length})
         </h2>
         
         {loading ? (
           <div className="space-y-6">
             {[1, 2].map(i => (
-              <div key={i} className="h-60 bg-[#111126]/60 border border-white/5 rounded-3xl animate-pulse"></div>
+              <div key={i} className="h-60 bg-[#0c0d21]/60 border border-white/5 rounded-3xl animate-pulse"></div>
             ))}
           </div>
         ) : activeOrders.length === 0 ? (
-          <div className="text-center py-16 bg-[#111126]/50 border border-white/5 rounded-3xl">
+          <div className="text-center py-16 bg-[#0c0d21]/50 border border-white/5 rounded-3xl">
             <ShoppingBag size={42} className="mx-auto text-gray-500 mb-4" />
             <h3 className="text-base font-bold text-white">No active orders</h3>
             <p className="text-xs text-gray-400 max-w-xs mx-auto mt-1">Get your next meal by visiting the Marketplace food stalls.</p>
@@ -96,10 +96,10 @@ const Orders = () => {
                     className="bg-white/[0.02] border border-white/5 rounded-[2rem] overflow-hidden shadow-2xl backdrop-blur-3xl"
                   >
                     {/* Live Tracking Header */}
-                    <div className="bg-gradient-to-r from-purple-900/10 to-pink-900/10 p-6 border-b border-white/5 flex justify-between items-center">
+                    <div className="bg-gradient-to-r from-cyan-900/10 to-blue-900/10 p-6 border-b border-white/5 flex justify-between items-center">
                       <div>
                         <h3 className="text-xl font-display font-extrabold text-white tracking-tight">{order.stallId?.name || 'Food Stall'}</h3>
-                        <p className="text-[10px] text-purple-300 font-bold uppercase tracking-wider mt-0.5">Order #{order.qrCodeToken.substring(0, 8)}</p>
+                        <p className="text-[10px] text-cyan-300 font-bold uppercase tracking-wider mt-0.5">Order #{order.qrCodeToken.substring(0, 8)}</p>
                       </div>
                       
                       {step < 3 ? (
@@ -130,20 +130,20 @@ const Orders = () => {
                           initial={{ width: 0 }}
                           animate={{ width: progressWidth }}
                           transition={{ duration: 0.8, ease: "easeOut" }}
-                          className="absolute top-5 left-[10%] h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"
+                          className="absolute top-5 left-[10%] h-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full"
                         />
 
                         <div className="relative flex justify-between">
                           {[
-                            { stepVal: 1, label: "Confirmed", icon: <Package size={13} />, color: "text-purple-400" },
-                            { stepVal: 2, label: "Preparing", icon: <ChefHat size={13} />, color: "text-pink-400" },
+                            { stepVal: 1, label: "Confirmed", icon: <Package size={13} />, color: "text-cyan-400" },
+                            { stepVal: 2, label: "Preparing", icon: <ChefHat size={13} />, color: "text-blue-500" },
                             { stepVal: 3, label: "Ready", icon: <CheckCircle size={13} />, color: "text-green-400" },
                             { stepVal: 4, label: "Collected", icon: <MapPin size={13} />, color: "text-blue-400" }
                           ].map((item, idx) => (
                             <div key={idx} className={`flex flex-col items-center gap-2 z-10 w-[20%] ${step >= item.stepVal ? item.color : 'text-gray-500'}`}>
-                              <div className={`w-8 h-8 rounded-xl flex items-center justify-center border bg-[#0b0b1f] transition-all duration-500 ${
+                              <div className={`w-8 h-8 rounded-xl flex items-center justify-center border bg-[#020208] transition-all duration-500 ${
                                 step >= item.stepVal 
-                                  ? 'border-purple-500/40 shadow-[0_0_15px_rgba(168,85,247,0.2)] text-white' 
+                                  ? 'border-cyan-500/40 shadow-[0_0_15px_rgba(6, 182, 212,0.2)] text-white' 
                                   : 'border-white/5'
                               }`}>
                                 {item.icon}
@@ -169,7 +169,7 @@ const Orders = () => {
                           </div>
                         </div>
                         <div className="flex items-center gap-3 text-xs">
-                          <span className="font-bold text-purple-400">{order.totalPoints} pts paid</span>
+                          <span className="font-bold text-cyan-400">{order.totalPoints} pts paid</span>
                           <span className="text-gray-600">•</span>
                           <span className="text-gray-400">{new Date(order.createdAt).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</span>
                         </div>
