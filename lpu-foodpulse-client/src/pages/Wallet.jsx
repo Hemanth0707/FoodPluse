@@ -54,7 +54,7 @@ const Wallet = () => {
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 select-none pb-2 border-b border-white/5">
         <div>
           <h2 className="text-3xl font-display font-extrabold text-white tracking-tight flex items-center gap-2.5">
-            Smart Wallet <span className="text-[10px] uppercase bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 px-2.5 py-1 rounded-full font-bold tracking-widest">Digital Ledger</span>
+            Smart Wallet <span className="text-[10px] uppercase bg-amber-500/5 text-amber-500 border border-amber-500/20 px-2.5 py-1 rounded-full font-bold tracking-widest">Digital Ledger</span>
           </h2>
           <p className="text-sm text-gray-400 mt-1">Monitor dining credits, review audit payouts, and track reward levels.</p>
         </div>
@@ -66,7 +66,7 @@ const Wallet = () => {
               onClick={() => setSelectedPeriod(period)}
               className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
                 selectedPeriod === period 
-                  ? 'bg-cyan-500 text-white shadow-md' 
+                  ? 'bg-amber-500 text-white shadow-md' 
                   : 'bg-white/5 border border-white/5 text-gray-400 hover:text-white hover:bg-white/10'
               }`}
             >
@@ -81,29 +81,29 @@ const Wallet = () => {
         
         {/* Balance Card Widget (Spans 4 columns) */}
         <div className="lg:col-span-4 bg-white/[0.02] border border-white/5 p-8 rounded-[2rem] shadow-2xl relative overflow-hidden backdrop-blur-3xl flex flex-col justify-between">
-          <div className="absolute top-0 right-0 w-48 h-48 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-48 h-48 bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
           
           <div className="space-y-8">
             <div className="flex justify-between items-start">
               <div>
                 <span className="text-[10px] text-gray-500 uppercase tracking-widest font-semibold block mb-1">Total Available Balance</span>
                 <div className="text-5xl font-display font-black text-white flex items-baseline gap-2">
-                  {walletPoints.toLocaleString()} <span className="text-sm text-cyan-300 font-bold uppercase tracking-wider">PTS</span>
+                  {walletPoints.toLocaleString()} <span className="text-sm text-amber-500 font-bold uppercase tracking-wider">PTS</span>
                 </div>
               </div>
-              <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center border border-cyan-500/20 shadow-inner">
+              <div className="w-12 h-12 rounded-2xl bg-amber-500/5 text-amber-500 flex items-center justify-center border border-amber-500/20 shadow-inner">
                 <WalletIcon size={22} />
               </div>
             </div>
 
             <div className="grid grid-cols-2 gap-4 pt-2">
-              <div className="p-4 rounded-2xl bg-[#0c0d21]/60 border border-white/5 shadow-inner">
+              <div className="p-4 rounded-2xl bg-[#151515]/60 border border-white/5 shadow-inner">
                 <span className="text-[9px] text-gray-500 uppercase tracking-widest font-semibold block mb-0.5">Spent Value</span>
-                <span className="font-extrabold text-sm text-blue-500">890 pts</span>
+                <span className="font-extrabold text-sm text-amber-500">890 pts</span>
               </div>
-              <div className="p-4 rounded-2xl bg-[#0c0d21]/60 border border-white/5 shadow-inner">
+              <div className="p-4 rounded-2xl bg-[#151515]/60 border border-white/5 shadow-inner">
                 <span className="text-[9px] text-gray-500 uppercase tracking-widest font-semibold block mb-0.5">Remaining Cap</span>
-                <span className="font-extrabold text-sm text-green-400">{walletPoints} pts</span>
+                <span className="font-extrabold text-sm text-[#7BA05B]">{walletPoints} pts</span>
               </div>
             </div>
             
@@ -114,7 +114,7 @@ const Wallet = () => {
               </div>
               <div className="w-full h-2 bg-white/5 rounded-full overflow-hidden border border-white/5">
                 <motion.div 
-                  className="h-full bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full"
+                  className="h-full bg-gradient-to-r from-amber-600 to-yellow-500 text-neutral-950 rounded-full"
                   initial={{ width: 0 }}
                   animate={{ width: '75%' }}
                   transition={{ duration: 1.2 }}
@@ -135,14 +135,14 @@ const Wallet = () => {
 
         {/* Recharts Analytics Card (Spans 8 columns) */}
         <div className="lg:col-span-8 bg-white/[0.02] border border-white/5 p-6 md:p-8 rounded-[2rem] shadow-2xl relative overflow-hidden backdrop-blur-3xl flex flex-col justify-between min-h-[400px]">
-          <div className="absolute top-0 left-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 left-0 w-32 h-32 bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
           
           <div className="flex justify-between items-center mb-6">
             <div className="flex items-center gap-2">
-              <TrendingUp size={18} className="text-cyan-400" />
+              <TrendingUp size={18} className="text-amber-500" />
               <h3 className="text-lg font-bold text-white tracking-tight">Earned vs Spent Analytics</h3>
             </div>
-            <span className="text-[10px] bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 px-2 py-0.5 rounded-full font-bold">
+            <span className="text-[10px] bg-amber-500/5 text-amber-500 border border-amber-500/20 px-2 py-0.5 rounded-full font-bold">
               AI Aggregation
             </span>
           </div>
@@ -218,19 +218,19 @@ const Wallet = () => {
         {/* Recent Transactions List (Spans 8 columns) */}
         <div className="lg:col-span-8 bg-white/[0.02] border border-white/5 p-6 md:p-8 rounded-[2rem] shadow-2xl relative overflow-hidden backdrop-blur-3xl">
           <h3 className="text-xl font-display font-extrabold text-white tracking-tight mb-6 flex items-center gap-2 select-none">
-            <CheckCircle size={18} className="text-cyan-400" /> Recent Ledgers
+            <CheckCircle size={18} className="text-amber-500" /> Recent Ledgers
           </h3>
           
           <div className="space-y-4">
             {[
-              { id: 'tx-1', type: 'credit', desc: 'Compensation: Verified Quality Failure', meta: 'Central Mess • Complaint Verified', amount: '+150 pts', icon: <ArrowDownLeft size={16}/>, color: 'bg-green-500/10 text-green-400 border-green-500/20' },
-              { id: 'tx-2', type: 'debit', desc: 'Order Placed: Cheese Pasta', meta: 'Central Mess • Token #CP-892', amount: '-120 pts', icon: <ArrowUpRight size={16}/>, color: 'bg-blue-600/10 text-blue-500 border-blue-600/20' },
-              { id: 'tx-3', type: 'credit', desc: 'Compensation: Hair Follicle Violation', meta: 'BH1 Mess • Scan verified', amount: '+150 pts', icon: <ArrowDownLeft size={16}/>, color: 'bg-green-500/10 text-green-400 border-green-500/20' },
-              { id: 'tx-4', type: 'credit', desc: 'Welcome Bonus Allocation', meta: 'Semester initiation bonus credits', amount: '+500 pts', icon: <ArrowDownLeft size={16}/>, color: 'bg-green-500/10 text-green-400 border-green-500/20' }
+              { id: 'tx-1', type: 'credit', desc: 'Compensation: Verified Quality Failure', meta: 'Central Mess • Complaint Verified', amount: '+150 pts', icon: <ArrowDownLeft size={16}/>, color: 'bg-green-500/10 text-[#7BA05B] border-green-500/20' },
+              { id: 'tx-2', type: 'debit', desc: 'Order Placed: Cheese Pasta', meta: 'Central Mess • Token #CP-892', amount: '-120 pts', icon: <ArrowUpRight size={16}/>, color: 'bg-yellow-500/3 text-amber-500 border-blue-600/20' },
+              { id: 'tx-3', type: 'credit', desc: 'Compensation: Hair Follicle Violation', meta: 'BH1 Mess • Scan verified', amount: '+150 pts', icon: <ArrowDownLeft size={16}/>, color: 'bg-green-500/10 text-[#7BA05B] border-green-500/20' },
+              { id: 'tx-4', type: 'credit', desc: 'Welcome Bonus Allocation', meta: 'Semester initiation bonus credits', amount: '+500 pts', icon: <ArrowDownLeft size={16}/>, color: 'bg-green-500/10 text-[#7BA05B] border-green-500/20' }
             ].map((tx) => (
               <div 
                 key={tx.id} 
-                className="p-4 bg-[#0c0d21]/30 border border-white/5 rounded-2xl flex items-center justify-between hover:bg-white/[0.02] hover:border-cyan-500/25 transition-all duration-300"
+                className="p-4 bg-[#151515]/30 border border-white/5 rounded-2xl flex items-center justify-between hover:bg-white/[0.02] hover:border-white/5 transition-all duration-300"
               >
                 <div className="flex items-center gap-4">
                   <div className={`w-10 h-10 rounded-xl flex items-center justify-center border shrink-0 ${tx.color} shadow-inner`}>
@@ -242,7 +242,7 @@ const Wallet = () => {
                   </div>
                 </div>
                 
-                <span className={`font-display font-extrabold text-sm md:text-base shrink-0 ${tx.type === 'credit' ? 'text-green-400' : 'text-blue-500'}`}>
+                <span className={`font-display font-extrabold text-sm md:text-base shrink-0 ${tx.type === 'credit' ? 'text-[#7BA05B]' : 'text-amber-500'}`}>
                   {tx.amount}
                 </span>
               </div>
@@ -254,9 +254,9 @@ const Wallet = () => {
         <div className="lg:col-span-4 bg-white/[0.02] border border-white/5 p-6 md:p-8 rounded-[2rem] shadow-2xl relative overflow-hidden backdrop-blur-3xl space-y-6">
           <div className="flex justify-between items-center border-b border-white/5 pb-4">
             <h3 className="text-lg font-display font-extrabold text-white tracking-tight flex items-center gap-2">
-              <Award size={18} className="text-blue-500 animate-pulse" /> Achievements
+              <Award size={18} className="text-amber-500 animate-pulse" /> Achievements
             </h3>
-            <Sparkles size={14} className="text-cyan-400 animate-bounce" />
+            <Sparkles size={14} className="text-amber-500 animate-bounce" />
           </div>
 
           <div className="space-y-5">
@@ -265,8 +265,8 @@ const Wallet = () => {
                 key={idx} 
                 className={`p-4 rounded-2xl border transition-all duration-300 ${
                   ms.unlocked 
-                    ? 'bg-cyan-950/10 border-cyan-500/20' 
-                    : 'bg-[#0c0d21]/40 border-white/5 opacity-60'
+                    ? 'bg-amber-500/5 border-amber-500/20' 
+                    : 'bg-[#151515]/40 border-white/5 opacity-60'
                 }`}
               >
                 <div className="flex justify-between items-start mb-2">
@@ -276,7 +276,7 @@ const Wallet = () => {
                   </div>
                   <span className={`text-[8px] font-bold px-2 py-0.5 rounded border ${
                     ms.unlocked 
-                      ? 'bg-cyan-500/20 text-cyan-300 border-cyan-500/30' 
+                      ? 'bg-amber-500/20 text-amber-500 border-amber-500/30' 
                       : 'bg-white/5 text-gray-500 border-white/5'
                   }`}>
                     {ms.req}
@@ -289,7 +289,7 @@ const Wallet = () => {
                     <span>{ms.progress}%</span>
                   </div>
                   <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-cyan-500 to-blue-600" style={{ width: `${ms.progress}%` }} />
+                    <div className="h-full bg-gradient-to-r from-amber-600 to-yellow-500 text-neutral-950" style={{ width: `${ms.progress}%` }} />
                   </div>
                 </div>
               </div>
@@ -297,7 +297,7 @@ const Wallet = () => {
           </div>
 
           <div className="pt-2">
-            <button className="w-full py-3.5 rounded-xl border border-white/5 hover:border-cyan-500/30 bg-white/5 hover:bg-white/10 text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 accessibility-focus">
+            <button className="w-full py-3.5 rounded-xl border border-white/5 hover:border-amber-500/30 bg-white/5 hover:bg-white/10 text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 accessibility-focus">
               Explore Reward Marketplace <ArrowRight size={12} />
             </button>
           </div>

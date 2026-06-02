@@ -65,17 +65,17 @@ const Orders = () => {
       {/* Active Orders Section */}
       <div className="space-y-6">
         <h2 className="text-xl font-display font-extrabold text-white tracking-tight flex items-center gap-2">
-          <Clock className="text-cyan-400 animate-pulse" size={20} /> Active Orders ({activeOrders.length})
+          <Clock className="text-amber-500 animate-pulse" size={20} /> Active Orders ({activeOrders.length})
         </h2>
         
         {loading ? (
           <div className="space-y-6">
             {[1, 2].map(i => (
-              <div key={i} className="h-60 bg-[#0c0d21]/60 border border-white/5 rounded-3xl animate-pulse"></div>
+              <div key={i} className="h-60 bg-[#151515]/60 border border-white/5 rounded-3xl animate-pulse"></div>
             ))}
           </div>
         ) : activeOrders.length === 0 ? (
-          <div className="text-center py-16 bg-[#0c0d21]/50 border border-white/5 rounded-3xl">
+          <div className="text-center py-16 bg-[#151515]/50 border border-white/5 rounded-3xl">
             <ShoppingBag size={42} className="mx-auto text-gray-500 mb-4" />
             <h3 className="text-base font-bold text-white">No active orders</h3>
             <p className="text-xs text-gray-400 max-w-xs mx-auto mt-1">Get your next meal by visiting the Marketplace food stalls.</p>
@@ -96,10 +96,10 @@ const Orders = () => {
                     className="bg-white/[0.02] border border-white/5 rounded-[2rem] overflow-hidden shadow-2xl backdrop-blur-3xl"
                   >
                     {/* Live Tracking Header */}
-                    <div className="bg-gradient-to-r from-cyan-900/10 to-blue-900/10 p-6 border-b border-white/5 flex justify-between items-center">
+                    <div className="bg-[#151515] p-6 border-b border-white/5 flex justify-between items-center">
                       <div>
                         <h3 className="text-xl font-display font-extrabold text-white tracking-tight">{order.stallId?.name || 'Food Stall'}</h3>
-                        <p className="text-[10px] text-cyan-300 font-bold uppercase tracking-wider mt-0.5">Order #{order.qrCodeToken.substring(0, 8)}</p>
+                        <p className="text-[10px] text-amber-500 font-bold uppercase tracking-wider mt-0.5">Order #{order.qrCodeToken.substring(0, 8)}</p>
                       </div>
                       
                       {step < 3 ? (
@@ -112,7 +112,7 @@ const Orders = () => {
                         </div>
                       ) : (
                         <div className="text-right">
-                          <div className="bg-green-500/10 border border-green-500/20 text-green-400 px-3.5 py-2 rounded-xl flex items-center gap-1.5 text-xs font-bold animate-pulse">
+                          <div className="bg-green-500/10 border border-green-500/20 text-[#7BA05B] px-3.5 py-2 rounded-xl flex items-center gap-1.5 text-xs font-bold animate-pulse">
                             <CheckCircle size={14} /> Ready for Pickup
                           </div>
                         </div>
@@ -130,20 +130,20 @@ const Orders = () => {
                           initial={{ width: 0 }}
                           animate={{ width: progressWidth }}
                           transition={{ duration: 0.8, ease: "easeOut" }}
-                          className="absolute top-5 left-[10%] h-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full"
+                          className="absolute top-5 left-[10%] h-1 bg-gradient-to-r from-amber-600 to-yellow-500 text-neutral-950 rounded-full"
                         />
 
                         <div className="relative flex justify-between">
                           {[
-                            { stepVal: 1, label: "Confirmed", icon: <Package size={13} />, color: "text-cyan-400" },
-                            { stepVal: 2, label: "Preparing", icon: <ChefHat size={13} />, color: "text-blue-500" },
-                            { stepVal: 3, label: "Ready", icon: <CheckCircle size={13} />, color: "text-green-400" },
-                            { stepVal: 4, label: "Collected", icon: <MapPin size={13} />, color: "text-blue-400" }
+                            { stepVal: 1, label: "Confirmed", icon: <Package size={13} />, color: "text-amber-500" },
+                            { stepVal: 2, label: "Preparing", icon: <ChefHat size={13} />, color: "text-amber-500" },
+                            { stepVal: 3, label: "Ready", icon: <CheckCircle size={13} />, color: "text-[#7BA05B]" },
+                            { stepVal: 4, label: "Collected", icon: <MapPin size={13} />, color: "text-amber-500" }
                           ].map((item, idx) => (
                             <div key={idx} className={`flex flex-col items-center gap-2 z-10 w-[20%] ${step >= item.stepVal ? item.color : 'text-gray-500'}`}>
-                              <div className={`w-8 h-8 rounded-xl flex items-center justify-center border bg-[#020208] transition-all duration-500 ${
+                              <div className={`w-8 h-8 rounded-xl flex items-center justify-center border bg-[#0B0B0B] transition-all duration-500 ${
                                 step >= item.stepVal 
-                                  ? 'border-cyan-500/40 shadow-[0_0_15px_rgba(6, 182, 212,0.2)] text-white' 
+                                  ? 'border-amber-500/20 shadow-[0_0_15px_rgba(198, 138, 43, 0.1)] text-white' 
                                   : 'border-white/5'
                               }`}>
                                 {item.icon}
@@ -169,7 +169,7 @@ const Orders = () => {
                           </div>
                         </div>
                         <div className="flex items-center gap-3 text-xs">
-                          <span className="font-bold text-cyan-400">{order.totalPoints} pts paid</span>
+                          <span className="font-bold text-amber-500">{order.totalPoints} pts paid</span>
                           <span className="text-gray-600">•</span>
                           <span className="text-gray-400">{new Date(order.createdAt).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</span>
                         </div>

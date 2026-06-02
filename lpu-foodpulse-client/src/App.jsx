@@ -22,49 +22,46 @@ const StartupSplash = () => (
     initial={{ opacity: 1 }}
     exit={{ opacity: 0 }}
     transition={{ duration: 0.5, ease: "easeInOut" }}
-    className="fixed inset-0 z-50 flex flex-col items-center justify-center min-h-screen bg-[#020208] overflow-hidden"
+    className="fixed inset-0 z-50 flex flex-col items-center justify-center min-h-screen bg-[#0B0B0B] overflow-hidden"
   >
-    {/* Animated background glow */}
+    {/* Subtle warm ambient glow */}
     <div className="absolute inset-0 flex items-center justify-center">
       <motion.div 
         animate={{ 
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.6, 0.3]
+          opacity: [0.15, 0.3, 0.15]
         }}
-        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-        className="w-96 h-96 bg-cyan-600/20 rounded-full blur-[100px]"
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        className="w-[450px] h-[450px] bg-amber-500/5 rounded-full blur-[120px]"
       />
     </div>
     
     <motion.div 
-      initial={{ scale: 0.8, opacity: 0, y: 20 }}
-      animate={{ scale: 1, opacity: 1, y: 0 }}
-      transition={{ delay: 0.2, duration: 0.8, type: "spring" }}
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.1, duration: 1, ease: [0.16, 1, 0.3, 1] }}
       className="relative z-10 flex flex-col items-center"
     >
-      <div className="w-24 h-24 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-3xl flex items-center justify-center text-4xl shadow-[0_0_40px_rgba(6,182,212,0.4)] mb-6 overflow-hidden relative">
+      <div className="w-20 h-20 bg-neutral-900 border border-white/10 rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-2xl relative overflow-hidden">
         <motion.div
           animate={{ y: ["100%", "-100%"] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-          className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-transparent"
+          transition={{ duration: 2.5, repeat: Infinity, ease: "linear" }}
+          className="absolute inset-0 bg-gradient-to-b from-transparent via-amber-500/10 to-transparent"
         />
-        🍕
+        <span className="text-amber-500 drop-shadow-[0_0_10px_rgba(198,138,43,0.3)]">⚜️</span>
       </div>
-      <h1 className="text-4xl font-display font-bold text-white mb-2 tracking-tight">Food<span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Pulse</span></h1>
-      <p className="text-gray-400 text-sm tracking-widest uppercase mb-8">Smart Campus Ecosystem</p>
+      <h1 className="text-3xl font-display font-light text-white mb-1.5 tracking-widest uppercase">
+        Food<span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-200">Pulse</span>
+      </h1>
+      <p className="text-neutral-500 text-[10px] tracking-[0.25em] uppercase mb-8">Culinary Campus Platform</p>
       
-      <div className="flex gap-2">
-        {[0, 1, 2].map((i) => (
-          <motion.div
-            key={i}
-            animate={{ 
-              y: [0, -10, 0],
-              opacity: [0.3, 1, 0.3]
-            }}
-            transition={{ duration: 1, repeat: Infinity, delay: i * 0.2 }}
-            className="w-2 h-2 rounded-full bg-cyan-500"
-          />
-        ))}
+      {/* Minimal Gold Progress Line */}
+      <div className="w-32 h-[1px] bg-white/10 rounded-full overflow-hidden relative">
+        <motion.div
+          initial={{ left: "-100%" }}
+          animate={{ left: "100%" }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-0 bottom-0 w-16 bg-gradient-to-r from-transparent via-amber-500 to-transparent"
+        />
       </div>
     </motion.div>
   </motion.div>

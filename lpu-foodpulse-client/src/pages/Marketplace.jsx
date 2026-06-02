@@ -145,15 +145,15 @@ const Marketplace = () => {
     const isFav = !!favorites[item._id];
     return (
       <div 
-        className="group relative rounded-3xl bg-white/[0.02] border border-white/5 hover:border-cyan-500/30 hover:shadow-[0_8px_30px_rgba(6, 182, 212,0.15)] transition-all duration-500 overflow-hidden flex flex-col h-full cursor-pointer"
+        className="group relative rounded-3xl bg-white/[0.02] border border-white/5 hover:border-amber-500/30 hover:shadow-none transition-all duration-500 overflow-hidden flex flex-col h-full cursor-pointer"
         onClick={() => handleItemClick(item)}
       >
         {/* Card Image Banner */}
-        <div className="w-full aspect-square overflow-hidden relative bg-[#020208]">
+        <div className="w-full aspect-square overflow-hidden relative bg-[#0B0B0B]">
           {item.image && item.image.startsWith('http') ? (
             <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
           ) : (
-            <div className="w-full h-full bg-gradient-to-tr from-cyan-950/20 to-blue-950/20 flex items-center justify-center text-4xl">
+            <div className="w-full h-full bg-[#151515] flex items-center justify-center text-4xl">
               {item.emoji || '🥘'}
             </div>
           )}
@@ -163,7 +163,7 @@ const Marketplace = () => {
           
           {/* Favorite Button */}
           <button 
-            className={`absolute top-4 right-4 w-9 h-9 rounded-xl flex items-center justify-center backdrop-blur-md transition-all ${isFav ? 'bg-blue-600 text-white' : 'bg-[#020208]/60 text-gray-400 hover:text-white border border-white/5'}`}
+            className={`absolute top-4 right-4 w-9 h-9 rounded-xl flex items-center justify-center backdrop-blur-md transition-all ${isFav ? 'bg-blue-600 text-white' : 'bg-[#0B0B0B]/60 text-gray-400 hover:text-white border border-white/5'}`}
             onClick={(e) => toggleFavorite(item._id, e)}
           >
             <Heart size={16} fill={isFav ? "currentColor" : "none"} />
@@ -171,10 +171,10 @@ const Marketplace = () => {
 
           {/* Delivery & Time Badge */}
           <div className="absolute bottom-4 left-4 flex gap-1.5">
-            <span className="text-[10px] font-bold bg-[#020208]/80 text-[#f3f4f6] px-2.5 py-1 rounded-lg backdrop-blur-md flex items-center gap-1 border border-white/5">
-              <Clock size={10} className="text-cyan-400" /> 15m
+            <span className="text-[10px] font-bold bg-[#0B0B0B]/80 text-[#f3f4f6] px-2.5 py-1 rounded-lg backdrop-blur-md flex items-center gap-1 border border-white/5">
+              <Clock size={10} className="text-amber-500" /> 15m
             </span>
-            <span className={`text-[10px] font-bold px-2.5 py-1 rounded-lg backdrop-blur-md border border-white/5 ${item.stallIsOpen ? 'bg-green-500/20 text-green-300' : 'bg-red-500/20 text-red-300'}`}>
+            <span className={`text-[10px] font-bold px-2.5 py-1 rounded-lg backdrop-blur-md border border-white/5 ${item.stallIsOpen ? 'bg-green-500/20 text-[#7BA05B]' : 'bg-red-500/20 text-red-300'}`}>
               {item.stallIsOpen ? 'OPEN' : 'CLOSED'}
             </span>
           </div>
@@ -184,22 +184,22 @@ const Marketplace = () => {
         <div className="p-5 flex-1 flex flex-col justify-between">
           <div className="space-y-1.5">
             <div className="flex justify-between items-start gap-2">
-              <h4 className="font-bold text-white text-base truncate group-hover:text-cyan-400 transition-colors">{item.name}</h4>
+              <h4 className="font-bold text-white text-base truncate group-hover:text-amber-500 transition-colors">{item.name}</h4>
               <div className="flex items-center text-xs font-bold text-yellow-500 bg-yellow-500/10 px-2 py-0.5 rounded-lg shrink-0">
                 <Star size={10} className="mr-1 fill-yellow-500"/> {item.rating}
               </div>
             </div>
             <p className="text-xs text-gray-400 flex items-center gap-1">
-              <MapPin size={11} className="text-cyan-400" /> {item.stallName} ({item.stallLocation})
+              <MapPin size={11} className="text-amber-500" /> {item.stallName} ({item.stallLocation})
             </p>
           </div>
 
           <div className="flex justify-between items-center mt-5 pt-4 border-t border-white/5">
             <div className="flex flex-col">
               <span className="text-[10px] text-gray-500 uppercase tracking-widest font-semibold">Price</span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 font-extrabold text-lg">{item.pointsCost} pts</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-200 font-extrabold text-lg">{item.pointsCost} pts</span>
             </div>
-            <button className="px-4 py-2 bg-gradient-to-tr from-cyan-500 to-blue-600 text-white rounded-xl text-xs font-bold shadow-[0_4px_12px_rgba(6, 182, 212,0.2)] group-hover:scale-[1.03] transition-all">
+            <button className="px-4 py-2 bg-gradient-to-tr from-amber-600 to-yellow-500 text-neutral-950 text-white rounded-xl text-xs font-bold shadow-[0_4px_12px_rgba(198, 138, 43, 0.1)] group-hover:scale-[1.03] transition-all">
               Add to Cart
             </button>
           </div>
@@ -209,7 +209,7 @@ const Marketplace = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#020208] text-[#f3f4f6] pb-24 lg:pb-12">
+    <div className="min-h-screen bg-[#0B0B0B] text-[#f3f4f6] pb-24 lg:pb-12">
       
       {/* Toast Notification */}
       <AnimatePresence>
@@ -218,20 +218,20 @@ const Marketplace = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-gradient-to-r from-cyan-900 to-blue-900 border border-cyan-500/30 text-white px-5 py-3 rounded-2xl flex items-center gap-2 shadow-2xl backdrop-blur-md"
+            className="fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-gradient-to-r from-neutral-900 to-neutral-900 border border-amber-500/30 text-white px-5 py-3 rounded-2xl flex items-center gap-2 shadow-2xl backdrop-blur-md"
           >
-            <Sparkles size={16} className="text-blue-500 animate-spin" />
+            <Sparkles size={16} className="text-amber-500 animate-spin" />
             <span className="text-xs font-bold">{notificationMsg}</span>
           </motion.div>
         )}
       </AnimatePresence>
 
       {/* Header and Smart Search Bar */}
-      <div className="sticky top-0 z-30 bg-[#020208]/85 backdrop-blur-2xl border-b border-white/5 py-5 mb-8">
+      <div className="sticky top-0 z-30 bg-[#0B0B0B]/85 backdrop-blur-2xl border-b border-white/5 py-5 mb-8">
         <div className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col md:flex-row gap-5 items-center justify-between">
           <div>
             <h1 className="text-3xl font-display font-extrabold text-white tracking-tight flex items-center gap-2">
-              Marketplace <span className="text-xs bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 px-2.5 py-1 rounded-full font-bold">Food Court</span>
+              Marketplace <span className="text-xs bg-amber-500/5 text-amber-500 border border-amber-500/20 px-2.5 py-1 rounded-full font-bold">Food Court</span>
             </h1>
             <p className="text-sm text-gray-400 mt-1">Discover, order, and bypass campus queues instantly</p>
           </div>
@@ -241,7 +241,7 @@ const Marketplace = () => {
             <input 
               type="text" 
               placeholder="Search dishes, messes, or stalls..." 
-              className="w-full bg-[#0c0d21] border border-white/10 rounded-2xl py-3.5 pl-12 pr-4 text-white text-sm focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 transition-all shadow-inner"
+              className="w-full bg-[#151515] border border-white/10 rounded-2xl py-3.5 pl-12 pr-4 text-white text-sm focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/50 transition-all shadow-inner"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
@@ -258,8 +258,8 @@ const Marketplace = () => {
               key={cat} 
               className={`shrink-0 px-6 py-3 rounded-2xl text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
                 activeCategory === cat 
-                  ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-[0_4px_15px_rgba(6, 182, 212,0.3)] border border-transparent' 
-                  : 'bg-[#0c0d21] text-gray-400 border border-white/5 hover:border-white/20 hover:text-white'
+                  ? 'bg-gradient-to-r from-amber-600 to-yellow-500 text-neutral-950 text-white shadow-none border border-transparent' 
+                  : 'bg-[#151515] text-gray-400 border border-white/5 hover:border-white/20 hover:text-white'
               }`}
               onClick={() => setActiveCategory(cat)}
             >
@@ -273,21 +273,21 @@ const Marketplace = () => {
           <motion.div 
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            className="p-6 rounded-[2rem] border border-cyan-500/20 bg-gradient-to-r from-cyan-950/20 via-[#0c0d21]/60 to-blue-950/10 backdrop-blur-3xl shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 mb-12 select-none relative overflow-hidden"
+            className="p-6 rounded-[2rem] border border-amber-500/20 bg-gradient-to-r [#151515] backdrop-blur-3xl shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 mb-12 select-none relative overflow-hidden"
           >
             {/* Glow accent */}
-            <div className="absolute -top-12 -right-12 w-48 h-48 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -top-12 -right-12 w-48 h-48 bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
             
             <div className="flex items-center gap-4 text-left">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white text-2xl shadow-[0_8px_20px_rgba(6,182,212,0.3)] shrink-0">
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-amber-600 to-yellow-500 text-neutral-950 flex items-center justify-center text-white text-2xl shadow-none shrink-0">
                 🤖
               </div>
               <div>
                 <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                  FoodPulse AI Insights <span className="text-[9px] bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 px-2 py-0.5 rounded-full font-bold uppercase">Active</span>
+                  FoodPulse AI Insights <span className="text-[9px] bg-amber-500/5 text-amber-500 border border-amber-500/20 px-2 py-0.5 rounded-full font-bold uppercase">Active</span>
                 </h3>
                 <p className="text-xs text-gray-400 mt-1 max-w-xl leading-relaxed">
-                  Based on your dining history, the AI recommends ordering from <strong className="text-cyan-300">Central Mess</strong> right now. Queue prediction indicates less than <strong className="text-green-400">4 minutes</strong> wait time, with an optimal safety verification index of <strong className="text-cyan-300">99.8%</strong>.
+                  Based on your dining history, the AI recommends ordering from <strong className="text-amber-500">Central Mess</strong> right now. Queue prediction indicates less than <strong className="text-[#7BA05B]">4 minutes</strong> wait time, with an optimal safety verification index of <strong className="text-amber-500">99.8%</strong>.
                 </p>
               </div>
             </div>
@@ -297,7 +297,7 @@ const Marketplace = () => {
                 const item = allMenuItems.find(i => i.stallId === 'stall1');
                 if (item) handleItemClick(item);
               }}
-              className="px-5 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-xs hover:shadow-[0_4px_15px_rgba(6,182,212,0.3)] transition-all shrink-0 cursor-pointer"
+              className="px-5 py-3 rounded-xl bg-gradient-to-r from-amber-600 to-yellow-500 text-neutral-950 text-white font-bold text-xs hover:shadow-none transition-all shrink-0 cursor-pointer"
             >
               Order Recommended Item
             </button>
@@ -309,17 +309,17 @@ const Marketplace = () => {
           <div>
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-xl font-display font-extrabold text-white tracking-tight">Search Results</h3>
-              <span className="text-xs bg-cyan-500/10 text-cyan-400 px-3 py-1 rounded-full font-bold">{filteredItems.length} Items Found</span>
+              <span className="text-xs bg-amber-500/5 text-amber-500 px-3 py-1 rounded-full font-bold">{filteredItems.length} Items Found</span>
             </div>
             
             {loading ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {[1, 2, 3, 4].map(i => (
-                  <div key={i} className="rounded-3xl border border-white/5 bg-[#0c0d21] aspect-[3/4] animate-pulse" />
+                  <div key={i} className="rounded-3xl border border-white/5 bg-[#151515] aspect-[3/4] animate-pulse" />
                 ))}
               </div>
             ) : filteredItems.length === 0 ? (
-              <div className="text-center py-20 bg-[#0c0d21]/50 border border-white/5 rounded-[2.5rem]">
+              <div className="text-center py-20 bg-[#151515]/50 border border-white/5 rounded-[2.5rem]">
                 <div className="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-4">
                   <AlertCircle size={28} className="text-gray-500" />
                 </div>
@@ -341,7 +341,7 @@ const Marketplace = () => {
             {trendingItems.length > 0 && (
               <div>
                 <h3 className="text-xl md:text-2xl font-display font-extrabold text-white tracking-tight mb-4 flex items-center gap-2">
-                  <Sparkles size={20} className="text-cyan-400 animate-pulse" /> Popular Right Now
+                  <Sparkles size={20} className="text-amber-500 animate-pulse" /> Popular Right Now
                 </h3>
                 <p className="text-xs text-gray-400 mb-6">Draggable showcase of the absolute best-rated mess items on campus</p>
                 
@@ -359,16 +359,16 @@ const Marketplace = () => {
                         transition={{ type: "spring", stiffness: 300, damping: 20 }}
                       >
                         <div 
-                          className="premium-glass p-5 flex flex-col justify-between border border-cyan-500/10 h-full relative overflow-hidden"
+                          className="premium-glass p-5 flex flex-col justify-between border border-white/5 h-full relative overflow-hidden"
                           onClick={() => setSelectedPreviewItem(item)}
                         >
                           <div className="flex gap-4">
-                            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-blue-600/20 flex-shrink-0 flex items-center justify-center text-2xl border border-cyan-500/10">
+                            <div className="w-16 h-16 rounded-2xl bg-amber-500/10 flex-shrink-0 flex items-center justify-center text-2xl border border-white/5">
                               {item.emoji || '🥘'}
                             </div>
                             <div className="min-w-0">
                               <h4 className="font-extrabold text-white text-sm truncate">{item.name}</h4>
-                              <p className="text-[10px] text-cyan-300 font-semibold mt-0.5">{item.stallName}</p>
+                              <p className="text-[10px] text-amber-500 font-semibold mt-0.5">{item.stallName}</p>
                               <div className="flex items-center text-[10px] font-bold text-yellow-500 bg-yellow-500/10 px-2 py-0.5 rounded mt-1.5 w-max">
                                 <Star size={9} className="mr-1 fill-yellow-500"/> {item.rating}
                               </div>
@@ -377,7 +377,7 @@ const Marketplace = () => {
                           
                           <div className="flex justify-between items-center mt-5 pt-3 border-t border-white/5">
                             <span className="font-extrabold text-white text-sm">{item.pointsCost} PTS</span>
-                            <span className="text-[10px] bg-green-500/10 text-green-300 border border-green-500/20 px-2 py-0.5 rounded font-bold uppercase tracking-wider">
+                            <span className="text-[10px] bg-green-500/10 text-[#7BA05B] border border-green-500/20 px-2 py-0.5 rounded font-bold uppercase tracking-wider">
                               ⚡ Fast ETA
                             </span>
                           </div>
@@ -391,16 +391,16 @@ const Marketplace = () => {
 
             {/* Recently Ordered & Live Campus Congestion */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
-              <div className="premium-glass p-6 border border-cyan-500/10 flex flex-col justify-between">
+              <div className="premium-glass p-6 border border-white/5 flex flex-col justify-between">
                 <div>
                   <h3 className="text-lg font-extrabold text-white tracking-tight flex items-center gap-2 mb-2">
-                    <Clock size={16} className="text-blue-500" /> Recently Ordered
+                    <Clock size={16} className="text-amber-500" /> Recently Ordered
                   </h3>
                   <p className="text-xs text-gray-400 mb-6">Reorder your favorites in one single click</p>
                   
                   <div className="space-y-4">
                     {trendingItems.slice(0, 2).map((item, idx) => (
-                      <div key={`recent-${idx}`} className="flex items-center justify-between p-3 bg-white/5 border border-white/5 rounded-2xl hover:border-cyan-500/20 transition-all cursor-pointer" onClick={() => setSelectedPreviewItem(item)}>
+                      <div key={`recent-${idx}`} className="flex items-center justify-between p-3 bg-white/5 border border-white/5 rounded-2xl hover:border-amber-500/20 transition-all cursor-pointer" onClick={() => setSelectedPreviewItem(item)}>
                         <div className="flex items-center gap-3">
                           <span className="text-2xl">{item.emoji || '🥘'}</span>
                           <div>
@@ -414,7 +414,7 @@ const Marketplace = () => {
                             updateCart(item, 1);
                             triggerToast(`Added ${item.name} to cart!`);
                           }}
-                          className="px-3.5 py-1.5 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 text-[10px] font-bold rounded-xl transition-all border border-cyan-500/20 hover:scale-105"
+                          className="px-3.5 py-1.5 bg-amber-500/20 hover:bg-amber-500/30 text-amber-500 text-[10px] font-bold rounded-xl transition-all border border-amber-500/20 hover:scale-105"
                         >
                           Reorder
                         </button>
@@ -424,23 +424,23 @@ const Marketplace = () => {
                 </div>
               </div>
               
-              <div className="premium-glass p-6 border border-cyan-500/10 flex flex-col justify-between">
+              <div className="premium-glass p-6 border border-white/5 flex flex-col justify-between">
                 <div>
                   <h3 className="text-lg font-extrabold text-white tracking-tight flex items-center gap-2 mb-2">
-                    <TrendingUp size={16} className="text-cyan-400" /> Live Campus Congestion
+                    <TrendingUp size={16} className="text-amber-500" /> Live Campus Congestion
                   </h3>
                   <p className="text-xs text-gray-400 mb-4">Overall food court status & average wait predictions</p>
                   
                   <div className="grid grid-cols-2 gap-4 mt-2">
                     <div className="bg-white/5 p-3 rounded-2xl border border-white/5">
                       <div className="text-[10px] text-gray-400 uppercase tracking-wider">Avg Wait Time</div>
-                      <div className="text-xl font-extrabold text-cyan-300 mt-1">12 mins</div>
-                      <div className="text-[9px] text-green-400 font-semibold mt-1">↓ 3 mins since peak</div>
+                      <div className="text-xl font-extrabold text-amber-500 mt-1">12 mins</div>
+                      <div className="text-[9px] text-[#7BA05B] font-semibold mt-1">↓ 3 mins since peak</div>
                     </div>
                     <div className="bg-white/5 p-3 rounded-2xl border border-white/5">
                       <div className="text-[10px] text-gray-400 uppercase tracking-wider">Active Orders</div>
-                      <div className="text-xl font-extrabold text-blue-400 mt-1">42 Audits</div>
-                      <div className="text-[9px] text-cyan-300 font-semibold mt-1">7 digital queue lines</div>
+                      <div className="text-xl font-extrabold text-amber-500 mt-1">42 Audits</div>
+                      <div className="text-[9px] text-amber-500 font-semibold mt-1">7 digital queue lines</div>
                     </div>
                   </div>
                 </div>
@@ -469,7 +469,7 @@ const Marketplace = () => {
             {recommendedItems.length > 0 && (
               <div>
                 <h3 className="text-xl md:text-2xl font-display font-extrabold text-white tracking-tight mb-6 flex items-center gap-2">
-                  <Sparkles size={20} className="text-blue-600" /> Recommended For You
+                  <Sparkles size={20} className="text-amber-500" /> Recommended For You
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                   {recommendedItems.map((item, idx) => (
@@ -483,7 +483,7 @@ const Marketplace = () => {
             {popularNearYou.length > 0 && (
               <div>
                 <h3 className="text-xl md:text-2xl font-display font-extrabold text-white tracking-tight mb-6 flex items-center gap-2">
-                  <Compass size={20} className="text-blue-500" /> Popular Near You
+                  <Compass size={20} className="text-amber-500" /> Popular Near You
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                   {popularNearYou.map((item, idx) => (
@@ -497,7 +497,7 @@ const Marketplace = () => {
             {healthyItems.length > 0 && (
               <div>
                 <h3 className="text-xl md:text-2xl font-display font-extrabold text-white tracking-tight mb-6 flex items-center gap-2">
-                  <Sparkles size={20} className="text-green-500" /> Healthy Choices
+                  <Sparkles size={20} className="text-[#7BA05B]" /> Healthy Choices
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                   {healthyItems.map((item, idx) => (
@@ -511,7 +511,7 @@ const Marketplace = () => {
             {lateNightItems.length > 0 && (
               <div>
                 <h3 className="text-xl md:text-2xl font-display font-extrabold text-white tracking-tight mb-6 flex items-center gap-2">
-                  <Flame size={20} className="text-cyan-500" /> Late Night Cravings
+                  <Flame size={20} className="text-amber-500" /> Late Night Cravings
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                   {lateNightItems.map((item, idx) => (
@@ -543,7 +543,7 @@ const Marketplace = () => {
               animate={{ x: 0 }} 
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 30, stiffness: 200 }}
-              className="relative w-full md:max-w-[480px] h-[95vh] md:h-full bg-[#020208] md:border-l border-white/10 flex flex-col shadow-2xl z-10 rounded-t-3xl md:rounded-none overflow-hidden"
+              className="relative w-full md:max-w-[480px] h-[95vh] md:h-full bg-[#0B0B0B] md:border-l border-white/10 flex flex-col shadow-2xl z-10 rounded-t-3xl md:rounded-none overflow-hidden"
             >
               {/* Header Info */}
               <div className="p-6 border-b border-white/10 bg-white/[0.02] shrink-0">
@@ -561,19 +561,19 @@ const Marketplace = () => {
                   <div className="flex items-center gap-1 bg-yellow-500/10 text-yellow-500 px-2.5 py-1.5 rounded-lg border border-yellow-500/20">
                     <Star size={12} className="fill-yellow-500"/> {selectedStall.rating} Rating
                   </div>
-                  <div className="flex items-center gap-1 bg-green-500/10 text-green-400 px-2.5 py-1.5 rounded-lg border border-green-500/20">
+                  <div className="flex items-center gap-1 bg-green-500/10 text-[#7BA05B] px-2.5 py-1.5 rounded-lg border border-green-500/20">
                     {selectedStall.isOpen ? 'OPEN' : 'CLOSED'}
                   </div>
                 </div>
               </div>
 
               {/* Body Area (Scrollable: contains menu items & analytics chart) */}
-              <div className="flex-1 overflow-y-auto p-6 space-y-8 bg-[#020208] hide-scrollbar pb-36">
+              <div className="flex-1 overflow-y-auto p-6 space-y-8 bg-[#0B0B0B] hide-scrollbar pb-36">
                 
                 {/* Advanced Feature: Smart Queue Prediction Chart */}
                 <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5">
                   <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-1.5">
-                    <LineIcon size={14} className="text-cyan-400" /> Queue Wait Prediction Index
+                    <LineIcon size={14} className="text-amber-500" /> Queue Wait Prediction Index
                   </h4>
                   <div className="h-40 w-full mt-2">
                     <ResponsiveContainer width="100%" height="100%">
@@ -616,7 +616,7 @@ const Marketplace = () => {
                               <div className="w-1.5 h-1.5 rounded-full bg-green-500" />
                             </div>
                             <h4 className="font-bold text-white text-sm truncate">{item.name}</h4>
-                            <p className="text-cyan-400 font-extrabold text-xs mt-1">{item.pointsCost} pts</p>
+                            <p className="text-amber-500 font-extrabold text-xs mt-1">{item.pointsCost} pts</p>
                             <p className="text-[10px] text-gray-500 mt-1 line-clamp-1">Fresh ingredients, pre-cooked for convenience</p>
                           </div>
                           
@@ -624,13 +624,13 @@ const Marketplace = () => {
                           <div className="flex flex-col items-center gap-2">
                             {quantity === 0 ? (
                               <button 
-                                className="px-4 py-1.5 rounded-xl border border-cyan-500/20 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 font-bold text-xs"
+                                className="px-4 py-1.5 rounded-xl border border-amber-500/20 bg-amber-500/5 hover:bg-amber-500/20 text-amber-500 font-bold text-xs"
                                 onClick={() => updateCart(item, 1)}
                               >
                                 ADD
                               </button>
                             ) : (
-                              <div className="flex items-center gap-2 bg-[#0c0d21] border border-white/10 rounded-xl px-2 py-1 text-xs">
+                              <div className="flex items-center gap-2 bg-[#151515] border border-white/10 rounded-xl px-2 py-1 text-xs">
                                 <button onClick={() => updateCart(item, -1)} className="p-1 hover:bg-white/5 rounded text-gray-400"><Minus size={12}/></button>
                                 <span className="w-4 text-center font-bold text-white">{quantity}</span>
                                 <button onClick={() => updateCart(item, 1)} className="p-1 hover:bg-white/5 rounded text-white"><Plus size={12}/></button>
@@ -654,18 +654,18 @@ const Marketplace = () => {
                     initial={{ y: '100%' }} 
                     animate={{ y: 0 }} 
                     exit={{ y: '100%' }}
-                    className="absolute bottom-0 left-0 right-0 bg-[#0c0d21] border-t border-white/10 p-5 shadow-[0_-15px_40px_rgba(0,0,0,0.6)] z-20"
+                    className="absolute bottom-0 left-0 right-0 bg-[#151515] border-t border-white/10 p-5 shadow-[0_-15px_40px_rgba(0,0,0,0.6)] z-20"
                   >
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex flex-col">
                         <span className="text-[10px] text-gray-500 uppercase tracking-widest font-semibold">{totalItems} Item{totalItems > 1 ? 's' : ''} Selected</span>
                         <span className="font-display font-extrabold text-xl text-white">{totalPoints} <span className="text-xs text-gray-400 font-normal">points</span></span>
                       </div>
-                      <span className="text-[10px] bg-cyan-500/10 text-cyan-300 px-2 py-1 rounded-lg border border-cyan-500/20 font-bold">Auto-Debit Wallet</span>
+                      <span className="text-[10px] bg-amber-500/5 text-amber-500 px-2 py-1 rounded-lg border border-amber-500/20 font-bold">Auto-Debit Wallet</span>
                     </div>
                     
                     <button 
-                      className="w-full py-4 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-sm shadow-[0_4px_15px_rgba(6, 182, 212,0.25)] hover:shadow-[0_4px_20px_rgba(6, 182, 212,0.45)] hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2"
+                      className="w-full py-4 rounded-2xl bg-gradient-to-r from-amber-600 to-yellow-500 text-neutral-950 text-white font-bold text-sm shadow-none hover:shadow-none hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2"
                       onClick={handleConfirmOrder} 
                       disabled={isPlacingOrder}
                     >

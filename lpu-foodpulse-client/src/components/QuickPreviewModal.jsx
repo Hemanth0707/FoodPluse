@@ -47,7 +47,7 @@ export default function QuickPreviewModal({ item, isOpen, onClose, cartQuantity 
         animate={{ scale: 1, y: 0, opacity: 1 }}
         exit={{ scale: 0.95, y: 20, opacity: 0 }}
         transition={{ type: "spring", damping: 25, stiffness: 300 }}
-        className="relative w-full max-w-2xl overflow-hidden premium-glass border border-cyan-500/20 shadow-2xl p-0 flex flex-col md:flex-row max-h-[90vh] md:max-h-none overflow-y-auto md:overflow-y-visible"
+        className="relative w-full max-w-2xl overflow-hidden premium-glass border border-amber-500/20 shadow-2xl p-0 flex flex-col md:flex-row max-h-[90vh] md:max-h-none overflow-y-auto md:overflow-y-visible"
         role="dialog"
         aria-modal="true"
         aria-label={`Preview of ${item.name}`}
@@ -62,8 +62,8 @@ export default function QuickPreviewModal({ item, isOpen, onClose, cartQuantity 
         </button>
 
         {/* Visual Section */}
-        <div className="w-full md:w-1/2 relative bg-gradient-to-br from-cyan-900/40 to-blue-900/40 min-h-[220px] md:min-h-full flex items-center justify-center overflow-hidden border-b md:border-b-0 md:border-r border-white/5">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(6, 182, 212,0.2)_0%,transparent_70%)]" />
+        <div className="w-full md:w-1/2 relative bg-[#151515] min-h-[220px] md:min-h-full flex items-center justify-center overflow-hidden border-b md:border-b-0 md:border-r border-white/5">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(198, 138, 43, 0.1)_0%,transparent_70%)]" />
           {item.imageUrl ? (
             <img
               src={item.imageUrl}
@@ -72,22 +72,22 @@ export default function QuickPreviewModal({ item, isOpen, onClose, cartQuantity 
             />
           ) : (
             <div className="flex flex-col items-center justify-center p-6 text-center z-1">
-              <div className="w-20 h-20 rounded-3xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center mb-4 text-cyan-400 animate-premium-float">
-                <Sparkles size={38} className="text-cyan-300" />
+              <div className="w-20 h-20 rounded-3xl bg-amber-500/5 border border-amber-500/30 flex items-center justify-center mb-4 text-amber-500 animate-premium-float">
+                <Sparkles size={38} className="text-amber-500" />
               </div>
               <span className="text-xl font-bold tracking-tight text-white mb-1">{item.name}</span>
-              <span className="text-xs text-cyan-300 font-semibold uppercase tracking-wider">Premium Dining</span>
+              <span className="text-xs text-amber-500 font-semibold uppercase tracking-wider">Premium Dining</span>
             </div>
           )}
 
           {/* Dynamic ETA Overlay Badge */}
-          <div className="absolute bottom-4 left-4 bg-black/65 backdrop-blur-md border border-cyan-500/30 rounded-full px-3.5 py-1.5 flex items-center gap-2 text-xs font-semibold text-cyan-200 shadow-lg">
-            <Clock size={13} className="text-cyan-400" />
+          <div className="absolute bottom-4 left-4 bg-black/65 backdrop-blur-md border border-amber-500/30 rounded-full px-3.5 py-1.5 flex items-center gap-2 text-xs font-semibold text-amber-200 shadow-lg">
+            <Clock size={13} className="text-amber-500" />
             <span>ETA: {eta}</span>
           </div>
 
           {/* Category Tag */}
-          <span className="absolute top-4 left-4 bg-blue-600/20 backdrop-blur-md border border-blue-600/30 text-blue-400 text-[10px] font-bold uppercase tracking-widest rounded px-2.5 py-1">
+          <span className="absolute top-4 left-4 bg-blue-600/20 backdrop-blur-md border border-blue-600/30 text-amber-500 text-[10px] font-bold uppercase tracking-widest rounded px-2.5 py-1">
             {item.category || "Popular"}
           </span>
         </div>
@@ -106,7 +106,7 @@ export default function QuickPreviewModal({ item, isOpen, onClose, cartQuantity 
               <h2 className="text-2xl font-extrabold text-white tracking-tight leading-tight">{item.name}</h2>
               <button 
                 onClick={onViewStall}
-                className="text-xs text-cyan-300 hover:text-cyan-100 font-semibold mt-1.5 underline decoration-cyan-500/50 hover:decoration-cyan-300 transition-all text-left block"
+                className="text-xs text-amber-500 hover:text-neutral-200 font-semibold mt-1.5 underline decoration-amber-500/50 hover:decoration-amber-500 transition-all text-left block"
               >
                 {item.stallName || "LPU Campus Hub"}
               </button>
@@ -118,8 +118,8 @@ export default function QuickPreviewModal({ item, isOpen, onClose, cartQuantity 
 
             {/* Nutrition Information */}
             <div className="space-y-2">
-              <span className="text-xs font-bold uppercase tracking-wider text-cyan-300/80 flex items-center gap-1.5">
-                <Flame size={13} className="text-cyan-400" /> Nutrition Metrics
+              <span className="text-xs font-bold uppercase tracking-wider text-amber-500/80 flex items-center gap-1.5">
+                <Flame size={13} className="text-amber-500" /> Nutrition Metrics
               </span>
               <div className="grid grid-cols-4 gap-2 text-center">
                 <div className="bg-white/5 border border-white/5 rounded-xl p-2">
@@ -128,11 +128,11 @@ export default function QuickPreviewModal({ item, isOpen, onClose, cartQuantity 
                 </div>
                 <div className="bg-white/5 border border-white/5 rounded-xl p-2">
                   <div className="text-xs text-gray-400">Prot</div>
-                  <div className="text-sm font-bold text-cyan-300 mt-0.5">{protein}</div>
+                  <div className="text-sm font-bold text-amber-500 mt-0.5">{protein}</div>
                 </div>
                 <div className="bg-white/5 border border-white/5 rounded-xl p-2">
                   <div className="text-xs text-gray-400">Carb</div>
-                  <div className="text-sm font-bold text-blue-400 mt-0.5">{carbs}</div>
+                  <div className="text-sm font-bold text-amber-500 mt-0.5">{carbs}</div>
                 </div>
                 <div className="bg-white/5 border border-white/5 rounded-xl p-2">
                   <div className="text-xs text-gray-400">Fat</div>
@@ -143,8 +143,8 @@ export default function QuickPreviewModal({ item, isOpen, onClose, cartQuantity 
 
             {/* Allergens & Dietary Flags */}
             <div className="space-y-2">
-              <span className="text-xs font-bold uppercase tracking-wider text-cyan-300/80 flex items-center gap-1.5">
-                <Leaf size={13} className="text-green-400" /> Dietary Info & Allergens
+              <span className="text-xs font-bold uppercase tracking-wider text-amber-500/80 flex items-center gap-1.5">
+                <Leaf size={13} className="text-[#7BA05B]" /> Dietary Info & Allergens
               </span>
               <div className="flex flex-wrap gap-1.5">
                 {allergens.map((alg, index) => (
@@ -152,12 +152,12 @@ export default function QuickPreviewModal({ item, isOpen, onClose, cartQuantity 
                     key={index}
                     className="text-xs bg-white/5 border border-white/10 text-gray-300 rounded-lg px-2.5 py-1 flex items-center gap-1.5"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#7BA05B]" />
                     {alg}
                   </span>
                 ))}
                 {item.isVeg ? (
-                  <span className="text-xs bg-green-500/10 border border-green-500/20 text-green-300 rounded-lg px-2.5 py-1 flex items-center gap-1.5">
+                  <span className="text-xs bg-green-500/10 border border-green-500/20 text-[#7BA05B] rounded-lg px-2.5 py-1 flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
                     Pure Veg
                   </span>
@@ -176,7 +176,7 @@ export default function QuickPreviewModal({ item, isOpen, onClose, cartQuantity 
             <div>
               <div className="text-xs text-gray-400">Audit Points Cost</div>
               <div className="text-2xl font-extrabold text-white flex items-baseline gap-1 mt-0.5">
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">{item.pointsCost}</span>
+                <span className="bg-gradient-to-r from-amber-500 to-yellow-200 bg-clip-text text-transparent">{item.pointsCost}</span>
                 <span className="text-xs text-gray-400 font-semibold">PTS</span>
               </div>
             </div>

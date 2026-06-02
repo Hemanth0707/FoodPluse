@@ -39,18 +39,18 @@ const Sidebar = ({ isMobileOpen, closeMobile }) => {
   const links = getNavLinks();
 
   return (
-    <aside className={`fixed top-0 bottom-0 left-0 z-40 w-[260px] bg-[#020208]/95 border-r border-white/5 p-6 flex flex-col justify-between transition-transform duration-300 ${
+    <aside className={`fixed top-0 bottom-0 left-0 z-40 w-[260px] bg-[#151515] border-r border-white/5 p-6 flex flex-col justify-between transition-transform duration-300 ${
       isMobileOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
     }`}>
       
       <div>
         {/* Sidebar Brand Logo */}
-        <div className="flex items-center gap-2 mb-10 px-2">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white shadow-[0_0_15px_rgba(6,182,212,0.3)]">
+        <div className="flex items-center gap-2.5 mb-10 px-2">
+          <div className="w-9 h-9 rounded-xl bg-neutral-900 border border-white/10 flex items-center justify-center text-amber-500 shadow-md">
             <Zap size={16} fill="currentColor" />
           </div>
-          <span className="text-lg font-display font-extrabold text-white tracking-tight">
-            Food<span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Pulse</span>
+          <span className="text-lg font-display font-light text-white tracking-widest uppercase">
+            Food<span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-200">Pulse</span>
           </span>
         </div>
 
@@ -62,8 +62,8 @@ const Sidebar = ({ isMobileOpen, closeMobile }) => {
               to={link.path} 
               className={({ isActive }) => `flex items-center gap-3.5 px-4 py-3.5 rounded-2xl text-xs font-bold uppercase tracking-wider transition-all duration-200 ${
                 isActive 
-                  ? 'bg-gradient-to-r from-cyan-500/20 to-blue-600/10 text-white border border-cyan-500/30 shadow-[0_0_15px_rgba(6,182,212,0.1)]' 
-                  : 'text-gray-400 border border-transparent hover:text-white hover:bg-white/5'
+                  ? 'bg-amber-500/10 text-white border border-amber-500/20 shadow-[0_0_15px_rgba(198,138,43,0.05)]' 
+                  : 'text-neutral-400 border border-transparent hover:text-white hover:bg-white/5'
               }`}
               onClick={closeMobile}
             >
@@ -77,7 +77,7 @@ const Sidebar = ({ isMobileOpen, closeMobile }) => {
       {/* Sidebar Footer Area */}
       <div className="border-t border-white/5 pt-6">
         <button 
-          className="w-full flex items-center gap-3.5 px-4 py-3.5 rounded-2xl text-xs font-bold uppercase tracking-wider text-cyan-400 border border-transparent hover:border-cyan-500/20 hover:bg-cyan-500/5 transition-all text-left" 
+          className="w-full flex items-center gap-3.5 px-4 py-3.5 rounded-2xl text-xs font-bold uppercase tracking-wider text-amber-500 border border-transparent hover:border-amber-500/20 hover:bg-amber-500/5 transition-all text-left cursor-pointer" 
           onClick={logout}
         >
           <LogOut size={18} />

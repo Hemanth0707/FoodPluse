@@ -57,7 +57,7 @@ export default function ReportSuccessModal({ isOpen, onClose, pointsEarned = 150
             }}
             className={`absolute w-3 h-3 rounded-full ${
               i % 3 === 0
-                ? "bg-cyan-400"
+                ? "bg-[#7BA05B]"
                 : i % 3 === 1
                 ? "bg-blue-500"
                 : "bg-blue-400"
@@ -72,14 +72,14 @@ export default function ReportSuccessModal({ isOpen, onClose, pointsEarned = 150
         animate={{ scale: 1, y: 0, opacity: 1 }}
         exit={{ scale: 0.9, y: 30, opacity: 0 }}
         transition={{ type: "spring", damping: 20, stiffness: 260 }}
-        className="relative w-full max-w-md overflow-hidden premium-glass border border-cyan-500/25 shadow-2xl p-8 text-center"
+        className="relative w-full max-w-md overflow-hidden premium-glass border border-white/5 shadow-2xl p-8 text-center"
         role="dialog"
         aria-modal="true"
         aria-label="Report Quality Verification Success"
       >
         {/* Glow Ring Effects */}
-        <div className="absolute -top-16 -left-16 w-32 h-32 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-16 -right-16 w-32 h-32 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -top-16 -left-16 w-32 h-32 bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-16 -right-16 w-32 h-32 bg-yellow-500/3 rounded-full blur-3xl pointer-events-none" />
 
         {/* Icon Sphere */}
         <div className="relative mx-auto w-24 h-24 mb-6 flex items-center justify-center">
@@ -87,20 +87,20 @@ export default function ReportSuccessModal({ isOpen, onClose, pointsEarned = 150
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-            className="absolute inset-0 rounded-full border-2 border-dashed border-cyan-500/30"
+            className="absolute inset-0 rounded-full border-2 border-dashed border-amber-500/30"
           />
           {/* Second pulsing glow ring */}
           <motion.div
             animate={{ scale: [1, 1.15, 1] }}
             transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute inset-2 rounded-full bg-cyan-500/10 border border-cyan-500/30"
+            className="absolute inset-2 rounded-full bg-amber-500/5 border border-amber-500/30"
           />
           {/* Center visual */}
-          <div className="relative w-16 h-16 rounded-full bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white shadow-lg shadow-cyan-500/20">
+          <div className="relative w-16 h-16 rounded-full bg-gradient-to-tr from-amber-600 to-yellow-500 text-neutral-950 flex items-center justify-center text-white shadow-lg shadow-none">
             <ShieldCheck size={32} className="animate-pulse" />
           </div>
           {/* Sparkles element */}
-          <Sparkles className="absolute top-0 right-0 text-blue-500 w-5 h-5 animate-bounce" />
+          <Sparkles className="absolute top-0 right-0 text-amber-500 w-5 h-5 animate-bounce" />
         </div>
 
         {/* Details Content */}
@@ -112,14 +112,14 @@ export default function ReportSuccessModal({ isOpen, onClose, pointsEarned = 150
         </p>
 
         {/* Reward Showcase Card */}
-        <div className="bg-cyan-950/20 border border-cyan-500/25 rounded-2xl p-4 mb-6 relative overflow-hidden">
-          <div className="absolute -right-6 -bottom-6 text-cyan-500/10">
+        <div className="bg-[#151515] border border-white/5 rounded-2xl p-4 mb-6 relative overflow-hidden">
+          <div className="absolute -right-6 -bottom-6 text-amber-500/10">
             <Award size={80} />
           </div>
-          <div className="text-xs font-bold text-cyan-300 uppercase tracking-widest">Digital Credits Awarded</div>
+          <div className="text-xs font-bold text-amber-500 uppercase tracking-widest">Digital Credits Awarded</div>
           <div className="text-4xl font-black text-white flex items-baseline justify-center gap-1.5 mt-1.5">
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">+{pointsEarned}</span>
-            <span className="text-sm text-cyan-300 font-bold">PTS</span>
+            <span className="bg-gradient-to-r from-amber-500 to-yellow-200 bg-clip-text text-transparent">+{pointsEarned}</span>
+            <span className="text-sm text-amber-500 font-bold">PTS</span>
           </div>
           <div className="text-[10px] text-gray-400 mt-2 flex items-center justify-center gap-1">
             <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-ping" />
@@ -131,14 +131,14 @@ export default function ReportSuccessModal({ isOpen, onClose, pointsEarned = 150
         <div className="space-y-2 mb-8 text-left">
           <div className="flex justify-between text-xs font-semibold">
             <span className="text-gray-400">Auditor XP (Lvl 3)</span>
-            <span className="text-cyan-300">850 / 1000 XP</span>
+            <span className="text-amber-500">850 / 1000 XP</span>
           </div>
           <div className="h-2 w-full bg-white/5 border border-white/5 rounded-full overflow-hidden">
             <motion.div
               initial={{ width: "70%" }}
               animate={{ width: "85%" }}
               transition={{ duration: 1.2, ease: "easeOut" }}
-              className="h-full bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full"
+              className="h-full bg-gradient-to-r from-amber-600 to-yellow-500 text-neutral-950 rounded-full"
             />
           </div>
           <div className="text-[10px] text-gray-500 text-center">

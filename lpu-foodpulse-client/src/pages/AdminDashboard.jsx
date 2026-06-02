@@ -61,33 +61,33 @@ const AdminDashboard = () => {
       
       {/* Top Stats Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        <div className="ad-stat-card bg-[#0c0d21] border border-white/5 rounded-2xl p-6 shadow-lg">
+        <div className="ad-stat-card bg-[#151515] border border-white/5 rounded-2xl p-6 shadow-lg">
           <div className="flex justify-between items-start mb-4">
-            <div className="p-3 bg-cyan-500/20 text-cyan-400 rounded-xl"><AlertOctagon size={24} /></div>
+            <div className="p-3 bg-amber-500/20 text-amber-500 rounded-xl"><AlertOctagon size={24} /></div>
             <span className="text-sm font-bold text-red-400 bg-red-500/10 px-2 py-1 rounded">+12%</span>
           </div>
           <h3 className="text-3xl font-display font-bold text-white mb-1">{stats.totalComplaints}</h3>
           <p className="text-gray-400 text-sm">Total AI Complaints</p>
         </div>
 
-        <div className="ad-stat-card bg-[#0c0d21] border border-white/5 rounded-2xl p-6 shadow-lg">
+        <div className="ad-stat-card bg-[#151515] border border-white/5 rounded-2xl p-6 shadow-lg">
           <div className="flex justify-between items-start mb-4">
-            <div className="p-3 bg-green-500/20 text-green-400 rounded-xl"><Activity size={24} /></div>
-            <span className="text-sm font-bold text-green-400 bg-green-500/10 px-2 py-1 rounded">+5%</span>
+            <div className="p-3 bg-green-500/20 text-[#7BA05B] rounded-xl"><Activity size={24} /></div>
+            <span className="text-sm font-bold text-[#7BA05B] bg-green-500/10 px-2 py-1 rounded">+5%</span>
           </div>
           <h3 className="text-3xl font-display font-bold text-white mb-1">{stats.verifiedComplaints}</h3>
           <p className="text-gray-400 text-sm">Verified Issues</p>
         </div>
 
-        <div className="ad-stat-card bg-[#0c0d21] border border-white/5 rounded-2xl p-6 shadow-lg">
+        <div className="ad-stat-card bg-[#151515] border border-white/5 rounded-2xl p-6 shadow-lg">
           <div className="flex justify-between items-start mb-4">
-            <div className="p-3 bg-blue-500/20 text-blue-400 rounded-xl"><Users size={24} /></div>
+            <div className="p-3 bg-blue-500/20 text-amber-500 rounded-xl"><Users size={24} /></div>
           </div>
           <h3 className="text-3xl font-display font-bold text-white mb-1">{stats.totalStudents.toLocaleString()}</h3>
           <p className="text-gray-400 text-sm">Active Students</p>
         </div>
 
-        <div className="ad-stat-card bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl p-6 shadow-lg relative overflow-hidden">
+        <div className="ad-stat-card bg-gradient-to-br from-amber-600 to-yellow-500 text-neutral-950 rounded-2xl p-6 shadow-lg relative overflow-hidden">
           <div className="absolute -right-4 -top-4 opacity-20"><TrendingUp size={100} /></div>
           <div className="flex justify-between items-start mb-4 relative z-10">
             <div className="p-3 bg-white/20 text-white rounded-xl"><DollarSign size={24} /></div>
@@ -99,7 +99,7 @@ const AdminDashboard = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
         {/* Hostel Problem Heatmap */}
-        <div className="lg:col-span-2 bg-[#0c0d21] border border-white/5 rounded-2xl p-6 shadow-lg">
+        <div className="lg:col-span-2 bg-[#151515] border border-white/5 rounded-2xl p-6 shadow-lg">
           <h3 className="font-display font-bold text-white text-lg mb-6 flex items-center gap-2">
             <AlertTriangle className="text-red-400"/> Hostel Issue Heatmap
           </h3>
@@ -120,7 +120,7 @@ const AdminDashboard = () => {
         </div>
 
         {/* Student Satisfaction Pie Chart */}
-        <div className="bg-[#0c0d21] border border-white/5 rounded-2xl p-6 shadow-lg flex flex-col">
+        <div className="bg-[#151515] border border-white/5 rounded-2xl p-6 shadow-lg flex flex-col">
           <h3 className="font-display font-bold text-white text-lg mb-2">Student Satisfaction</h3>
           <p className="text-xs text-gray-400 mb-6">Based on AI verified meal ratings</p>
           <div className="flex-1 flex justify-center items-center relative">
@@ -164,7 +164,7 @@ const AdminDashboard = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Quality Trend Line Chart */}
-        <div className="bg-[#0c0d21] border border-white/5 rounded-2xl p-6 shadow-lg">
+        <div className="bg-[#151515] border border-white/5 rounded-2xl p-6 shadow-lg">
           <h3 className="font-display font-bold text-white text-lg mb-6">Food Quality Trends (7 Days)</h3>
           <div className="h-64">
             <ResponsiveContainer width="100%" height="100%">
@@ -180,7 +180,7 @@ const AdminDashboard = () => {
           </div>
           <div className="flex justify-center gap-6 mt-4">
             <div className="flex items-center gap-2 text-sm text-gray-300">
-              <div className="w-3 h-1 bg-cyan-500 rounded"></div> Taste Score
+              <div className="w-3 h-1 bg-amber-500 rounded"></div> Taste Score
             </div>
             <div className="flex items-center gap-2 text-sm text-gray-300">
               <div className="w-3 h-1 bg-blue-600 rounded"></div> Hygiene Score
@@ -189,13 +189,13 @@ const AdminDashboard = () => {
         </div>
 
         {/* Vendor Performance */}
-        <div className="bg-[#0c0d21] border border-white/5 rounded-2xl p-6 shadow-lg flex flex-col">
+        <div className="bg-[#151515] border border-white/5 rounded-2xl p-6 shadow-lg flex flex-col">
           <h3 className="font-display font-bold text-white text-lg mb-6">Top Performing Stalls</h3>
           <div className="space-y-4 flex-1 overflow-y-auto pr-2 custom-scrollbar">
             {stalls.slice(0, 5).map((stall, idx) => (
               <div key={stall._id} className="flex items-center justify-between p-3 bg-white/5 rounded-xl border border-white/5">
                 <div className="flex items-center gap-4">
-                  <div className="w-8 h-8 rounded bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center font-bold text-white">
+                  <div className="w-8 h-8 rounded bg-gradient-to-br from-amber-600 to-yellow-500 text-neutral-950 flex items-center justify-center font-bold text-white">
                     {idx + 1}
                   </div>
                   <div>
@@ -204,7 +204,7 @@ const AdminDashboard = () => {
                   </div>
                 </div>
                 <div className="text-right">
-                  <p className="text-green-400 font-bold">{stall.rating} ★</p>
+                  <p className="text-[#7BA05B] font-bold">{stall.rating} ★</p>
                   <p className="text-xs text-gray-500">{((5 - idx) * 125 + 100)} orders</p>
                 </div>
               </div>

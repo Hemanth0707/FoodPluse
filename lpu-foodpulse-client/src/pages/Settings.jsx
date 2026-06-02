@@ -36,7 +36,7 @@ const Settings = () => {
       <div className="space-y-6">
         {/* Theme Settings */}
         <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
-          <div className="flex items-center gap-3 mb-4 text-cyan-400">
+          <div className="flex items-center gap-3 mb-4 text-amber-500">
             {theme === 'dark' ? <Moon size={20} /> : <Sun size={20} />}
             <h3 className="font-bold text-lg text-white">Appearance</h3>
           </div>
@@ -47,14 +47,14 @@ const Settings = () => {
             </div>
             <label className="relative inline-flex items-center cursor-pointer">
               <input type="checkbox" className="sr-only peer" checked={theme === 'dark'} onChange={toggleTheme} />
-              <div className="w-11 h-6 bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-cyan-500"></div>
+              <div className="w-11 h-6 bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-500"></div>
             </label>
           </div>
         </div>
 
         {/* Notification Settings */}
         <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
-          <div className="flex items-center gap-3 mb-4 text-cyan-400">
+          <div className="flex items-center gap-3 mb-4 text-amber-500">
             <Bell size={20} />
             <h3 className="font-bold text-lg text-white">Notifications</h3>
           </div>
@@ -66,7 +66,7 @@ const Settings = () => {
               </div>
               <label className="relative inline-flex items-center cursor-pointer">
                 <input type="checkbox" name="orderUpdates" className="sr-only peer" checked={notifs.orderUpdates} onChange={handleNotifChange} />
-                <div className="w-11 h-6 bg-gray-700 rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-cyan-500 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+                <div className="w-11 h-6 bg-gray-700 rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-amber-500 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
               </label>
             </div>
             <div className="flex items-center justify-between">
@@ -76,7 +76,7 @@ const Settings = () => {
               </div>
               <label className="relative inline-flex items-center cursor-pointer">
                 <input type="checkbox" name="complaintStatus" className="sr-only peer" checked={notifs.complaintStatus} onChange={handleNotifChange} />
-                <div className="w-11 h-6 bg-gray-700 rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-cyan-500 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+                <div className="w-11 h-6 bg-gray-700 rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-amber-500 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
               </label>
             </div>
           </div>
@@ -84,7 +84,7 @@ const Settings = () => {
 
         {/* Security & Privacy */}
         <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
-          <div className="flex items-center gap-3 mb-4 text-cyan-400">
+          <div className="flex items-center gap-3 mb-4 text-amber-500">
             <Shield size={20} />
             <h3 className="font-bold text-lg text-white">Security</h3>
           </div>

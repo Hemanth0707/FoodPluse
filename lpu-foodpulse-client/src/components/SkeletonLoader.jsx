@@ -7,7 +7,7 @@ export default function SkeletonLoader({ type = "card", className = "", count = 
       case "avatar":
         return (
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-full shimmer-bg border border-cyan-500/10 flex-shrink-0" />
+            <div className="w-12 h-12 rounded-full shimmer-bg border border-white/5 flex-shrink-0" />
             <div className="flex-1 space-y-2">
               <div className="h-4 w-24 shimmer-bg rounded-md" />
               <div className="h-3 w-16 shimmer-bg rounded-md opacity-60" />
@@ -24,10 +24,10 @@ export default function SkeletonLoader({ type = "card", className = "", count = 
       case "card":
       default:
         return (
-          <div className="premium-glass p-6 min-h-[160px] flex flex-col justify-between border border-cyan-500/10">
+          <div className="premium-glass p-6 min-h-[160px] flex flex-col justify-between border border-white/5">
             <div className="space-y-3">
               <div className="flex justify-between items-center">
-                <div className="w-10 h-10 rounded-xl shimmer-bg border border-cyan-500/10" />
+                <div className="w-10 h-10 rounded-xl shimmer-bg border border-white/5" />
                 <div className="w-16 h-5 shimmer-bg rounded-full" />
               </div>
               <div className="h-6 w-2/3 shimmer-bg rounded-md" />

@@ -197,7 +197,7 @@ const ReportFood = () => {
             id: 'undercooked-2',
             label: 'Crystalline Moisture Defect',
             confidence: '92.4%',
-            color: 'border-cyan-500 text-cyan-400 bg-cyan-500/10',
+            color: 'border-amber-500/30 text-amber-500 bg-amber-500/5',
             style: { top: '40%', left: '45%', width: '30%', height: '35%' }
           }
         ];
@@ -231,7 +231,7 @@ const ReportFood = () => {
             id: 'unhygienic-2',
             label: 'Organic Residue Trace',
             confidence: '94.1%',
-            color: 'border-cyan-500 text-cyan-400 bg-cyan-500/10',
+            color: 'border-amber-500/30 text-amber-500 bg-amber-500/5',
             style: { top: '45%', left: '40%', width: '25%', height: '25%' }
           }
         ];
@@ -265,7 +265,7 @@ const ReportFood = () => {
             id: 'stale-2',
             label: 'Gaseous Degraded Layer',
             confidence: '89.5%',
-            color: 'border-cyan-500 text-cyan-400 bg-cyan-500/10',
+            color: 'border-amber-500/30 text-amber-500 bg-amber-500/5',
             style: { top: '40%', left: '30%', width: '35%', height: '30%' }
           }
         ];
@@ -275,7 +275,7 @@ const ReportFood = () => {
             id: 'default-1',
             label: 'Viscosity & Texture Irregularity',
             confidence: '85.6%',
-            color: 'border-cyan-500 text-cyan-400 bg-cyan-500/10',
+            color: 'border-amber-500/30 text-amber-500 bg-amber-500/5',
             style: { top: '25%', left: '25%', width: '50%', height: '50%' }
           }
         ];
@@ -428,24 +428,24 @@ const ReportFood = () => {
       
       {/* Main Stepper Wizard Content */}
       <div className="report-form-card flex-1 bg-white/[0.02] border border-white/5 p-6 md:p-8 rounded-[2rem] shadow-2xl relative overflow-hidden backdrop-blur-3xl">
-        <div className="absolute top-0 left-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-0 left-0 w-32 h-32 bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
 
         {/* Stepper Progress Bar Header */}
         <div className="relative flex justify-between items-center mb-10 pb-4 border-b border-white/5">
-          <div className={`flex items-center gap-2 font-bold text-xs transition-colors duration-300 ${step === 1 ? 'text-cyan-400' : 'text-gray-400'}`}>
-            <div className={`w-6 h-6 rounded-full flex items-center justify-center font-display font-extrabold transition-all duration-300 ${step === 1 ? 'bg-cyan-500 text-white shadow-[0_0_12px_rgba(6, 182, 212,0.4)]' : 'bg-white/5 border border-white/10 text-gray-500'}`}>1</div>
+          <div className={`flex items-center gap-2 font-bold text-xs transition-colors duration-300 ${step === 1 ? 'text-amber-500' : 'text-gray-400'}`}>
+            <div className={`w-6 h-6 rounded-full flex items-center justify-center font-display font-extrabold transition-all duration-300 ${step === 1 ? 'bg-amber-500 text-white shadow-[0_0_12px_rgba(198, 138, 43, 0.1)]' : 'bg-white/5 border border-white/10 text-gray-500'}`}>1</div>
             Details
           </div>
-          <div className={`flex-1 h-[2px] mx-4 transition-colors duration-300 ${step > 1 ? 'bg-cyan-500/50' : 'bg-white/5'}`} />
+          <div className={`flex-1 h-[2px] mx-4 transition-colors duration-300 ${step > 1 ? 'bg-amber-500/20' : 'bg-white/5'}`} />
           
-          <div className={`flex items-center gap-2 font-bold text-xs transition-colors duration-300 ${step === 2 ? 'text-cyan-400' : 'text-gray-400'}`}>
-            <div className={`w-6 h-6 rounded-full flex items-center justify-center font-display font-extrabold transition-all duration-300 ${step === 2 ? 'bg-cyan-500 text-white shadow-[0_0_12px_rgba(6, 182, 212,0.4)]' : 'bg-white/5 border border-white/10 text-gray-500'}`}>2</div>
+          <div className={`flex items-center gap-2 font-bold text-xs transition-colors duration-300 ${step === 2 ? 'text-amber-500' : 'text-gray-400'}`}>
+            <div className={`w-6 h-6 rounded-full flex items-center justify-center font-display font-extrabold transition-all duration-300 ${step === 2 ? 'bg-amber-500 text-white shadow-[0_0_12px_rgba(198, 138, 43, 0.1)]' : 'bg-white/5 border border-white/10 text-gray-500'}`}>2</div>
             AI Verify
           </div>
-          <div className={`flex-1 h-[2px] mx-4 transition-colors duration-300 ${step > 2 ? 'bg-cyan-500/50' : 'bg-white/5'}`} />
+          <div className={`flex-1 h-[2px] mx-4 transition-colors duration-300 ${step > 2 ? 'bg-amber-500/20' : 'bg-white/5'}`} />
           
-          <div className={`flex items-center gap-2 font-bold text-xs transition-colors duration-300 ${step === 3 ? 'text-cyan-400' : 'text-gray-400'}`}>
-            <div className={`w-6 h-6 rounded-full flex items-center justify-center font-display font-extrabold transition-all duration-300 ${step === 3 ? 'bg-cyan-500 text-white shadow-[0_0_12px_rgba(6, 182, 212,0.4)]' : 'bg-white/5 border border-white/10 text-gray-500'}`}>3</div>
+          <div className={`flex items-center gap-2 font-bold text-xs transition-colors duration-300 ${step === 3 ? 'text-amber-500' : 'text-gray-400'}`}>
+            <div className={`w-6 h-6 rounded-full flex items-center justify-center font-display font-extrabold transition-all duration-300 ${step === 3 ? 'bg-amber-500 text-white shadow-[0_0_12px_rgba(198, 138, 43, 0.1)]' : 'bg-white/5 border border-white/10 text-gray-500'}`}>3</div>
             Result
           </div>
         </div>
@@ -475,7 +475,7 @@ const ReportFood = () => {
                   <select 
                     name="messOptionId" 
                     aria-labelledby="mess-facility-label"
-                    className="w-full bg-[#0c0d21]/60 border border-white/10 rounded-2xl py-4 px-4 text-white text-sm focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 transition-all shadow-inner accessibility-focus"
+                    className="w-full bg-[#151515]/60 border border-white/10 rounded-2xl py-4 px-4 text-white text-sm focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/50 transition-all shadow-inner accessibility-focus"
                     value={formData.messOptionId} 
                     onChange={handleChange} 
                     required
@@ -492,7 +492,7 @@ const ReportFood = () => {
                     <select 
                       name="mealType" 
                       aria-labelledby="meal-type-label"
-                      className="w-full bg-[#0c0d21]/60 border border-white/10 rounded-2xl py-4 px-4 text-white text-sm focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 transition-all shadow-inner accessibility-focus"
+                      className="w-full bg-[#151515]/60 border border-white/10 rounded-2xl py-4 px-4 text-white text-sm focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/50 transition-all shadow-inner accessibility-focus"
                       value={formData.mealType} 
                       onChange={handleChange}
                     >
@@ -508,7 +508,7 @@ const ReportFood = () => {
                     <select 
                       name="issueType" 
                       aria-labelledby="issue-type-label"
-                      className="w-full bg-[#0c0d21]/60 border border-white/10 rounded-2xl py-4 px-4 text-white text-sm focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 transition-all shadow-inner accessibility-focus"
+                      className="w-full bg-[#151515]/60 border border-white/10 rounded-2xl py-4 px-4 text-white text-sm focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/50 transition-all shadow-inner accessibility-focus"
                       value={formData.issueType} 
                       onChange={handleChange}
                     >
@@ -527,7 +527,7 @@ const ReportFood = () => {
                   <textarea 
                     name="description"
                     aria-labelledby="desc-label"
-                    className="w-full bg-[#0c0d21]/60 border border-white/10 rounded-2xl py-4 px-4 text-white text-sm focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 transition-all shadow-inner min-h-[100px] accessibility-focus" 
+                    className="w-full bg-[#151515]/60 border border-white/10 rounded-2xl py-4 px-4 text-white text-sm focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/50 transition-all shadow-inner min-h-[100px] accessibility-focus" 
                     placeholder="E.g., Roti was completely hard and uncooked inside. Not edible..."
                     value={formData.description}
                     onChange={handleChange}
@@ -543,8 +543,8 @@ const ReportFood = () => {
                     <div 
                       className={`border-2 border-dashed rounded-3xl p-8 text-center cursor-pointer transition-all duration-300 flex flex-col items-center justify-center ${
                         isDragging 
-                          ? 'border-cyan-500 bg-cyan-500/10' 
-                          : 'border-white/10 hover:border-cyan-500/30 bg-[#0c0d21]/60 hover:bg-[#0c0d21]'
+                          ? 'border-amber-500 bg-amber-500/5' 
+                          : 'border-white/10 hover:border-amber-500/30 bg-[#151515]/60 hover:bg-[#151515]'
                       } accessibility-focus`}
                       onDragOver={handleDragOver}
                       onDragLeave={handleDragLeave}
@@ -555,7 +555,7 @@ const ReportFood = () => {
                       aria-label="Drag and drop photo or video evidence here to upload"
                       onKeyDown={(e) => e.key === 'Enter' && fileInputRef.current?.click()}
                     >
-                      <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-4 border border-cyan-500/20">
+                      <div className="w-14 h-14 rounded-2xl bg-amber-500/5 text-amber-500 flex items-center justify-center mb-4 border border-amber-500/20">
                         <UploadCloud size={24} />
                       </div>
                       <h4 className="font-bold text-white text-sm">Drag & drop photo / video evidence here</h4>
@@ -573,17 +573,17 @@ const ReportFood = () => {
 
                   {/* Upload percentage progress bar */}
                   {isUploading && (
-                    <div className="border border-cyan-500/20 bg-[#0c0d21]/60 rounded-3xl p-6 relative overflow-hidden backdrop-blur-md">
+                    <div className="border border-amber-500/20 bg-[#151515]/60 rounded-3xl p-6 relative overflow-hidden backdrop-blur-md">
                       <div className="flex justify-between items-center mb-3">
-                        <span className="text-xs font-mono text-cyan-300 flex items-center gap-1.5">
-                          <RefreshCw size={12} className="animate-spin text-cyan-400" />
+                        <span className="text-xs font-mono text-amber-500 flex items-center gap-1.5">
+                          <RefreshCw size={12} className="animate-spin text-amber-500" />
                           {uploadStatusText}
                         </span>
                         <span className="text-sm font-mono text-white font-bold">{uploadProgress}%</span>
                       </div>
                       <div className="h-2 w-full bg-white/5 border border-white/5 rounded-full overflow-hidden relative">
                         <motion.div 
-                          className="h-full bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full"
+                          className="h-full bg-gradient-to-r from-amber-600 to-yellow-500 text-neutral-950 rounded-full"
                           style={{ width: `${uploadProgress}%` }}
                           layout
                         />
@@ -632,7 +632,7 @@ const ReportFood = () => {
                 {/* Submit trigger */}
                 <button 
                   type="submit" 
-                  className="w-full py-4.5 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-base shadow-[0_4px_20px_rgba(6, 182, 212,0.3)] hover:shadow-[0_4px_25px_rgba(6, 182, 212,0.5)] hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:pointer-events-none accessibility-focus"
+                  className="w-full py-4.5 rounded-2xl bg-gradient-to-r from-amber-600 to-yellow-500 text-neutral-950 text-white font-bold text-base shadow-[0_4px_20px_rgba(198, 138, 43, 0.2)] hover:shadow-[0_4px_25px_rgba(6, 182, 212,0.5)] hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:pointer-events-none accessibility-focus"
                   disabled={isUploading || files.length === 0}
                 >
                   Submit & Verify Issue <ChevronRight size={18} />
@@ -653,7 +653,7 @@ const ReportFood = () => {
               className="text-center py-12 flex flex-col items-center justify-center min-h-[400px]"
             >
               {/* Computer vision scanning HUD overlay */}
-              <div className="relative w-72 h-72 border border-cyan-500/30 rounded-3xl overflow-hidden bg-black/40 shadow-2xl mb-8 radar-sweep-container flex items-center justify-center">
+              <div className="relative w-72 h-72 border border-amber-500/30 rounded-3xl overflow-hidden bg-black/40 shadow-2xl mb-8 radar-sweep-container flex items-center justify-center">
                 {files.length > 0 && (
                   <img src={files[0].url} className="absolute inset-0 w-full h-full object-cover opacity-80" alt="food quality scanning" />
                 )}
@@ -662,7 +662,7 @@ const ReportFood = () => {
                 <div className="radar-sweep-line" />
                 
                 {/* Glowing grid & crosshairs overlay */}
-                <svg className="absolute inset-0 w-full h-full text-cyan-500/25 pointer-events-none" viewBox="0 0 100 100">
+                <svg className="absolute inset-0 w-full h-full text-amber-500/25 pointer-events-none" viewBox="0 0 100 100">
                   <circle cx="50" cy="50" r="10" stroke="currentColor" strokeWidth="0.5" fill="none" />
                   <circle cx="50" cy="50" r="25" stroke="currentColor" strokeWidth="0.5" strokeDasharray="2,2" fill="none" />
                   <circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="0.5" fill="none" />
@@ -681,7 +681,7 @@ const ReportFood = () => {
                     key={box.id}
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
-                    className={`absolute border-2 rounded-lg ${box.color} flex flex-col justify-between p-1 z-20 shadow-[0_0_15px_rgba(6, 182, 212,0.15)]`}
+                    className={`absolute border-2 rounded-lg ${box.color} flex flex-col justify-between p-1 z-20 shadow-[0_0_15px_rgba(198, 138, 43, 0.05)]`}
                     style={box.style}
                   >
                     {/* Corner Bracket Graphics */}
@@ -699,15 +699,15 @@ const ReportFood = () => {
                 
                 {/* HUD interface overlays */}
                 <div className="absolute inset-0 flex flex-col justify-between p-4 pointer-events-none z-30 font-mono text-[9px]">
-                  <div className="flex justify-between items-center text-cyan-400">
+                  <div className="flex justify-between items-center text-amber-500">
                     <span className="flex items-center gap-1">
-                      <span className="w-1 h-1 rounded-full bg-cyan-400 animate-ping" />
+                      <span className="w-1 h-1 rounded-full bg-[#7BA05B] animate-ping" />
                       SYS_AUDIT_MODE: LIVE
                     </span>
                     <span>CAM_FEED: 01</span>
                   </div>
                   
-                  <div className="flex justify-between items-center text-cyan-400/80">
+                  <div className="flex justify-between items-center text-amber-500/80">
                     <span>LATITUDE: 31.25° N</span>
                     <span>LONGITUDE: 75.70° E</span>
                   </div>
@@ -715,11 +715,11 @@ const ReportFood = () => {
               </div>
 
               <h3 className="text-2xl font-bold font-display text-white tracking-tight mb-2 flex items-center gap-2">
-                <Cpu className="text-cyan-400 animate-spin" size={20} /> AI Quality Analysis Running...
+                <Cpu className="text-amber-500 animate-spin" size={20} /> AI Quality Analysis Running...
               </h3>
               
               {/* Simulated Live status logs */}
-              <div className="w-full max-w-sm bg-[#0c0d21]/60 border border-white/5 py-3.5 px-4 rounded-2xl font-mono text-left text-xs text-cyan-300 min-h-[50px] shadow-inner mt-4">
+              <div className="w-full max-w-sm bg-[#151515]/60 border border-white/5 py-3.5 px-4 rounded-2xl font-mono text-left text-xs text-amber-500 min-h-[50px] shadow-inner mt-4">
                 <span className="text-gray-500 mr-2">&gt;</span> {aiScanStatus}
               </div>
             </motion.div>
@@ -737,16 +737,16 @@ const ReportFood = () => {
             >
               {verificationResult === 'approved' && (
                 <div className="flex flex-col items-center">
-                  <div className="w-20 h-20 bg-green-500/10 rounded-full border border-green-500/20 text-green-400 flex items-center justify-center mb-6 shadow-[0_0_40px_rgba(16,185,129,0.2)] animate-bounce">
+                  <div className="w-20 h-20 bg-green-500/10 rounded-full border border-green-500/20 text-[#7BA05B] flex items-center justify-center mb-6 shadow-[0_0_40px_rgba(16,185,129,0.2)] animate-bounce">
                     <CheckCircle size={42} />
                   </div>
                   
-                  <h3 className="text-3xl font-display font-extrabold text-green-400 tracking-tight mb-2">Complaint AI Verified!</h3>
+                  <h3 className="text-3xl font-display font-extrabold text-[#7BA05B] tracking-tight mb-2">Complaint AI Verified!</h3>
                   <p className="text-gray-400 max-w-sm leading-relaxed mb-6">Computer vision has confirmed texture issues. Your report is approved instantly.</p>
                   
-                  <div className="bg-cyan-950/20 border border-cyan-500/25 rounded-2xl p-5 shadow-inner mb-10 max-w-xs">
-                    <p className="text-green-300 font-extrabold text-lg flex items-center justify-center gap-1.5">
-                      <Sparkles size={16} className="text-blue-500" /> +150 Points Credited
+                  <div className="bg-[#151515] border border-white/5 rounded-2xl p-5 shadow-inner mb-10 max-w-xs">
+                    <p className="text-[#7BA05B] font-extrabold text-lg flex items-center justify-center gap-1.5">
+                      <Sparkles size={16} className="text-amber-500" /> +150 Points Credited
                     </p>
                     <p className="text-[10px] text-gray-500 mt-1">Wallet automatically updated.</p>
                   </div>
@@ -754,13 +754,13 @@ const ReportFood = () => {
                   <div className="flex gap-4">
                     <button 
                       onClick={() => setIsSuccessModalOpen(true)}
-                      className="px-6 py-3 bg-[#0c0d21] hover:bg-[#151532] border border-cyan-500/30 text-white rounded-xl text-xs font-bold transition-all accessibility-focus"
+                      className="px-6 py-3 bg-[#151515] hover:bg-[#151532] border border-amber-500/30 text-white rounded-xl text-xs font-bold transition-all accessibility-focus"
                     >
                       Show Certificate
                     </button>
                     <button 
                       onClick={resetForm}
-                      className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl text-xs font-bold hover:shadow-[0_4px_15px_rgba(6, 182, 212,0.3)] transition-all accessibility-focus"
+                      className="px-6 py-3 bg-gradient-to-r from-amber-600 to-yellow-500 text-neutral-950 text-white rounded-xl text-xs font-bold hover:shadow-none transition-all accessibility-focus"
                     >
                       Report Another Issue
                     </button>
@@ -777,7 +777,7 @@ const ReportFood = () => {
                   <h3 className="text-3xl font-display font-extrabold text-yellow-400 tracking-tight mb-2">Under Manual Review</h3>
                   <p className="text-gray-400 max-w-sm leading-relaxed mb-8">AI flag is partial. Complaint submitted successfully and is pending final check by mess administration.</p>
                   
-                  <button className="px-6 py-3 border border-white/10 hover:border-cyan-500/30 bg-white/5 text-white rounded-xl text-xs font-bold transition-all accessibility-focus" onClick={resetForm}>
+                  <button className="px-6 py-3 border border-white/10 hover:border-amber-500/30 bg-white/5 text-white rounded-xl text-xs font-bold transition-all accessibility-focus" onClick={resetForm}>
                     Report Another Issue
                   </button>
                 </div>
@@ -792,7 +792,7 @@ const ReportFood = () => {
                   <h3 className="text-3xl font-display font-extrabold text-red-400 tracking-tight mb-2">Analysis Failed</h3>
                   <p className="text-gray-400 max-w-sm leading-relaxed mb-8">{errorMsg || "Vision analysis indicates standard visual quality. Please upload clearer evidence."}</p>
                   
-                  <button className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl text-xs font-bold shadow-md hover:-translate-y-0.5 transition-all accessibility-focus" onClick={resetForm}>
+                  <button className="px-6 py-3 bg-gradient-to-r from-amber-600 to-yellow-500 text-neutral-950 text-white rounded-xl text-xs font-bold shadow-md hover:-translate-y-0.5 transition-all accessibility-focus" onClick={resetForm}>
                     Retry Analysis
                   </button>
                 </div>
@@ -821,7 +821,7 @@ const ReportFood = () => {
               <div key={idx} className="space-y-1">
                 <div className="flex justify-between text-xs font-semibold">
                   <span className="text-gray-300">{trend.name}</span>
-                  <span className={trend.status === "Critical" ? "text-red-400" : trend.status === "Medium" ? "text-yellow-400" : "text-green-400"}>{trend.status}</span>
+                  <span className={trend.status === "Critical" ? "text-red-400" : trend.status === "Medium" ? "text-yellow-400" : "text-[#7BA05B]"}>{trend.status}</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden">
@@ -838,9 +838,9 @@ const ReportFood = () => {
         <div className="rsi-card relative overflow-hidden font-sans">
           <div className="flex items-center justify-between mb-5 select-none">
             <h4 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest flex items-center gap-1.5">
-              <Clock size={14} className="text-cyan-400" /> Compliance Audits
+              <Clock size={14} className="text-amber-500" /> Compliance Audits
             </h4>
-            <span className="text-[9px] bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 px-2 py-0.5 rounded-full font-bold">
+            <span className="text-[9px] bg-amber-500/5 text-amber-500 border border-amber-500/20 px-2 py-0.5 rounded-full font-bold">
               Level 3
             </span>
           </div>
@@ -854,8 +854,8 @@ const ReportFood = () => {
                   onClick={() => setExpandedAuditId(isExpanded ? null : audit.id)}
                   className={`p-3.5 rounded-2xl border transition-all duration-300 cursor-pointer accessibility-focus ${
                     isExpanded 
-                      ? 'bg-cyan-950/20 border-cyan-500/30 shadow-lg shadow-cyan-500/5' 
-                      : 'bg-[#0c0d21]/40 border-white/5 hover:border-white/10 hover:bg-[#0c0d21]/80'
+                      ? 'bg-[#151515] border-amber-500/30 shadow-none' 
+                      : 'bg-[#151515]/40 border-white/5 hover:border-white/10 hover:bg-[#151515]/80'
                   }`}
                   tabIndex="0"
                   role="button"
@@ -879,13 +879,13 @@ const ReportFood = () => {
                       <div className="flex items-center justify-between mt-2">
                         <span className={`text-[9px] font-bold px-2 py-0.5 rounded-full border ${
                           audit.status === 'Verified' 
-                            ? 'bg-green-500/10 text-green-400 border-green-500/20' 
+                            ? 'bg-green-500/10 text-[#7BA05B] border-green-500/20' 
                             : 'bg-red-500/10 text-red-400 border-red-500/20'
                         }`}>
                           {audit.status}
                         </span>
                         {audit.points > 0 && (
-                          <span className="text-[10px] font-extrabold text-cyan-300">
+                          <span className="text-[10px] font-extrabold text-amber-500">
                             +{audit.points} PTS
                           </span>
                         )}
@@ -904,7 +904,7 @@ const ReportFood = () => {
                         {audit.status === 'Verified' ? (
                           <div className="space-y-2">
                             <p>Computer vision neural nodes detected abnormal texture arrays. Verification approved. +150 Wallet points and +50 Auditor XP credited.</p>
-                            <div className="flex items-center gap-1.5 text-[9px] font-mono text-green-400 bg-green-500/5 py-1 px-2 rounded-lg border border-green-500/10">
+                            <div className="flex items-center gap-1.5 text-[9px] font-mono text-[#7BA05B] bg-green-500/5 py-1 px-2 rounded-lg border border-green-500/10">
                               <CheckCircle size={10} /> CV_ACCURACY: 98.4%
                             </div>
                           </div>
