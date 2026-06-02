@@ -520,7 +520,7 @@ const Profile = () => {
             <svg viewBox="0 0 280 200" className="w-full max-w-[280px] drop-shadow-[0_0_30px_rgba(6, 182, 212,0.2)]">
               {/* Outer background elements */}
               <defs>
-                <linearGradient id="cyanPink" x1="0%" y1="0%" x2="100%" y2="100%">
+                <linearGradient id="cyanBlue" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stopColor="#00D4FF" stopOpacity="0.4" />
                   <stop offset="100%" stopColor="#06B6D4" stopOpacity="0.1" />
                 </linearGradient>
@@ -531,7 +531,7 @@ const Profile = () => {
               </defs>
               
               {/* Background Shapes */}
-              <rect x="20" y="20" width="240" height="160" rx="20" fill="url(#cyanPink)" stroke="rgba(255,255,255,0.05)" strokeWidth="1" />
+              <rect x="20" y="20" width="240" height="160" rx="20" fill="url(#cyanBlue)" stroke="rgba(255,255,255,0.05)" strokeWidth="1" />
               
               {/* Connecting Nodes */}
               <circle cx="90" cy="100" r="25" fill="#020208" stroke="rgba(6, 182, 212,0.3)" strokeWidth="1.5" />
